@@ -6,8 +6,10 @@ import * as ApiActions from './actions/session/session_actions';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const store = configureStore();
+  window.store = store;
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>Welcome to Sociagram</h1>, root);
+  ReactDOM.render(<Root store={store}/>, root);
 });
 
 window.login = ApiActions.login;
