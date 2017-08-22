@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  window.staticImage = {
+    phonelogin: "<%= image_path('login_phone.jpeg') %>"
+  }
+</script>
+
   <script type="text/javascript">
     <% if signed_in? %>
         window.currentUser = <%= render("api/users/user.json.jbuilder",
