@@ -1,3 +1,93 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.signup-form{
+  display: flex;
+  background: white;
+  justify-content: center;
+  flex-direction: column;
+  width: 250px;
+  border: 1px solid lightgrey;
+  padding: 15px 40px 20px 40px;
+  margin-left: 40px;
+}
+
+.input-field{
+  margin: 0;
+  border-radius: 3px;
+  height: 30px;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  font-size: 14px;
+  background-color: #fafafa;
+  border: 1px solid lightgrey;
+  color: darkgrey;
+  font-weight: 100;
+}
+.input-field:focus{
+  color: black;
+  font-weight: 500;
+}
+.error-login{
+  padding: 3px;
+  text-align: center;
+  font-weight: 50;
+  color: #999;
+  font-size: 15px;
+}
+.title-descrip{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 15px;
+  color: #999;
+  font-weight: bold;
+}
+.sociagram-title{
+  display: flex;
+  font-family: 'Dancing Script';
+  justify-content: center;
+  font-size: 45px;
+  padding-bottom: 15px;
+  padding-top: 14px;
+}
+
+.login-button{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  border: 1px solid lightgrey;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 25px;
+  margin-left: 40px;
+  width: inherit;
+  background: white;
+  font-size: 14px;
+}
+
+.main-login{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 110px;
+}
+.current-form{
+  display: flex;
+  flex-direction: column;
+}
+.login-spacer{
+  padding-right: 5px;
+}
+.submit-button{
+  background: #3897f0;
+  border: none;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 3px;
+  color: white;
+}
+.errors-display{
+  color: red;
+}
