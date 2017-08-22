@@ -16,7 +16,6 @@
 |title          | string  |   not null                      |
 |body           | string  |   not null                      |
 |author_id      | integer |   not null, foreign key         |
-|likes_id       | integer |   not null, foreign key         |
 
 
 |Comments       | Type    |             Details             |
@@ -30,8 +29,7 @@
 |Likes          | Type    |             Details             |
 |---------------|:-------:|--------------------------------:|
 |id             | integer |    not null, primary key        |
-|user_id        | integer |    not null, foreign key        |
-|author_id      | integer |    not null, foreign key        |
+|liker_id       | integer |    not null, foreign key        |
 |post_id        | integer |    not null, foreign key        |
 
 
