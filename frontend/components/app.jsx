@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 
 const App = () => (
   <div>
-    <h1>Bench BnB</h1>
+    <h1>Sociagram</h1>
     <GreetingContainer />
 
     <Route path="/login" component={SessionFormContainer} />
