@@ -4,7 +4,7 @@ import SessionFormContainer from './session/session_form_container';
 import { Route } from 'react-router-dom';
 
 const App = () => (
-  <div>
+  <div className='main-login'>
     <GreetingContainer />
 
     <Route exact path="/login" component={SessionFormContainer} />

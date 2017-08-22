@@ -10,7 +10,7 @@ const Greeting = (props) => {
   } else {
     return (
       <div>
-        <img src="/assets/login_phone.jpeg" height="400px" width="250px" alt="Log in Phone"/>
+        <img src="/assets/login_phone.jpeg" height="440px" width="382px" alt="Log in Phone"/>
         <Redirect to="/signup"/>
 
       </div>
