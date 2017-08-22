@@ -6,7 +6,7 @@ class CreateFollows < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_index :posts, :followee_id
-    add_index :posts, :follower_id
+    add_index :follows, :followee_id
+    add_index :follows, :follower_id
   end
 end
