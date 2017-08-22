@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
 
     if(this.props.formType === 'login' && !this.props.loggedIn){
       return(
-        <div>
+        <div className="current-form">
           <form className="signup-form" onSubmit={this.handleSubmit}>
             <h2 className="sociagram-title">Sociagram</h2>
             <input className="input-field" placeholder="Username" onChange={this.update('username')} value={this.state.username} />
@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
       );
     }
     return (
-      <div>
+      <div className="current-form">
         {this.props.loggedIn ? <Redirect to="/" /> : <div></div> }
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <h2 className="sociagram-title">Sociagram</h2>
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
           <div>{this.props.errors.join(", ")}</div>
         </form>
           <div className="login-button">
-            Have an account? <Link to="/login"> Log in</Link>
+            <li className="login-spacer">Have an account?</li><Link to="/login"> Log in</Link>
           </div>
       </div>
     );
