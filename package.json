@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "webpack.config.js",
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
+
   "directories": {
     "doc": "docs",
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
