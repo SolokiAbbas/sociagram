@@ -4,6 +4,7 @@ username        string      not null, indexed, unique
 Fname           string      not null
 Lname           string      not null
 email           string      not null, indexed, unique
+handle          string      not null, unique
 password_digest string      not null
 session_token   string      not null
 
@@ -13,7 +14,7 @@ title           string      not null
 body            string      not null
 author_id       integer     not null, foreign key
 likes_id        integer     not null, foreign key
-comments_id     integer     not null, foreign key
+
 
 Comments
 id              integer     not null, primary key
@@ -25,8 +26,9 @@ Likes
 id              integer     not null, primary key
 user_id         integer     not null, foreign key
 author_id       integer     not null, foreign key
+post_id         integer     not null, foreign key
 
 Follows
 id              integer     not null, primary key
-user_id         integer     not null, foreign key
-author_id       integer     not null, foreign key
+followee_id     integer     not null, foreign key
+follower_id     integer     not null, foreign key
