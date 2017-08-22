@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
     if(this.props.formType === 'login'){
       return(
         <div>
-          <img src="/assets/login_phone.jpeg" height="440px" width="382px" alt="Log in Phone"/>
+          <img src={window.staticImage.phonelogin} height="440px" width="382px" alt="Log in Phone"/>
         <div className="current-form">
           <form className="signup-form" onSubmit={this.handleSubmit}>
             <h2 className="sociagram-title">Sociagram</h2>
