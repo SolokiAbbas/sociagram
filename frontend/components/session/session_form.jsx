@@ -34,6 +34,7 @@ class SessionForm extends React.Component {
 
 
   render(){
+
     if(this.props.formType === 'login' && !this.props.loggedIn){
       return(
         <div>
@@ -58,6 +59,7 @@ class SessionForm extends React.Component {
       <div>
         {this.props.loggedIn ? <Redirect to="/" /> : <div></div> }
         <h2>Sociagram</h2>
+        <h4>Sign up to see photos and videos from your friends.</h4>
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <input placeholder="Email" onChange={this.update('email')} value={this.state.email} />
             <br />
