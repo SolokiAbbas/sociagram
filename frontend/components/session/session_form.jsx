@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
             <h2 className="sociagram-title">Sociagram</h2>
             <input className="input-field" placeholder="Username" onChange={this.update('username')} value={this.state.username} />
 
-            <input className="input-field" placeholder="Password" onChange={this.update('password')} value={this.state.password} />
+            <input type="password" className="input-field" placeholder="Password" onChange={this.update('password')} value={this.state.password} />
             <input className="submit-button" type="submit" value="Log in" />
             <br />
             <p className="errors-display"> {this.props.errors.join(", ")} </p>
@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
           <h2 className="sociagram-title">Sociagram</h2>
           <h4 className="title-descrip">Sign up to see photos and videos from your friends.</h4>
 
-          <button className="submit-button" onClick={() => this.props.login({username: "tester", password: "password", Fname: "tester", Lname:"tester", email: "email", handle: "@tester"})}>
+          <button className="submit-button" onClick={() => this.props.login({username: "tester", password: "password"})}>
             Login Demo
           </button>
           <br />
@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
 
           <input className="input-field" placeholder="Username" onChange={this.update('username')} value={this.state.username} />
 
-          <input className="input-field" placeholder="Password" onChange={this.update('password')} value={this.state.password} />
+          <input type="password" className="input-field" placeholder="Password" onChange={this.update('password')} value={this.state.password} />
 
           <input className="submit-button" type="submit" value="Sign up" />
           <br />
