@@ -6,7 +6,8 @@ JSON API
 
 Users
   POST  /api/users
-  PATCH /api/users
+  GET   /api/users/:id
+  PATCH /api/users/:id
 
 Session
   POST    /api/session
