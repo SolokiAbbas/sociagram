@@ -1,3 +1,4 @@
+```js
 {
   entities: {
     users: {
@@ -76,3 +77,4 @@
     avatar_url: 'www.imgssss.com/guest.jpg'
   }
 }
+```

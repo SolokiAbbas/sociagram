@@ -5,11 +5,10 @@ import { Route } from 'react-router-dom';
 
 const App = () => (
   <div>
-    <h1>Sociagram</h1>
     <GreetingContainer />
 
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <Route exact path="/login" component={SessionFormContainer} />
+    <Route exact path="/signup" component={SessionFormContainer} />
   </div>
 );
 
