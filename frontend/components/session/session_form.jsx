@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
-
-
 class SessionForm extends React.Component {
 
   constructor(props) {
@@ -25,7 +23,6 @@ class SessionForm extends React.Component {
     nextState.handle="@"+this.state.username;
     const user = Object.assign({}, nextState );
     this.props.processForm(user);
-    this.setState({username: '', password: '', handle: '@', Fname: '', Lname: '', email: ''});
   }
 
   update(field) {
@@ -35,8 +32,10 @@ class SessionForm extends React.Component {
 
   render(){
 
-    if(this.props.formType === 'login' && !this.props.loggedIn){
+    if(this.props.formType === 'login'){
       return(
+        <div>
+          <img src="/assets/login_phone.jpeg" height="440px" width="382px" alt="Log in Phone"/>
         <div className="current-form">
           <form className="signup-form" onSubmit={this.handleSubmit}>
             <h2 className="sociagram-title">Sociagram</h2>
@@ -53,11 +52,13 @@ class SessionForm extends React.Component {
             </Link>
           </div>
         </div>
+      </div>
       );
     }
     return (
+      <div>
+        <img src="/assets/login_phone.jpeg" height="440px" width="382px" alt="Log in Phone"/>
       <div className="current-form">
-        {this.props.loggedIn ? <Redirect to="/" /> : <div></div> }
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <h2 className="sociagram-title">Sociagram</h2>
           <h4 className="title-descrip">Sign up to see photos and videos from your friends.</h4>
@@ -79,6 +80,7 @@ class SessionForm extends React.Component {
           <div className="login-button">
             <li className="login-spacer">Have an account?</li><Link to="/login"> Log in</Link>
           </div>
+      </div>
       </div>
     );
   }
