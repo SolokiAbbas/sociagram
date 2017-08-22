@@ -41,14 +41,14 @@ class SessionForm extends React.Component {
           <form className="signup-form" onSubmit={this.handleSubmit}>
             <h2 className="sociagram-title">Sociagram</h2>
             <input className="input-field" placeholder="Username" onChange={this.update('username')} value={this.state.username} />
-            <br />
+
             <input className="input-field" placeholder="Password" onChange={this.update('password')} value={this.state.password} />
-              <br />
-            <input type="submit" value="Log in" />
-            <p> {this.props.errors.join(", ")} </p>
+            <input className="submit-button" type="submit" value="Log in" />
+            <br />
+            <p className="errors-display"> {this.props.errors.join(", ")} </p>
           </form>
-          <div className="signup-button">
-            <Link to="/signup">
+          <div className="login-button">
+            <li className="login-spacer">Don't have an account?</li><Link to="/signup">
               Sign Up
             </Link>
           </div>
@@ -62,19 +62,19 @@ class SessionForm extends React.Component {
           <h2 className="sociagram-title">Sociagram</h2>
           <h4 className="title-descrip">Sign up to see photos and videos from your friends.</h4>
           <input className="input-field" placeholder="Email" onChange={this.update('email')} value={this.state.email} />
-            <br />
+
           <input className="input-field" placeholder="First Name" onChange={this.update('Fname')} value={this.state.Fname} />
-            <br />
+
           <input className="input-field" placeholder="Last Name" onChange={this.update('Lname')} value={this.state.Lname} />
-            <br />
+
           <input className="input-field" placeholder="Username" onChange={this.update('username')} value={this.state.username} />
-          <br />
+
           <input className="input-field" placeholder="Password" onChange={this.update('password')} value={this.state.password} />
-            <br />
-          <input type="submit" value="Sign up" />
+
+          <input className="submit-button" type="submit" value="Sign up" />
           <br />
           <p className="error-login">By signing up, you agree to our Terms & Privacy Policy.</p>
-          <div>{this.props.errors.join(", ")}</div>
+          <div className="errors-display">{this.props.errors.join(", ")}</div>
         </form>
           <div className="login-button">
             <li className="login-spacer">Have an account?</li><Link to="/login"> Log in</Link>
