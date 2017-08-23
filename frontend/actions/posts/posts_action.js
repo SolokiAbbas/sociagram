@@ -35,8 +35,17 @@ export const fetchAllPosts = () => (dispatch) => {
 
 export const fetchAPost = (id) => (dispatch) => {
   return (
-    ApiUtil.fetchAllPost(id).then(
+    ApiUtil.fetchAPost(id).then(
       (post) => dispatch(receiveAPost(post)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
+    )
+  );
+};
+
+export const createAPost = (post) => (dispatch) => {
+  return (
+    ApiUtil.createAPost(post).then(
+      (post) => dispatch(receiveCurrentPost(post)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
