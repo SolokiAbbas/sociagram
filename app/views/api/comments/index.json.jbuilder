@@ -1,5 +1,5 @@
 @comments.each do |comment|
-  json.set! post.id do
-    json.partial! 'comment', comment: comment
+  json.set! comment.id do
+    json.partial! 'comment', comments: comment
   end
 end

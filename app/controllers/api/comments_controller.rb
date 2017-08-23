@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(post_params)
     @comment.author_id = current_user.id
     if @comment.save
-      render :show
+      render :index
     else
       render json: @comment.errors.full_messages, status: 422
     end
@@ -17,7 +17,7 @@ class Api::CommentsController < ApplicationController
 
   def index
     @comments = Comment.find(params[:post_id])
-    render :index
+    render :index @comments
   end
 
   private
