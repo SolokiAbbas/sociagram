@@ -16,13 +16,13 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comment = Comment.find(params[:post_id])
+    @comments = Comment.find(params[:post_id])
     render :index
   end
 
   private
   def post_params
-    params.require(:post).permit(:body, :title, :post_id)
+    params.require(:comment).permit(:body, :post_id)
   end
 
 end

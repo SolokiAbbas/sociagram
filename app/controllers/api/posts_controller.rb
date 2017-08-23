@@ -17,13 +17,13 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    @post = Post.all
+    @posts = Post.all
     render :index
   end
 
   def show
-    post = Post.find(params[:id])
-    render json: post
+    @post = Post.find(params[:id])
+    render json: @post
   end
 
   private
