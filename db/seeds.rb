@@ -8,3 +8,14 @@
 
 User.destroy_all
 User.create!({username: "tester", password: "password", Fname: "tester", Lname:"tester", email: "email", handle: "@tester"})
+
+
+
+
+Comment.destroy_all
+
+Post.destroy_all
+
+Follow.destroy_all
+
+Like.destroy_all
