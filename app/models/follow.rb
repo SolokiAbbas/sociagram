@@ -10,7 +10,7 @@
 #
 
 class Follow < ApplicationRecord
-  validates :followee_id, :follower_id, presence: null
+  validates :followee_id, :follower_id, presence: true
   belongs_to :user, foreign_key: :author_id
 
 end

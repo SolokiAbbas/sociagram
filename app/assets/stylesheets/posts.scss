@@ -1,3 +1,24 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.posts-index{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.posts-index-item{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 1px solid #e6e6e6;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  margin: 5px;
+}
+
+.posts-body{
+  display: flex;
+  justify-content: flex-start;
+
+}
