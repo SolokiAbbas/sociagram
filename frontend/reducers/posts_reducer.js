@@ -1,4 +1,5 @@
 import { RECEIVE_ERRORS, RECEIVE_ALL_POSTS, RECEIVE_A_POST } from '../actions/posts/posts_action';
+import merge from 'lodash/merge';
 
 const PostsReducer = (state = {}, action) => {
   Object.freeze(state);
