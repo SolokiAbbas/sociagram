@@ -29,9 +29,7 @@ class SessionForm extends React.Component {
     return e => this.setState({[field]: e.currentTarget.value});
   }
 
-
   render(){
-
     if(this.props.formType === 'login'){
       return(
         <div>
@@ -63,7 +61,7 @@ class SessionForm extends React.Component {
           <h2 className="sociagram-title">Sociagram</h2>
           <h4 className="title-descrip">Sign up to see photos and videos from your friends.</h4>
 
-          <button className="submit-button" onClick={() => this.props.login({username: "tester", password: "password"})}>
+          <button type="button" className="submit-button" onClick={() => this.props.login({username: "tester", password: "password"})}>
             Login Demo
           </button>
           <br />
