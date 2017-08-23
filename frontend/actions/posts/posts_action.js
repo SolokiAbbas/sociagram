@@ -1,4 +1,4 @@
-import * as ApiUtil from '../../util/posts/posts_action';
+import * as ApiUtil from '../../util/posts/post_api_util';
 
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_A_POST = 'RECEIVE_A_POST';
