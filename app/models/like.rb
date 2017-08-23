@@ -10,7 +10,7 @@
 #
 
 class Like < ApplicationRecord
-  validates :post_id, :liker_id, :post_id, presence: null
+  validates :post_id, :liker_id, :post_id, presence: true
   belongs_to :post, foreign_key: :post_id
   belongs_to :liker, primary_id: :id, foreign_key: :liker_id, class_name: :User
 
