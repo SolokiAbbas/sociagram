@@ -1,15 +1,15 @@
 import React from 'react';
 
-
-const PostsIndexItem = ({ post, session }) => {
-
-  if(typeof session !== 'undefined'){
+const PostsIndexItem = (props) => {
+  debugger
+  props.fetchAUser(props.post.id);
+  if(typeof props.session !== 'undefined'){
   return(
   <div>
     <ul className="posts-index-item">
-      <li>{session.currentUser.username}</li>
+      <li>{users.username}</li>
       <li>{post.title}</li>
-        <img src={post.image_url} alt={post.title}/>
+        <img src={post.image_url} alt={post.title} className="post-images"/>
       <br />
       <li className="posts-body">{post.body}</li>
     </ul>
