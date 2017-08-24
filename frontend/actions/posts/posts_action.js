@@ -10,6 +10,7 @@ export const receiveCurrentPost = (posts) => {
     posts,
   };
 };
+
 export const receiveAPost = (post) => {
   return {
     type: RECEIVE_A_POST,
