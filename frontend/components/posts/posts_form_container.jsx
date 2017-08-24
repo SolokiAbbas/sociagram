@@ -5,7 +5,7 @@ import PostsForm from './posts_form';
 
 const mapStateToProps = (state) =>{
   return {
-    posts: state.entities.posts,
+    posts: state.entities.posts.allPosts,
     session: state.session,
   };
 };

@@ -2,7 +2,7 @@ import * as ApiUtil from '../../util/posts/post_api_util';
 
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_A_POST = 'RECEIVE_A_POST';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
 export const receiveCurrentPost = (posts) => {
   return {
@@ -19,7 +19,7 @@ export const receiveAPost = (post) => {
 
 export const receiveErrors = (errors) => {
   return {
-    type: RECEIVE_ERRORS,
+    type: RECEIVE_POST_ERRORS,
     errors,
   };
 };
