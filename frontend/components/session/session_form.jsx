@@ -12,12 +12,12 @@ class SessionForm extends React.Component {
       Lname: "",
       email: "",
       handle: "@",
-
+      errors: [],
     };
-
+    let allerrors;
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -32,7 +32,14 @@ class SessionForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  handleErrors(){
+    let allerrors = [];
+
+  }
+
   render(){
+    let allerrors = [];
+    allerrors = this.props.errors.join(", ");
     if(this.props.formType === 'login'){
       return(
         <div>
@@ -45,7 +52,8 @@ class SessionForm extends React.Component {
             <input type="password" className="input-field" placeholder="Password" onChange={this.update('password')} value={this.state.password} />
             <input className="submit-button" type="submit" value="Log in" />
             <br />
-            <p className="errors-display"> {this.props.errors.join(", ")} </p>
+            <p className="errors-display"> {allerrors} </p>
+            {this.handleErrors}
           </form>
           <div className="login-button">
             <li className="login-spacer">Don't have an account?</li><Link to="/signup">
@@ -86,7 +94,8 @@ class SessionForm extends React.Component {
           <input className="submit-button" type="submit" value="Sign up" />
           <br />
           <p className="error-login">By signing up, you agree to our Terms & Privacy Policy.</p>
-          <div className="errors-display">{this.props.errors.join(", ")}</div>
+          <div className="errors-display">{allerrors}</div>
+          {this.handleErrors}
         </form>
           <div className="login-button">
             <li className="login-spacer">Have an account?</li><Link to="/login"> Log in</Link>
