@@ -7,9 +7,9 @@ const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
 
   switch(action.type) {
     case RECEIVE_ALL_POSTS:
-      return merge({}, newState, {allPosts: action.posts});
+      return merge({}, newState, { allPosts: action.posts });
     case RECEIVE_A_POST:
-      const newPost = {allPosts: {[action.post.id]: action.post}};
+      const newPost = { allPosts: {[action.post.id]: action.post }};
       return merge({}, state, newPost);
     case RECEIVE_POST_ERRORS:
         return Object.assign({}, state, { errors: action.errors });
