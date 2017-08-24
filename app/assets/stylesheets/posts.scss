@@ -47,11 +47,20 @@
   border: 1px blue;
 }
 .upload-button{
-  margin-bottom: 5px;
   background: #3897f0;
   border: none;
-  height: 30px;
-  font-size: 14px;
+  cursor: pointer;
   border-radius: 3px;
   color: white;
+  width: 50%;
+
+}
+.sub-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.up-button{
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
