@@ -15,5 +15,7 @@ class Post < ApplicationRecord
   belongs_to :user, primary_key: :id, foreign_key: :author_id, class_name: :User
   has_many :likes
   has_many :comments
-
+  has_attached_file :image, default_url: "sociagramlogo.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  
 end
