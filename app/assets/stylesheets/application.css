@@ -16,3 +16,9 @@
 body{
   font-family: 'Open Sans';
 }
+button:hover{
+  cursor: pointer;
+}
+input.submit-button:hover{
+  cursor: pointer;
+}

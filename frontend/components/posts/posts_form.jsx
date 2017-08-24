@@ -29,8 +29,8 @@ class PostsForm extends React.Component{
     if(this.state.redirect === false){
     return(
     <form className="posts-form" onSubmit={this.handleSubmit}>
-        <input className="input-field" placeholder="title" onChange={this.update('title')} value={this.state.username} />
-        <textarea className="input-field" placeholder="body" onChange={this.update('body')}>{this.state.username}</textarea>
+        <input className="input-field" placeholder="Title" onChange={this.update('title')} value={this.state.username} />
+        <textarea className="input-form" placeholder="Body" onChange={this.update('body')}>{this.state.username}</textarea>
         <input className="submit-button" type="submit" value="Make Post" />
     </form>
   );} else {

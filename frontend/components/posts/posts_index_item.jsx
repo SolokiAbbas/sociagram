@@ -15,7 +15,7 @@ const PostsIndexItem = ({ post, session }) => {
     </ul>
   </div>
   );}
-  return(<div>Hello</div>)
+  return(<div>Hello</div>);
 };
 
 export default PostsIndexItem;

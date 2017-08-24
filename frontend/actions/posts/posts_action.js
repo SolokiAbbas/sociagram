@@ -45,7 +45,7 @@ export const fetchAPost = (id) => (dispatch) => {
 export const createAPost = (post) => (dispatch) => {
   return (
     ApiUtil.createAPost(post).then(
-      (post) => dispatch(receiveCurrentPost(post)),
+      (newpost) => dispatch(receiveAPost(newpost)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
