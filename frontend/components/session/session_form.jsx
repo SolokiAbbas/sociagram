@@ -12,9 +12,12 @@ class SessionForm extends React.Component {
       Lname: "",
       email: "",
       handle: "@",
+
     };
+
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleSubmit(e) {
@@ -26,7 +29,7 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value});
+    return e => this.setState({ [field]: e.currentTarget.value });
   }
 
   render(){
@@ -62,7 +65,7 @@ class SessionForm extends React.Component {
           <h2 className="title-descrip">Sign up to see photos and videos from your friends.</h2>
 
           <button type="button" className="submit-button" onClick={() => this.props.login({username: "tester", password: "password"})}>
-            Login Demo
+            Login with Demo Account
           </button>
           <br />
           <div className="or_section">

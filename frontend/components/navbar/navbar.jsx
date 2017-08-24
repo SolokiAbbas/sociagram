@@ -12,8 +12,7 @@ class NavBar extends React.Component{
         <ul className="navbar">
           <Link to="/"><img src={window.staticImage.sociagramlogo} alt="Sociagram"></img></Link>
           <input className="navbar-search" type="text" placeholder="Search"></input>
-          <li>Next Feature</li>
-          <Link to="/new"><button className="nav-logout"> New Post </button></Link>
+          <button className="nav-new"><Link to="/new">New Post</Link></button>
           <button className="nav-logout" onClick={this.props.logout}> Log Out </button>
         </ul>
       </div>
