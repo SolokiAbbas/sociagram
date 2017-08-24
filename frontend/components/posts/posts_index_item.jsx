@@ -9,7 +9,7 @@ const PostsIndexItem = ({ post, session }) => {
     <ul className="posts-index-item">
       <li>{session.currentUser.username}</li>
       <li>{post.title}</li>
-      <li>PlaceHolder For Images</li>
+        <img src={post.image_url} alt={post.title}/>
       <br />
       <li className="posts-body">{post.body}</li>
     </ul>

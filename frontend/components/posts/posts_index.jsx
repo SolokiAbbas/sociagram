@@ -10,7 +10,7 @@ class PostsIndex extends React.Component{
   render(){
 
     let {session} = this.props;
-    let allposts = Object.keys(this.props.posts).map(el=> {
+    let allposts = Object.keys(this.props.posts).reverse().map(el=> {
       return this.props.posts[el];
     });
     if(typeof session !== 'undefined'){

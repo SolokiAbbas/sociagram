@@ -47,8 +47,13 @@ class PostsForm extends React.Component{
         <input className="input-field" placeholder="Title" onChange={this.update('title')} value={this.state.username} />
         <img src={this.state.imageUrl}/>
         <textarea className="input-form" placeholder="Body" onChange={this.update('body')}>{this.state.username}</textarea>
-        <input className="upload-button" type="file" onChange={this.updateFile}/>
+        <div className="sub-buttons">
+        <div className="upload-button">
+          Upload
+          <input className="up-button" type="file" onChange={this.updateFile}/>
+        </div>
         <input className="submit-button" type="submit" value="Make Post" />
+        </div>
     </form>
   );} else {
     return(<Redirect to="/"/>);
