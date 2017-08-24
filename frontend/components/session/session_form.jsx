@@ -58,13 +58,18 @@ class SessionForm extends React.Component {
         <img src={window.staticImage.phonelogin} height="440px" width="382px" alt="Log in Phone"/>
       <div className="current-form">
         <form className="signup-form" onSubmit={this.handleSubmit}>
-          <h2 className="sociagram-title">Sociagram</h2>
-          <h4 className="title-descrip">Sign up to see photos and videos from your friends.</h4>
+          <h1 className="sociagram-title">Sociagram</h1>
+          <h2 className="title-descrip">Sign up to see photos and videos from your friends.</h2>
 
           <button type="button" className="submit-button" onClick={() => this.props.login({username: "tester", password: "password"})}>
             Login Demo
           </button>
           <br />
+          <div className="or_section">
+            <div className="lines"></div>
+            <div className="word_or">or</div>
+            <div className="lines"></div>
+          </div>
           <input className="input-field" placeholder="Email" onChange={this.update('email')} value={this.state.email} />
 
           <input className="input-field" placeholder="First Name" onChange={this.update('Fname')} value={this.state.Fname} />
