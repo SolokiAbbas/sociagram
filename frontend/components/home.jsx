@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import NavbarContainer from './navbar/navbar_container';
 import PostsFormContainer from './posts/posts_form_container';
+import ProfileContainer from './profile/profile_container';
 
 const Home = () => (
   <div className='main-login'>
@@ -11,6 +12,7 @@ const Home = () => (
         <Route path="/" component={NavbarContainer} />
       <Switch>
         <Route exact path="/new" component={PostsFormContainer} />
+        <Route exact path="/profile" component={ProfileContainer} />
         <Route path="/" component={PostsContainer} />
       </Switch>
 
