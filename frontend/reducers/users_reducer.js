@@ -4,11 +4,10 @@ import { RECEIVE_USER_ERRORS, RECEIVE_A_USER } from '../actions/users/users_acti
 
 const UsersReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState = merge({}, state);
 
   switch(action.type) {
     case RECEIVE_A_USER:
-      const newUser = { [action.user.id]: action.user };
+      const newUser = { [action.users.id]: action.users };
       return merge({}, state, newUser);
     case RECEIVE_USER_ERRORS:
         return Object.assign({}, state, { errors: action.errors });

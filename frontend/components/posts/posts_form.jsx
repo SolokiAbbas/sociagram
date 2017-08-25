@@ -30,8 +30,8 @@ class PostsForm extends React.Component{
     formData.append("post[title]", this.state.title);
     formData.append("post[body]", this.state.body);
     if (this.state.imageFile) {
-      formData.append("post[image]", this.state.imageFile)
-    };
+      formData.append("post[image]", this.state.imageFile);
+    }
     this.props.createAPost(formData);
     this.setState({redirect: true});
   }

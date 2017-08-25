@@ -3,10 +3,10 @@ import * as ApiUtil from '../../util/users/users_api_util';
 export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
 export const RECEIVE_A_USER = "RECEIVE_A_USER";
 
-export const receiveAUser = (user) => {
+export const receiveAUser = (users) => {
   return {
     type: RECEIVE_A_USER,
-    user,
+    users,
   };
 };
 

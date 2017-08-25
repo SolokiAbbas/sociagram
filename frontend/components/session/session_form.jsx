@@ -42,8 +42,8 @@ class SessionForm extends React.Component {
         <div className="session-errors">
           <li>{err}</li>
         </div>
-      )
-    })
+      );
+    });
     if(this.props.formType === 'login'){
       return(
         <div>
