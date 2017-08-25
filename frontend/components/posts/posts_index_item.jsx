@@ -1,15 +1,18 @@
 import React from 'react';
 
+
 class PostsIndexItem extends React.Component {
 
-  componentWillMount(){
-    let author = this.props.post.author_id;
-    this.props.fetchAUser(author);
+  componentDidMount(){
+    const author = this.props.post.author_id;
+    if(typeof this.props.users[author] === 'undefined'){
+      this.props.fetchAUser(author);
+    }
   }
 
   render(){
     let author = this.props.post.author_id;
-    if(typeof this.props.users.length !== 'undefined'){
+    if(this.props.users[author]){
     return(
     <div>
       <ul className="posts-index-item">
