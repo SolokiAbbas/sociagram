@@ -3,12 +3,13 @@ import React from 'react';
 import { fetchAllPosts, fetchAPost, deleteAPost } from '../../actions/posts/posts_action';
 import PostsIndex from './posts_index';
 import { fetchAUser } from '../../actions/users/users_action';
+import PostsIndexItem from './posts_index_item';
 
 const mapStateToProps = (state) =>{
   return {
     posts: state.entities.posts.allPosts,
     session: state.session,
-    users: state.users,
+    users: state.entities.users,
   };
 };
 
