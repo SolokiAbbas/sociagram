@@ -5,13 +5,11 @@ class PostsIndexItem extends React.Component {
   componentWillMount(){
     let author = this.props.post.author_id;
     this.props.fetchAUser(author);
-    debugger
   }
 
   render(){
     let author = this.props.post.author_id;
     if(typeof this.props.users.length !== 'undefined'){
-      debugger
     return(
     <div>
       <ul className="posts-index-item">
