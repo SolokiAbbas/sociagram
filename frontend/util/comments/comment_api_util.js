@@ -1,14 +1,14 @@
-export const fetchAllComments = () => {
+export const fetchAComment = (post_id) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/comments',
+    url: `/api/posts/${post_id}/comments`,
   });
 };
 
 export const createAComment = (comment) => {
   return $.ajax({
     method: 'POST',
-    url: `api/comments/`,
+    url: `/api/comments/`,
     data: { comment }
   });
 };
@@ -16,6 +16,6 @@ export const createAComment = (comment) => {
 export const deleteAPost = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/comments/${id}`,
+    url: `/api/comments/${id}`,
   });
 };

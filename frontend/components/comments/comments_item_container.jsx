@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { createAComment, fetchAComment } from '../../actions/comments/comments_action';
-import CommentsForm from './comments_form';
+import { fetchAComment, deleteAComment } from '../../actions/comments/comments_action';
+import CommentsItem from './comments_item';
 import { fetchAUser } from '../../actions/comments/comments_action';
 
 const mapStateToProps = (state) =>{
@@ -17,8 +17,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchAUser: (id) => dispatch(fetchAUser(id)),
     fetchAComment: (id) => dispatch(fetchAComment(id)),
-    createAComment: (comment) => dispatch(createAComment(comment)),
+    deleteAComment: (id) => dispatch(deleteAComment(id))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentsForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsItem);

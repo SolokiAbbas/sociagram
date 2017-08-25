@@ -17,12 +17,17 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.find(params[:post_id])
+    @comments = Comment.where("post_id = #{params[:post_id]}")
     render :index
   end
 
+  def show
+    @comments = Comment.where("post_id = #{params[:id]}")
+    render :show
+  end
+
   private
-  
+
   def post_params
     params.require(:comment).permit(:body, :post_id)
   end

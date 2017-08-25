@@ -1,5 +1,6 @@
 import React from 'react';
-
+import CommentsFormContainer from '../comments/comments_form_container';
+import CommentsItemContainer from '../comments/comments_item_container';
 
 class PostsIndexItem extends React.Component {
 
@@ -22,6 +23,10 @@ class PostsIndexItem extends React.Component {
         <br />
         <li className="posts-body">{this.props.post.body}</li>
       </ul>
+      <div>
+        <CommentsItemContainer post={ this.props.post } />
+        <CommentsFormContainer post={ this.props.post } />)}
+      </div>
     </div>
     );}
     return(<div>Hello</div>);

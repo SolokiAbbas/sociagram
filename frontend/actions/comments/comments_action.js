@@ -1,15 +1,10 @@
 import * as ApiUtil from '../../util/comments/comment_api_util';
 
-export const RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
+
 export const RECEIVE_COMMENTS_ERRORS = 'RECEIVE_COMMENTS_ERRORS';
 export const RECEIVE_A_COMMENT = "RECEIVE_A_COMMENT";
 
-export const receiveCurrentComments = (comments) => {
-  return {
-    type: RECEIVE_ALL_COMMENTS,
-    comments,
-  };
-};
+
 export const receiveAComment = (comment) => {
   return {
     type: RECEIVE_A_COMMENT,
@@ -24,10 +19,10 @@ export const receiveErrors = (errors) => {
   };
 };
 
-export const fetchAllComments = () => (dispatch) => {
+export const fetchAComment = (id) => (dispatch) => {
   return (
-    ApiUtil.fetchAllComments().then(
-      (comments) => dispatch(receiveCurrentComments(comments)),
+    ApiUtil.fetchAComment(id).then(
+      (comment) => dispatch(receiveAComment(comment)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
@@ -45,7 +40,7 @@ export const createAComment = (comment) => (dispatch) => {
 export const deleteAComment = (id) => (dispatch) => {
   return (
     ApiUtil.deleteAComment(id).then(
-      (comment) => dispatch(receiveCurrentComments(comment)),
+      (comment) => dispatch(receiveAComment(comment)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
