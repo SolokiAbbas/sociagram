@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchAComment, deleteAComment } from '../../actions/comments/comments_action';
-import CommentsItem from './comments_item';
-import { fetchAUser } from '../../actions/comments/comments_action';
+import { fetchAComment, deleteAComment, clearComments } from '../../actions/comments/comments_action';
+import CommentsIndex from './comments_index';
+import { fetchAUser } from '../../actions/users/users_action';
+import { allComments } from '../../reducers/selectors';
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state, ownProps) =>{
   return {
-    post: state.post,
-    comments: state.entities.comments,
-    users: state.users,
+    post: ownProps.post,
+    comments: allComments(state.entities),
+    users: state.entities.users,
     session: state.session,
   };
 };
@@ -17,8 +18,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchAUser: (id) => dispatch(fetchAUser(id)),
     fetchAComment: (id) => dispatch(fetchAComment(id)),
-    deleteAComment: (id) => dispatch(deleteAComment(id))
+    deleteAComment: (id) => dispatch(deleteAComment(id)),
+    clearComments: () => dispatch(clearComments([])),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentsItem);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsIndex);

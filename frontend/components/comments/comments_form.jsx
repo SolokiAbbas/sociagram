@@ -19,17 +19,19 @@ class CommentsForm extends React.Component{
     let nextState = this.state;
     const comment = Object.assign({}, nextState );
     this.props.createAComment(comment);
+    this.setState({body: "", post_id: null});
   }
 
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value, post_id: this.props.post.id});
+    return e => this.setState({ [field]: e.currentTarget.value, post_id: this.props.post.id });
   }
 
   render(){
 
     return(
       <form className="posts-form" onSubmit={this.handleSubmit}>
-        <textarea className="input-form" placeholder="Add Comments" onChange={this.update('body')}>{this.state.body}</textarea>
+        <textarea className="input-form" placeholder="Add Comments..." value={this.state.body} onChange={this.update('body')}></textarea>
+        <input type="submit" value="submit"/>
       </form>
     );
 

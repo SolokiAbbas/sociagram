@@ -1,29 +1,27 @@
 import React from 'react';
 
 class CommentsItem extends React.Component{
-  componentWillMount() {
-    this.props.fetchAComment(this.props.post.id);
-  }
 
   componentDidMount(){
-    const author = this.props.comments.author_id;
+    const author = this.props.comment.author_id;
     if(typeof this.props.users[author] === 'undefined'){
       this.props.fetchAUser(author);
-      this.props.fetchAComment(this.props.post.id);
     }
   }
 
   render(){
-    if(this.props.comments[author]){
+    let author = this.props.comment.author_id;
+    if(this.props.users[author] && this.props.post.id === this.props.comment.post_id){
     return(
   <div>
-    <ul>
-      <li>{this.props.user[this.props.comment.author_id]}</li>
+    <ul className="single-comment">
+      <li>{this.props.users[author].username}</li>
       <li>{this.props.comment.body}</li>
     </ul>
   </div>
     );
     }
+    return(<div></div>);
   }
 }
 

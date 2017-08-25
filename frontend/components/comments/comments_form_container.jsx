@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { createAComment, fetchAComment } from '../../actions/comments/comments_action';
 import CommentsForm from './comments_form';
-import { fetchAUser } from '../../actions/comments/comments_action';
+import { fetchAUser } from '../../actions/users/users_action';
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state, ownProps) =>{
   return {
-    post: state.post,
+    post: ownProps.post,
     comments: state.entities.comments,
-    users: state.users,
+    users: state.entities.users,
     session: state.session,
   };
 };
