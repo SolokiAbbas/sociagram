@@ -13,9 +13,11 @@ class PostsIndexItem extends React.Component {
 
   render(){
     let author = this.props.post.author_id;
+
     if(this.props.users[author]){
+      let { post } = this.props;
     return(
-    <div>
+    <div className="posts-index-item">
       <ul className="posts-index-item">
         <li>{this.props.users[author].username}</li>
         <li>{this.props.post.title}</li>
@@ -23,9 +25,9 @@ class PostsIndexItem extends React.Component {
         <br />
         <li className="posts-body">{this.props.post.body}</li>
       </ul>
-      <div>
+      <div className="comments-part">
         <CommentsItemContainer post={ this.props.post } />
-        <CommentsFormContainer post={ this.props.post } />)}
+        <CommentsFormContainer post={ this.props.post } />
       </div>
     </div>
     );}
