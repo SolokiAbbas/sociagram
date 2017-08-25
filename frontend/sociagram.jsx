@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import * as ApiActions from './actions/session/session_actions';
 import Root from './components/root';
 import { fetchAUser } from './util/users/users_api_util';
+import { fetchAComment } from './util/comments/comment_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -23,3 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.fetchAUser = fetchAUser;
+window.fetchAComment = fetchAComment;
