@@ -7,12 +7,13 @@ class Profile extends React.Component{
 
   render(){
     let { session } = this.props;
-    if (this.props.user === "profile"){
+
+    if (this.props.clicked_user === "profile"){
       return(
         <ProfileItem session={ session }/>
       );
     }else {
-      let other = parseInt(this.props.user.slice(-1));
+      let other = parseInt(this.props.clicked_user.slice(-1));
       this.props.fetchAUser(other);
     return(
       <ProfileItem />
