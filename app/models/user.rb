@@ -15,11 +15,10 @@
 #
 
 class User < ApplicationRecord
-  validates :password, length: {minimum: 6, allow_nil: true}
+  validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, :password_digest, :email, :session_token, presence: true, uniqueness: true
 
   has_many :posts
-  has_many :follows
   has_many :comments, through: :posts
 
   attr_reader :password

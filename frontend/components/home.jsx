@@ -10,9 +10,11 @@ const Home = () => (
   <div className='main-login'>
 
         <Route path="/" component={NavbarContainer} />
+
       <Switch>
-        <Route exact path="/new" component={PostsFormContainer} />
+        <Route path="/profile/" component={ProfileContainer} />
         <Route exact path="/profile" component={ProfileContainer} />
+        <Route exact path="/new" component={PostsFormContainer} />
         <Route path="/" component={PostsContainer} />
       </Switch>
 

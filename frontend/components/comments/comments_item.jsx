@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CommentsItem extends React.Component{
 
@@ -15,7 +16,7 @@ class CommentsItem extends React.Component{
     return(
   <div>
     <ul className="single-comment">
-      <li>{this.props.users[author].username}</li>
+      <li><Link to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link></li>
       <li>{this.props.comment.body}</li>
     </ul>
   </div>
