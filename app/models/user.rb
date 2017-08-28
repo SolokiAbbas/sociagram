@@ -18,8 +18,13 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, :password_digest, :email, :session_token, presence: true, uniqueness: true
 
+  has_many :followees, foreign_key: :followee_id, class_name: :Follow
+  has_many :followers, foreign_key: :follower_id, class_name: :Follow
   has_many :posts
   has_many :comments, through: :posts
+
+  has_attached_file :avatar, default_url: "https://s3.amazonaws.com/sociagram-dev/posts/icons/add-button.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
 

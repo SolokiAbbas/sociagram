@@ -12,7 +12,7 @@ class CommentsItem extends React.Component{
 
   componentWillReceiveProps(nextProps) {
       if(JSON.stringify(this.props.comment) !== JSON.stringify(nextProps.comment))
-      { 
+      {
           this.updateComment();
       }
   }
@@ -26,6 +26,7 @@ class CommentsItem extends React.Component{
 
   render(){
     let author = this.props.comment.author_id;
+
     if(this.props.users[author] && this.props.post.id === this.props.comment.post_id){
     return(
   <div>
@@ -33,7 +34,10 @@ class CommentsItem extends React.Component{
       <li><Link to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link></li>
       <div>
         <li>{this.props.comment.body}</li>
-        <img src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/cross-out.png'} onClick={() => this.props.deleteAComment(this.props.comment.id)}/>
+        <div>
+          {this.props.users[author].id === this.props.session.currentUser.id ? <img src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/cross-out.png'} onClick={() => this.props.deleteAComment(this.props.comment.id)}/> : <div></div>
+          }
+        </div>
       </div>
     </ul>
   </div>

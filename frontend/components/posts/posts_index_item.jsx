@@ -57,7 +57,11 @@ class PostsIndexItem extends React.Component {
     return(
     <div className="posts-index-item">
       <ul className="posts-index-item">
-        <li><Link to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link></li>
+        <li>
+          {this.props.users[author].id === this.props.session.currentUser.id ? <Link to="/profile">{this.props.users[author].username}</Link> :
+            <Link to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
+          }
+        </li>
         <li>{this.props.post.title}</li>
           <img src={this.props.post.image_url} alt={this.props.post.title} className="post-images"/>
         <br />
