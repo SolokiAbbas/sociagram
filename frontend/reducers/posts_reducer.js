@@ -7,6 +7,8 @@ const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
 
   switch(action.type) {
     case RECEIVE_ALL_POSTS:
+      // const allpost = action.posts;
+      // allpost.liker_id = action.posts.likers.map(liker => liker.id);
       return merge({}, newState, { allPosts: action.posts });
     case RECEIVE_A_POST:
       const newPost = { allPosts: {[action.post.id]: action.post }};

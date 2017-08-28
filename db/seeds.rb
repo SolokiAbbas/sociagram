@@ -44,9 +44,10 @@ Comment.create!({body: "tester", author_id: user5.id, post_id: post1.id})
   Comment.create!({body: Faker::StarWars.quote, author_id: user2.id, post_id: post1.id})
 end
 
+Like.destroy_all
+Like.create!({post_id: post1.id, liker_id: user1.id})
+
 
 # Follow.destroy_all
 # Follow.create!({followee_id: user1.id, follower_id: user2.id})
 #
-# Like.destroy_all
-# Like.create!({post_id: post1.id, liker_id: user2.id})
