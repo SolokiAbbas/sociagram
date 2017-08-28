@@ -17,7 +17,8 @@ class CommentsIndex extends React.Component{
       <div className="comment-container">
         {this.props.comments.map(comment => <CommentsItem key={comment.id}
           session={ session } fetchAUser={ this.props.fetchAUser } comment={ comment }
-          users={ users } post={ post }/>)}
+          users={ users } post={ post } deleteAComment={this.props.deleteAComment}
+          fetchAComment={this.props.fetchAComment}/>)}
       </div>
       );
     }

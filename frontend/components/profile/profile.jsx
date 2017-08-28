@@ -27,9 +27,12 @@ class Profile extends React.Component{
     return(
       <section className="profile-section">
         <div>Pic</div>
-        <div>{current.username}</div>
         <div>{current.Fname}</div>
         <div>{current.Lname}</div>
+        <div>
+          
+        </div>
+        <div>{current.username}</div>
         <button className="nav-new" onClick={this.props.logout}>Log Out</button>
       </section>
     );
