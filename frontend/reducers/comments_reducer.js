@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_COMMENTS_ERRORS, RECEIVE_A_COMMENT, CLEAR_COMMENTS } from '../actions/comments/comments_action';
+import { RECEIVE_COMMENTS_ERRORS, RECEIVE_A_COMMENT, CLEAR_COMMENTS, REMOVE_A_COMMENT } from '../actions/comments/comments_action';
 
 
 const CommentsReducer = (state = {}, action) => {
@@ -10,6 +10,9 @@ const CommentsReducer = (state = {}, action) => {
       return merge({}, newState, action.comment );
     case CLEAR_COMMENTS:
       return action.comment;
+    case REMOVE_A_COMMENT:
+      delete newState[action.comment_id.id];
+      return newState;
     case RECEIVE_COMMENTS_ERRORS:
         return Object.assign({}, state, { errors: action.errors });
     default:

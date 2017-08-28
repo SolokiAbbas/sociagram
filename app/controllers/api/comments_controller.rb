@@ -2,8 +2,7 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(post_params)
     @comment.author_id = current_user.id
-    if @comment
-      @comment.save!
+    if @comment.save
       render :show
     else
       render json: @comment.errors.full_messages, status: 422
@@ -12,8 +11,9 @@ class Api::CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find(params[:id])
+    comment_id = comment.id
     comment.destroy
-    render json: {}
+    render json: {id: comment_id}
   end
 
   def index

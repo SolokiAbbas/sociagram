@@ -1,4 +1,5 @@
 import { RECEIVE_POST_ERRORS, RECEIVE_ALL_POSTS, RECEIVE_A_POST } from '../actions/posts/posts_action';
+import { RECEIVE_A_LIKE, DELETE_A_LIKE } from '../actions/likes/likes_action';
 import merge from 'lodash/merge';
 
 const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
@@ -7,12 +8,17 @@ const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
 
   switch(action.type) {
     case RECEIVE_ALL_POSTS:
-      // const allpost = action.posts;
-      // allpost.liker_id = action.posts.likers.map(liker => liker.id);
       return merge({}, newState, { allPosts: action.posts });
     case RECEIVE_A_POST:
       const newPost = { allPosts: {[action.post.id]: action.post }};
       return merge({}, state, newPost);
+    case RECEIVE_A_LIKE:
+      newState.allPosts[action.like.post_id].likes.push(action.like);
+      return newState;
+    case DELETE_A_LIKE:
+      const newLikes = newState.allPosts[action.like.post_id].likes.filter(like => like.id !== action.like.id);
+      newState.allPosts[action.like.post_id].likes = newLikes;
+      return newState;
     case RECEIVE_POST_ERRORS:
         return Object.assign({}, state, { errors: action.errors });
     default:

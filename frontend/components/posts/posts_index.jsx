@@ -17,7 +17,8 @@ class PostsIndex extends React.Component{
       <div className="posts-index">
         {allposts.map(post => <PostsIndexItem key={post.id} post={ post }
           session={ session } fetchAUser={this.props.fetchAUser}
-          users={users}/>)}
+          users={users} deleteALike={this.props.deleteALike} createALike={this.props.createALike}
+          fetchAPost={this.props.fetchAPost}/>)}
       </div>
     );
   }
