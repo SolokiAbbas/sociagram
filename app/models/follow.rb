@@ -9,8 +9,10 @@
 #  updated_at  :datetime         not null
 #
 
-# class Follow < ApplicationRecord
-#   validates :followee_id, :follower_id, presence: true
-#   belongs_to :user, foreign_key: :author_id
-#
-# end
+class Follow < ApplicationRecord
+
+  belongs_to :follower, foreign_key: :follower_id, class_name: :User
+  belongs_to :followee, foreign_key: :followee_id, class_name: :User
+
+
+end

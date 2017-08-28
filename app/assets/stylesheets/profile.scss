@@ -1,0 +1,21 @@
+.stats-user{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: auto;
+}
+
+.profile-section{
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+}
+
+.profile-stat-rows{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logout-profile{
+  width: 200px;
+}

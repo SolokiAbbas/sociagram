@@ -28,11 +28,23 @@
 }
 .nav-logout{
   margin-top: 40px;
-  width: 5%;
-  height: 20px;
+  width: auto;
+  height: 30px;
+  margin-right: 60px;
 }
 .nav-new{
   margin-top: 40px;
   width: 8%;
   height: 30px;
+}
+
+.profile-image{
+  margin-top: 15px;
+  height: 60%;
+  width: auto;
+}
+.top-right-nav{
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
 }
