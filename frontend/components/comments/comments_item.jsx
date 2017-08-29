@@ -31,14 +31,21 @@ class CommentsItem extends React.Component{
     return(
   <div>
     <ul className="single-comment">
-      <li><Link to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link></li>
-      <div>
-        <li>{this.props.comment.body}</li>
-        <div>
-          {this.props.users[author].id === this.props.session.currentUser.id ? <img src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/cross-out.png'} onClick={() => this.props.deleteAComment(this.props.comment.id)}/> : <div></div>
-          }
+      <li>
+        {this.props.users[author].id === this.props.session.currentUser.id ? <Link to="/profile">{this.props.users[author].username}</Link> :
+          <Link to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
+        }
+      </li>
+        <div className="body-comments-container">
+          <div className="body-comments">
+            {this.props.comment.body}
+          </div>
+          <div className="delete-comment">
+            {
+              this.props.users[author].id === this.props.session.currentUser.id ? <img src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/cross-out.png'} onClick={() => this.props.deleteAComment(this.props.comment.id)}/> : <div></div>
+            }
+          </div>
         </div>
-      </div>
     </ul>
   </div>
     );
