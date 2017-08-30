@@ -10,8 +10,10 @@
 .user-avatar{
   width: 30px;
   height: 30px;
-  padding-right: 10px;
+  margin-right: 14px;
+  border-radius: 50%;
 }
+
 .user-avatar-container{
   display: flex;
   flex-direction: row;
