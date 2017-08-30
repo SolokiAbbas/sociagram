@@ -4,6 +4,7 @@
   flex-wrap: nowrap;
   width: 600px;
   font-size: 16px;
+  margin-top: 16px;
 }
 .profile-name{
   display: flex;
@@ -12,6 +13,7 @@
   width: 600px;
   font-size: 17px;
   font-weight: bolder;
+  margin-top: 20px;
 }
 
 .profile-user{
@@ -45,7 +47,7 @@
   padding-left: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .logout-profile{
@@ -93,4 +95,24 @@
   max-width: 1100px;
   margin-top: 40px;
   justify-content: flex-start;
+}
+.follow{
+  width: 120px;
+  height: 30px;
+  margin-left: 20px;
+  border-radius: 3px;
+  font-size: 14px;
+  background: white;
+  border: 1px solid lightgrey;
+}
+
+.unfollow{
+  width: 120px;
+  height: 30px;
+  background-color: #3897f0;
+  color: white;
+  margin-left: 20px;
+  border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid lightgrey;
 }

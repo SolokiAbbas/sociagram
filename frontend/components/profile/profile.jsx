@@ -56,6 +56,7 @@ class Profile extends React.Component{
                   <img onClick={this.props.logout} className="logout-profile" src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/logout.png"}/>
                 </div>
               </div>
+
               <div>
                 <ul className="stats-user">
                   <li className="post-counter">{postcounter}Posts</li>
@@ -63,6 +64,7 @@ class Profile extends React.Component{
                   <li className="followers-counter">Following</li>
                 </ul>
               </div>
+
               <div className="profile-name">
                 <div className="profile-fname">{this.props.session.currentUser.Fname}</div>
                 <div className="profile-lname">{this.props.session.currentUser.Lname}</div>
@@ -95,26 +97,43 @@ class Profile extends React.Component{
               postcounter++;
           }
         });
+        let allposts = this.props.allPosts.reverse();
     return(
       <section className="profile-section">
         <div>
             <img className="user-pic" src={current.image_url}/>
         </div>
         <div className="profile-stat-rows">
-            <div className="stats-user">{current.username}</div>
+            <div className="profile-user">
+              <div>
+                {current.username}
+              </div>
+              <li>
+                {followid ? <button className="unfollow" onClick={() => this.handleUnfollow()}>UnFollow</button> : <button className="follow" onClick={() => this.handleFollow(current.id)}>Follow</button>}
+              </li>
+            </div>
+
             <div>
               <ul className="stats-user">
-                <li>{postcounter}Posts</li>
-                <li>
-                  {followid ? <button onClick={() => this.handleUnfollow()}>UnFollow</button> : <button onClick={() => this.handleFollow(current.id)}>Follow</button>}
-                </li>
+                <li className="post-counter">{postcounter}Posts</li>
+                <li className="follows-counter">Followers</li>
+                <li className="followers-counter">Following</li>
               </ul>
             </div>
-            <div className="stats-user">
-              <div>{current.Fname}</div>
-              <div>{current.Lname}</div>
-          </div>
+
         </div>
+        <div className="profile-posts-container">
+          {allposts.map(post => {
+            if(post.author_id === current.id){
+              return(
+                <div className="user-posts-container">
+                  <img className="user-posts" src={post.image_url}/>
+                </div>
+              );
+            }
+          })
+        }
+      </div>
       </section>
     );
   }}
