@@ -29,25 +29,25 @@ class CommentsItem extends React.Component{
 
     if(this.props.users[author] && this.props.post.id === this.props.comment.post_id){
     return(
-  <div>
-    <ul className="single-comment">
-      <li>
-        {this.props.users[author].id === this.props.session.currentUser.id ? <Link to="/profile">{this.props.users[author].username}</Link> :
-          <Link to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
-        }
-      </li>
-        <div className="body-comments-container">
-          <div className="body-comments">
-            {this.props.comment.body}
-          </div>
-          <div className="delete-comment">
-            {
-              this.props.users[author].id === this.props.session.currentUser.id ? <img src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/cross-out.png'} onClick={() => this.props.deleteAComment(this.props.comment.id)}/> : <div></div>
-            }
-          </div>
-        </div>
-    </ul>
-  </div>
+      <div>
+          <ul className="single-comment">
+            <li>
+              {this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text" to="/profile">{this.props.users[author].username}</Link> :
+                <Link className="user-text" to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
+              }
+            </li>
+              <div className="body-comments-container">
+                <div className="body-comments">
+                  {this.props.comment.body}
+                </div>
+                <div className="delete-comment">
+                  {
+                    this.props.users[author].id === this.props.session.currentUser.id ? <img className="delete-x" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/cross-out.png'} onClick={() => this.props.deleteAComment(this.props.comment.id)}/> : <div></div>
+                  }
+                </div>
+              </div>
+          </ul>
+      </div>
     );
     }
     return(<div></div>);

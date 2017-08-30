@@ -1,21 +1,53 @@
 .stats-user{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: nowrap;
-  width: auto;
+  width: 600px;
+  font-size: 17px;
+}
+.profile-name{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 600px;
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.profile-user{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 600px;
+  font-size: 30px;
+  font-weight: lighter;
 }
 
 .profile-section{
+  padding-left: 110px;
   display: flex;
   flex-direction: row;
-  width: 800px;
+  width: 935px;
+}
+
+.profile-fname{
+  padding-right: 7px;
 }
 
 .profile-stat-rows{
+  padding-left: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .logout-profile{
-  width: 200px;
+  margin-left: 23px;
+  width: 100px;
+}
+
+.user-pic{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
 }

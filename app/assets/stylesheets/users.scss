@@ -7,3 +7,17 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+.user-avatar{
+  width: 30px;
+  height: 30px;
+  padding-right: 10px;
+}
+.user-avatar-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar-container{
+  padding-top: 15px;
+  padding-left: 15px;
+}

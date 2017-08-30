@@ -12,15 +12,17 @@
   flex-direction: column;
   border: 1px solid #e6e6e6;
   width: 600px;
-
-  padding: 20px;
-  margin: 5px;
+  margin-bottom: 60px;
 }
 
 .posts-body{
   display: flex;
   justify-content: flex-start;
-
+  padding: 1px 5px 5px 15px;
+  margin-top: 7px;
+}
+.posts-body-body{
+  padding: 0px 5px 5px;
 }
 
 .posts-form{
@@ -67,20 +69,21 @@
 .post-images{
   margin-top: 20px;
   margin-bottom: 5px;
-  width: 551px;
+  width: 600px;
   min-height: 300px;
-  margin-right: 20px;
+
 }
 .posts-item2{
   display: flex;
   flex-direction: column;
   width: 600px;
-  padding: 20px;
-  margin: 5px;
 }
 
 .post-image-container{
-  max-width: 95%;
+  display: flex;
+  justify-content: flex-start;
+  width: 600px;
+
 }
 
 .likes-counter{
@@ -91,8 +94,17 @@
 .single-counter-likes{
   padding-top: 10px;
   margin-left: 4px;
+  padding-left: 13px;
 }
 
 .post-title-single{
   padding-top: 5px;
+}
+.posts-title-user{
+  padding-left: 0px;
+}
+.post-container-title-user{
+  display: flex;
+  flex-direction: column;
+  height: 30px;
 }

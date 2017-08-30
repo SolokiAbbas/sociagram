@@ -31,10 +31,13 @@ class Profile extends React.Component{
       return(
         <section className="profile-section">
           <div>
-              <img src={this.props.session.currentUser.image_url}/>
+              <img className="user-pic" src={this.props.session.currentUser.image_url}/>
           </div>
           <div className="profile-stat-rows">
-              <div className="stats-user">{this.props.session.currentUser.username}</div>
+              <div className="profile-user">
+                {this.props.session.currentUser.username}
+                <button className="logout-profile" onClick={this.props.logout}>Edit Profile</button>
+              </div>
               <div>
                 <ul className="stats-user">
                   <li>Posts</li>
@@ -42,8 +45,8 @@ class Profile extends React.Component{
                   <li>Followers</li>
                 </ul>
               </div>
-              <div className="stats-user">
-                <div>{this.props.session.currentUser.Fname}</div>
+              <div className="profile-name">
+                <div className="profile-fname">{this.props.session.currentUser.Fname}</div>
                 <div>{this.props.session.currentUser.Lname}</div>
             </div>
             <button className="logout-profile" onClick={this.props.logout}>Log Out</button>
@@ -61,7 +64,7 @@ class Profile extends React.Component{
     return(
       <section className="profile-section">
         <div>
-            <img src={current.image_url}/>
+            <img className="user-pic" src={current.image_url}/>
         </div>
         <div className="profile-stat-rows">
             <div className="stats-user">{current.username}</div>
