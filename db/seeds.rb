@@ -10,32 +10,32 @@ User.destroy_all
 usertest = User.create!({username: "tester", password: "password", Fname: "tester", Lname:"tester", email: "email", handle: "@tester"})
 
   name = Faker::Name.first_name
-  user1=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name })
+  user1=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile.jpg"})
 
   name = Faker::Name.first_name
-  user2=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name })
+  user2=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile2.jpg" })
 
   name = Faker::Name.first_name
-  user3=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name })
+  user3=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile3.jpg" })
 
   name = Faker::Name.first_name
-  user4=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name })
+  user4=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile4.jpg" })
 
   name = Faker::Name.first_name
-  user5=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name })
+  user5=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
 Post.destroy_all
-post1 = Post.create!({title: "Testing", body:"Tester again", author_id: usertest.id})
+post1 = Post.create!({title: "Testing", body:"Tester again", author_id: usertest.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post1.jpg"})
 
-post2 = Post.create!({title: "Read All about it!!!", body:"There was a cat who was so fat that it ate all the cats", author_id: user1.id})
-post3 = Post.create!({title: "Mission Impossible", body:"I want to be able to create a Chuck Norris Fact with a lot of jokes", author_id: user1.id})
-post4 = Post.create!({title: "What is Love?", body:"Baby dont hurt me, dont hurt me, no more!!!", author_id: user2.id})
-post5 = Post.create!({title: "Brooklyn", body:"We are going to go out to enjoy a beer and some pizza", author_id: user2.id})
-post6 = Post.create!({title: "Journey", body:"The Journey around the world begins in your backyard!", author_id: user2.id})
-post7 = Post.create!({title: "So.....", body:"Like OMG, it happened again! I cant believe it!", author_id: user2.id})
-post8 = Post.create!({title: "The wait is over", body:"The new phone is here and its aamaaazzzinggggggg!!!!", author_id: user3.id})
-post9 = Post.create!({title: "Beach", body:"I am going to the beach again!!! Take some pics and post it later yay!", author_id: user3.id})
-post10 = Post.create!({title: "Who is with me?", body:"Guys, I want to make a stand. Stand with me on this one!", author_id: user4.id})
+post2 = Post.create!({title: "Read All about it!!!", body:"There was a cat who was so fat that it ate all the cats", author_id: user1.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post2.jpg"})
+post3 = Post.create!({title: "Mission Impossible", body:"I want to be able to create a Chuck Norris Fact with a lot of jokes", author_id: user1.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post3.jpg"})
+post4 = Post.create!({title: "What is Love?", body:"Baby dont hurt me, dont hurt me, no more!!!", author_id: user2.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post4.jpg"})
+post5 = Post.create!({title: "Brooklyn", body:"We are going to go out to enjoy a beer and some pizza", author_id: user2.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post5.jpg"})
+post6 = Post.create!({title: "Journey", body:"The Journey around the world begins in your backyard!", author_id: user2.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post6.jpg"})
+post7 = Post.create!({title: "So.....", body:"Like OMG, it happened again! I cant believe it!", author_id: user2.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post7.jpg"})
+post8 = Post.create!({title: "The wait is over", body:"The new phone is here and its aamaaazzzinggggggg!!!!", author_id: user3.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post8.jpg"})
+post9 = Post.create!({title: "Beach", body:"I am going to the beach again!!! Take some pics and post it later yay!", author_id: user3.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post9.jpg"})
+post10 = Post.create!({title: "Who is with me?", body:"Guys, I want to make a stand. Stand with me on this one!", author_id: user4.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post10.jpg"})
 
 Comment.destroy_all
 commenttest = Comment.create!({body: "tester", author_id: usertest.id, post_id: post1.id})

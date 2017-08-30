@@ -34,11 +34,11 @@ class Profile extends React.Component{
     }
     if (this.props.clicked_user === "profile"){
           this.props.allPosts.forEach(post =>{
-
             if(post.author_id === this.props.session.currentUser.id){
               postcounter++;
           }
         });
+          let allposts = this.props.allPosts.reverse();
       return(
         <section className="profile-section">
           <div>
@@ -46,8 +46,15 @@ class Profile extends React.Component{
           </div>
           <div className="profile-stat-rows">
               <div className="profile-user">
-                {this.props.session.currentUser.username}
-                <button className="logout-profile" onClick={this.props.logout}>Edit Profile</button>
+                <div>
+                  {this.props.session.currentUser.username}
+                </div>
+                <div>
+                  <button className="edit-profile" >Edit Profile</button>
+                </div>
+                <div>
+                  <img onClick={this.props.logout} className="logout-profile" src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/logout.png"}/>
+                </div>
               </div>
               <div>
                 <ul className="stats-user">
@@ -58,9 +65,20 @@ class Profile extends React.Component{
               </div>
               <div className="profile-name">
                 <div className="profile-fname">{this.props.session.currentUser.Fname}</div>
-                <div>{this.props.session.currentUser.Lname}</div>
+                <div className="profile-lname">{this.props.session.currentUser.Lname}</div>
             </div>
-            <button className="logout-profile" onClick={this.props.logout}>Log Out</button>
+          </div>
+          <div className="profile-posts-container">
+            {allposts.map(post => {
+              if(post.author_id === this.props.session.currentUser.id){
+                return(
+                  <div className="user-posts-container">
+                    <img className="user-posts" src={post.image_url}/>
+                  </div>
+                  );
+                }
+              })
+            }
           </div>
         </section>
       );

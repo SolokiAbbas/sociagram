@@ -45,7 +45,7 @@ class PostsForm extends React.Component{
     return(
     <form className="posts-form" onSubmit={this.handleSubmit}>
         <input className="input-field" placeholder="Title" onChange={this.update('title')} value={this.state.username} />
-        <img src={this.state.imageUrl}/>
+        <img className="preview-image" src={this.state.imageUrl}/>
         <textarea className="input-form" placeholder="Body" onChange={this.update('body')}>{this.state.username}</textarea>
         <div className="sub-buttons">
         <div className="upload-button">

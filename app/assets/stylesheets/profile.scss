@@ -3,7 +3,7 @@
   justify-content: flex-start;
   flex-wrap: nowrap;
   width: 600px;
-  font-size: 17px;
+  font-size: 16px;
 }
 .profile-name{
   display: flex;
@@ -19,19 +19,26 @@
   justify-content: flex-start;
   flex-wrap: nowrap;
   width: 600px;
-  font-size: 30px;
-  font-weight: lighter;
+  font-size: 33px;
+  font-weight: 300;
 }
 
 .profile-section{
   padding-left: 110px;
   display: flex;
   flex-direction: row;
-  width: 935px;
+  width: 1000px;
 }
 
 .profile-fname{
   padding-right: 7px;
+  text-transform: capitalize;
+  font-family: "Roboto Mono";
+}
+
+.profile-lname{
+  text-transform: capitalize;
+  font-family: "Roboto Mono";
 }
 
 .profile-stat-rows{
@@ -42,8 +49,19 @@
 }
 
 .logout-profile{
+  width: 35px;
+  height: 35px;
+  margin-left: 23px;
+}
+
+.logout-profile:hover{
+  cursor: pointer;
+}
+
+.edit-profile{
   margin-left: 23px;
   width: 100px;
+  height: 30px;
 }
 
 .user-pic{
@@ -60,4 +78,19 @@
 }
 .followers-counter{
 
+}
+
+.user-posts{
+  width: 300px;
+  height: 300px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.profile-posts-container{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin-top: 40px;
+  justify-content: flex-start;
 }
