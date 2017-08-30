@@ -9,6 +9,7 @@ class PostsForm extends React.Component{
       body: "",
       imageFile: null,
       imageUrl: null,
+      imageName: null,
       redirect: false,
     };
     this.update = this.update.bind(this);
@@ -19,7 +20,7 @@ class PostsForm extends React.Component{
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ imageFile: file, imageUrl: fileReader.result });
+      this.setState({ imageFile: file, imageUrl: fileReader.result, imageName: file.name });
     };
     if (file) { fileReader.readAsDataURL(file);}
   }
@@ -48,10 +49,13 @@ class PostsForm extends React.Component{
         <img className="preview-image" src={this.state.imageUrl}/>
         <textarea className="input-form" placeholder="Body" onChange={this.update('body')}>{this.state.username}</textarea>
         <div className="sub-buttons">
-        <div className="upload-button">
-          Upload
-          <input required className="up-button" type="file" onChange={this.updateFile}/>
-        </div>
+          <div className="upload-button">
+            <input required className="up-button" type="file" onChange={this.updateFile}/>
+            <div className="fake-upload">
+                <input value={(this.state.imageName === null) ? "" : this.state.imageName} className="fake-input"/>
+              <img className="browse" src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/add.png"} />
+            </div>
+          </div>
         <input className="submit-button" type="submit" value="Make Post" />
         </div>
     </form>

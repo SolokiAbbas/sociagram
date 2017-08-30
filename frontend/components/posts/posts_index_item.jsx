@@ -7,15 +7,23 @@ class PostsIndexItem extends React.Component {
 
   constructor(props){
     super(props);
+    this.state = {
+      input: "notfocus"
+    };
     this.handleAddLike = this.handleAddLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
     this.updatePost = this.updatePost.bind(this);
+    this.handleCommentClick = this.handleCommentClick.bind(this);
   }
   componentDidMount(){
     const author = this.props.post.author_id;
     if(typeof this.props.users[author] === 'undefined'){
       this.props.fetchAUser(author);
     }
+  }
+
+  handleCommentClick(){
+    this.setState({input: "focus"});
   }
 
   handleAddLike(){
@@ -76,7 +84,12 @@ class PostsIndexItem extends React.Component {
       <div>
         <section className="likes-counter">
           <div>
-            {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
+            <div>
+              {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
+            </div>
+            <div>
+              <img className="bubble" onClick={() => this.handleCommentClick()} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
+            </div>
           </div>
           <div className="single-counter-likes">
             {this.props.post.likes.length} Likes
@@ -92,7 +105,7 @@ class PostsIndexItem extends React.Component {
       </div>
       <div className="comments-part">
         <CommentsItemContainer post={ this.props.post } />
-        <CommentsFormContainer post={ this.props.post } />
+        <CommentsFormContainer post={ this.props.post } focus={this.state.input} />
       </div>
     </div>
     );}
