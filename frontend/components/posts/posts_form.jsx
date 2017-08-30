@@ -50,7 +50,7 @@ class PostsForm extends React.Component{
         <div className="sub-buttons">
         <div className="upload-button">
           Upload
-          <input className="up-button" type="file" onChange={this.updateFile}/>
+          <input required className="up-button" type="file" onChange={this.updateFile}/>
         </div>
         <input className="submit-button" type="submit" value="Make Post" />
         </div>

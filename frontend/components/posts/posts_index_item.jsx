@@ -57,27 +57,35 @@ class PostsIndexItem extends React.Component {
     return(
     <div className="posts-index-item">
       <ul className="posts-item2">
-        <li>
-          {this.props.users[author].id === this.props.session.currentUser.id ? <Link to="/profile">{this.props.users[author].username}</Link> :
-            <Link to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
-          }
-        </li>
-        <li className="post-title-single">{this.props.post.title}</li>
-        <div className="post-image-container">
-          <img src={this.props.post.image_url} alt={this.props.post.title} className="post-images"/>
+        <div className="avatar-container">
+          <img className="user-avatar" src={this.props.users[author].image_url}/>
+          <div className="post-container-title-user">
+            <li className="posts-title-user">
+              {
+                this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text" to="/profile">{this.props.users[author].username}</Link> :
+                <Link className="user-text" to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
+              }
+            </li>
+            <li className="post-title-single">{this.props.post.title}</li>
         </div>
-        <br />
-        <li className="posts-body">{this.props.post.body}</li>
+      </div>
+          <div className="post-image-container">
+            <img src={this.props.post.image_url} alt={this.props.post.title} className="post-images"/>
+          </div>
       </ul>
       <div>
         <section className="likes-counter">
           <div>
-            {ok_match ? <img src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
+            {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
           </div>
           <div className="single-counter-likes">
             {this.props.post.likes.length} Likes
           </div>
         </section>
+      </div>
+      <div className="posts-body">
+        <Link className="user-text" to="/profile">{this.props.users[author].username}</Link>
+        <li className="posts-body-body">{this.props.post.body}</li>
       </div>
       <div className="comments-part">
         <CommentsItemContainer post={ this.props.post } />

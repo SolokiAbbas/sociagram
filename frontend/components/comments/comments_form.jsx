@@ -29,9 +29,8 @@ class CommentsForm extends React.Component{
   render(){
 
     return(
-      <form className="posts-form" onSubmit={this.handleSubmit}>
-        <textarea className="input-body-form" placeholder="Add Comments..." value={this.state.body} onChange={this.update('body')}></textarea>
-        <input type="submit" value="submit"/>
+      <form className="body-form" onSubmit={this.handleSubmit}>
+        <input className="input-body-form" placeholder="Add Comments..." value={this.state.body} onChange={this.update('body')}/>
       </form>
     );
 

@@ -10,7 +10,7 @@
 }
 
 .single-comment{
-  padding: 1px 5px 5px;
+  padding: 1px 5px 5px 15px;
   margin-top: 7px;
 }
 
@@ -22,30 +22,52 @@
 
 }
 .input-body-form{
-  margin: 0;
   border-radius: 3px;
-  height: 100px;
-  width: 585px;
-  margin-bottom: 10px;
-  padding-left: 8px;
+  height: 35px;
+  width: 600px;
   font-size: 14px;
   background-color: #fafafa;
-  border: 1px solid lightgrey;
   color: darkgrey;
   font-weight: 100;
+  outline: none;
+  border: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+
 }
 
+.body-form{
+  border-top: 1px solid lightgrey;
+  padding-left: 0px;
+  padding-right: 10px;
+  width: 560px;
+  align-self: center;
+  margin-top: 10px;
+}
 .body-comments{
-  padding: 1px 10px 5px;
+  width: 600px;
+  padding: 0px 5px 5px;
+  font-weight: lighter;
 }
 .body-comments-container{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 550px;
+  width: 540px;
+
 }
 
 .delete-comment:hover{
   cursor: pointer;
+}
 
+.user-text{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.delete-x{
+  width: 10px;
+  height: 10px;
+  padding-top: 4px;
 }
