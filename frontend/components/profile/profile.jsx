@@ -23,11 +23,22 @@ class Profile extends React.Component{
   render(){
     let other = parseInt(this.props.clicked_user.slice(8));
     let current = this.props.users[other];
+    let postcounter = 0;
     let followid;
+
     if(typeof current === 'undefined' && !isNaN(other)){
       this.props.fetchAUser(other);
     }
+    if(this.props.allPosts.length === 0){
+      this.props.fetchAllPosts();
+    }
     if (this.props.clicked_user === "profile"){
+          this.props.allPosts.forEach(post =>{
+
+            if(post.author_id === this.props.session.currentUser.id){
+              postcounter++;
+          }
+        });
       return(
         <section className="profile-section">
           <div>
@@ -40,9 +51,9 @@ class Profile extends React.Component{
               </div>
               <div>
                 <ul className="stats-user">
-                  <li>Posts</li>
-                  <li>Follows</li>
-                  <li>Followers</li>
+                  <li className="post-counter">{postcounter}Posts</li>
+                  <li className="follows-counter">Followers</li>
+                  <li className="followers-counter">Following</li>
                 </ul>
               </div>
               <div className="profile-name">
@@ -61,6 +72,11 @@ class Profile extends React.Component{
               followid = follow.id;
             }
           });
+          this.props.allPosts.forEach(post =>{
+            if(post.author_id === current.id){
+              postcounter++;
+          }
+        });
     return(
       <section className="profile-section">
         <div>
@@ -70,7 +86,7 @@ class Profile extends React.Component{
             <div className="stats-user">{current.username}</div>
             <div>
               <ul className="stats-user">
-                <li>Posts</li>
+                <li>{postcounter}Posts</li>
                 <li>
                   {followid ? <button onClick={() => this.handleUnfollow()}>UnFollow</button> : <button onClick={() => this.handleFollow(current.id)}>Follow</button>}
                 </li>

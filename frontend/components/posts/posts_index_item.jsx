@@ -84,7 +84,10 @@ class PostsIndexItem extends React.Component {
         </section>
       </div>
       <div className="posts-body">
-        <Link className="user-text" to="/profile">{this.props.users[author].username}</Link>
+        {
+          this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text" to="/profile">{this.props.users[author].username}</Link> :
+          <Link className="user-text" to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
+        }
         <li className="posts-body-body">{this.props.post.body}</li>
       </div>
       <div className="comments-part">
