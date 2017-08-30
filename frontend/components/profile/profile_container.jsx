@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { logout } from '../../actions/session/session_actions';
 import Profile from './profile';
-import { fetchAUser } from '../../actions/users/users_action';
+import { fetchAUser, updateUser, receiveAUser } from '../../actions/users/users_action';
 import { createAFollow, deleteAFollow } from '../../actions/follows/follows_action';
 import { allPost } from '../../reducers/selectors';
 import { fetchAllPosts } from '../../actions/posts/posts_action';
@@ -13,7 +13,6 @@ const mapStateToProps = (state, ownProps) =>{
     session: state.session,
     users: state.entities.users,
     allPosts: allPost(state.entities.posts),
-    posts: state.entities.posts,
   };
 };
 
@@ -24,6 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     createAFollow: (follow) => dispatch(createAFollow(follow)),
     deleteAFollow: (id) => dispatch(deleteAFollow(id)),
     fetchAllPosts: () => dispatch(fetchAllPosts()),
+    updateUser: (user, id) => dispatch(updateUser(user, id)),
+    clearUsers: () => dispatch(receiveAUser({})),
   };
 };
 

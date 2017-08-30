@@ -30,7 +30,7 @@ class CommentsForm extends React.Component{
 
     return(
       <form className="body-form" onSubmit={this.handleSubmit}>
-        <input className="input-body-form" placeholder="Add Comments..." value={this.state.body} onChange={this.update('body')}/>
+        <input autofocus={this.props.focus === focus ? "true" : "false"} className="input-body-form" placeholder="Add a Comment..." value={this.state.body} onChange={this.update('body')}/>
       </form>
     );
 

@@ -44,7 +44,7 @@
 }
 
 .profile-stat-rows{
-  padding-left: 100px;
+  padding-left: 80px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -92,7 +92,7 @@
 .profile-posts-container{
   display: flex;
   flex-wrap: wrap;
-  max-width: 1100px;
+  width: 1100px;
   margin-top: 40px;
   justify-content: flex-start;
 }
@@ -115,4 +115,28 @@
   border-radius: 3px;
   font-size: 14px;
   border: 1px solid lightgrey;
+}
+
+.no-input{
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+.profile-upload-button{
+  position: relative;
+}
+
+.profile-up-button{
+  position: relative;
+  text-align: right;
+  -moz-opacity:0 ;
+  filter:alpha(opacity = 0);
+  opacity: 0;
+  z-index: 2;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
 }

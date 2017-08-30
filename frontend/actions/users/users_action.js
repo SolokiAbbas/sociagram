@@ -25,3 +25,12 @@ export const fetchAUser = (id) => (dispatch) => {
     )
   );
 };
+
+export const updateUser = (user, id) => (dispatch) => {
+  return (
+    ApiUtil.updateUser(user, id).then(
+      (user) => dispatch(receiveAUser(user)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
+    )
+  );
+};

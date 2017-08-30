@@ -45,15 +45,19 @@
   margin-top: 10px;
 }
 .body-comments{
-  width: 600px;
+  width: 500px;
   padding: 0px 5px 5px;
   font-weight: lighter;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
+
 .body-comments-container{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 540px;
+  width: 527px;
 
 }
 
@@ -66,6 +70,7 @@
   color: black;
   font-weight: bolder;
   font-family: "Roboto Mono";
+  margin-top: 2px;
 }
 .delete-x{
   width: 10px;

@@ -22,7 +22,7 @@
   margin-top: 7px;
 }
 .posts-body-body{
-  padding: 0px 5px 5px;
+  padding: 2px 5px 5px;
   font-weight: lighter;
 }
 
@@ -51,19 +51,34 @@
 }
 
 .upload-button{
-  display: flex;
-  justify-content: center;
-  background: #3897f0;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-  color: white;
-  width: 50%;
+  position: relative;
 }
+
 .up-button{
+  position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity = 0);
+	opacity: 0;
+	z-index: 2;
+}
+.fake-upload{
+  position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+.browse{
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
+  padding-left: 2px;
+}
+.fake-input{
+  padding-left: 5px;
+  width: 150px;
+  height: 25px;
+  font-size: 14px;
 }
 
 .sub-buttons{
@@ -104,17 +119,26 @@
 .post-title-single{
   padding-top: 5px;
 }
+
 .posts-title-user{
   padding-left: 0px;
 }
+
 .post-container-title-user{
   display: flex;
   flex-direction: column;
   height: 30px;
 }
+
 .preview-image{
   max-width: 640px;
   max-height: 400px;
   margin-bottom: 10px;
   border: none;
+}
+.bubble{
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  padding-top: 10px;
 }

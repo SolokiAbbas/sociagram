@@ -3,6 +3,68 @@ import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 class Profile extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      id: null,
+      username: null,
+      Fname: null,
+      Lname: null,
+      email: null,
+    imageFile: null,
+    imageUrl: null,
+    render: false,
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.uploadFile = this.uploadFile.bind(this);
+
+  }
+
+  componentDidMount(){
+    const author = this.props.session.currentUser.id;
+    if(typeof this.props.users[author] === 'undefined'){
+      this.props.fetchAUser(author);
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    const author = this.props.session.currentUser.id;
+    debugger
+      if(JSON.stringify(this.props.session.currentUser.image_url) !== JSON.stringify(nextProps.session.currentUser.image_url))
+    {
+      this.props.clearUsers();
+    }
+
+  }
+
+
+  uploadFile(e){
+    const file = e.currentTarget.files[0];
+
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({id: this.props.session.currentUser.id, username: this.props.session.currentUser.username,
+        Fname: this.props.session.currentUser.Fname, Lname: this.props.session.currentUser.Lname,
+        email: this.props.session.currentUser.email,
+        imageFile: file, imageUrl: fileReader.result, imageName: file.name }, this.handleSubmit);
+    };
+    if (file) { fileReader.readAsDataURL(file);}
+
+  }
+
+  handleSubmit(){
+    const formData = new FormData();
+    formData.append("user[id]", this.state.id);
+    formData.append("user[username]", this.state.username);
+    formData.append("user[Fname]", this.state.Fname);
+    formData.append("user[Lname]", this.state.Lname);
+    formData.append("user[email]", this.state.email);
+
+    if (this.state.imageFile) {
+      formData.append("user[avatar]", this.state.imageFile);
+    }
+    this.props.updateUser(formData, this.state.id);
+  }
 
   handleFollow(id){
     let follow = {followee_id: id};
@@ -41,16 +103,22 @@ class Profile extends React.Component{
           let allposts = this.props.allPosts.reverse();
       return(
         <section className="profile-section">
-          <div>
-              <img className="user-pic" src={this.props.session.currentUser.image_url}/>
-          </div>
+
+              <div className="profile-upload-button">
+                <input className="profile-up-button" type="file" onChange={this.uploadFile}/>
+                <div className="fake-upload">
+                    <input className="no-input" />
+                  <img className="user-pic" src={this.props.session.currentUser.image_url} alt="Profile Pic"/>
+                </div>
+              </div>
+
           <div className="profile-stat-rows">
               <div className="profile-user">
                 <div>
                   {this.props.session.currentUser.username}
                 </div>
                 <div>
-                  <button className="edit-profile" >Edit Profile</button>
+                  <button className="edit-profile">Edit Profile</button>
                 </div>
                 <div>
                   <img onClick={this.props.logout} className="logout-profile" src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/logout.png"}/>
