@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
           <h1 className="sociagram-title">Sociagram</h1>
           <h2 className="title-descrip">Sign up to see photos and videos from your friends.</h2>
 
-          <button type="button" className="submit-button" onClick={() => this.props.login({username: "tester", password: "password"})}>
+          <button type="button" className="submit-button" onClick={() => this.props.login({username: "Vegeta2000", password: "password"})}>
             Login with Demo Account
           </button>
           <br />

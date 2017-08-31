@@ -4,6 +4,10 @@ json.image_url asset_path(@user.avatar.url)
 #   json.array! @user.followers, :id, :follower_id, :followee_id
 # end
 
-json.followees do
-  json.array! @user.followees, :id, :follower_id, :followee_id
+json.followers do
+  json.array! @user.followees, :follower_id
+end
+
+json.following do
+  json.array! @user.followers, :followee_id
 end

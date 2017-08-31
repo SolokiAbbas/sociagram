@@ -18,6 +18,27 @@ class Profile extends React.Component{
     this.uploadFile = this.uploadFile.bind(this);
   }
 
+  componentDidMount(){
+    let authorId = this.props.session.currentUser.id;
+    let otherUserId = this.props.clicked_user;
+    if(otherUserId){
+      this.props.fetchAUser(authorId).then(()=> this.props.fetchAUser(otherUserId)).then(()=> this.props.fetchAllPosts());
+    }else {
+      this.props.fetchAUser(authorId).then(()=> this.props.fetchAllPosts());
+
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    let otherUserId = this.props.clicked_user;
+    let nextUserId = nextProps.clicked_user;
+    let authorId = this.props.session.currentUser.id;
+    if(otherUserId !== nextUserId && typeof nextUserId !== 'undefined'){
+        this.props.fetchAUser(nextUserId);
+    }
+
+  }
+
   uploadFile(e){
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
@@ -51,51 +72,28 @@ class Profile extends React.Component{
   }
 
   handleUnfollow(){
-    let followid;
-    let other = parseInt(this.props.clicked_user.slice(8));
-    this.props.users[other].followees.forEach(follow =>{
-      if(follow.follower_id === this.props.session.currentUser.id){
-        followid = follow.id;
-      }
-    });
-    this.props.deleteAFollow(followid);
-
+    let currentId =this.props.session.currentUser.id;
+    let other = this.props.clicked_user;
+    this.props.deleteAFollow(other);
   }
 
   render(){
-    let other = parseInt(this.props.clicked_user.slice(8));
+    let other = this.props.clicked_user;
     let current = this.props.users[other];
     let postcounter = 0;
-    let followid;
     let author = this.props.session.currentUser.id;
 
-    if(this.props.allPosts.length === 0){
-      this.props.fetchAllPosts();
-    }
-    if (this.props.clicked_user === "profile"){
+
+    if (typeof this.props.clicked_user === 'undefined' && this.props.users[author]){
 
           this.props.allPosts.forEach(post =>{
             if(post.author_id === this.props.session.currentUser.id){
               postcounter++;
           }
         });
-        let allfollowings = 0;
 
-        let allfollowers = this.props.users[author].followees.length;
-        let arrayusers = Object.keys(this.props.users).map(id => this.props.users[id]);
-
-        arrayusers.forEach(user => {
-
-          user.followees.forEach(follow => {
-
-            if(follow.follower_id === author){
-              allfollowings++;
-            }
-          });
-        });
-        if(typeof this.props.users[author] === 'undefined'){
-            this.props.fetchAUser(author);
-        }
+        let allfollowers = this.props.users[author].followers.length;
+        let allfollowings = this.props.users[author].following.length;
 
         let allposts = this.props.allPosts.reverse();
       return(
@@ -152,29 +150,22 @@ class Profile extends React.Component{
     }else if(!current){
       return(<div></div>);
     }else
-    {      this.props.users[other].followees.forEach(follow =>{
-            if(follow.follower_id === this.props.session.currentUser.id){
-              followid = follow.id;
-            }
-          });
+    {
+      let followid;
+      this.props.users[author].following.forEach(id =>{
+        if(id.followee_id === current.id){
+          followid = id;
+        }
+      });
           this.props.allPosts.forEach(post =>{
             if(post.author_id === current.id){
               postcounter++;
           }
         });
-        let allfollowings = 0;
-        let allfollowers = current.followees.length;
-        let arrayusers = Object.keys(this.props.users).map(id => this.props.users[id]);
 
-        arrayusers.forEach(user => {
+        let allfollowers = this.props.users[other].followers.length;
+        let allfollowings = this.props.users[other].following.length;
 
-          user.followees.forEach(follow => {
-
-            if(follow.follower_id === current.id){
-              allfollowings++;
-            }
-          });
-        });
         let allposts = this.props.allPosts.reverse();
     return(
       <section className="profile-section">
@@ -187,11 +178,11 @@ class Profile extends React.Component{
                 {current.username}
               </div>
               <li>
-                {followid ? <button className="unfollow" onClick={() => this.handleUnfollow()}>UnFollow</button> : <button className="follow" onClick={() => this.handleFollow(current.id)}>Follow</button>}
+                {followid ? <button className="unfollow" onClick={() => this.handleUnfollow()}>Unfollow</button> : <button className="follow" onClick={() => this.handleFollow(current.id)}>Follow</button>}
               </li>
             </div>
 
-            <div>
+            <div className="post-info-container">
               <ul className="stats-user">
                 <li className="post-counter">{postcounter} Posts</li>
                 <li className="follows-counter">{allfollowers} Followers</li>
