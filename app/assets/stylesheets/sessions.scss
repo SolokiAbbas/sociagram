@@ -12,6 +12,18 @@
   margin-left: 40px;
 }
 
+.login-form{
+    display: flex;
+    background: white;
+    justify-content: center;
+    flex-direction: column;
+    width: 250px;
+    border: 1px solid lightgrey;
+    padding: 15px 40px 20px 40px;
+    margin-left: 40px;
+    margin-top: 65px;
+}
+
 .input-field{
   min-width: 100px;
   max-width: 640px;

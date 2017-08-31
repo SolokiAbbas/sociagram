@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
         <div>
           <img src={window.staticImage.phonelogin} height="440px" width="382px" alt="Log in Phone"/>
         <div className="current-form">
-          <form className="signup-form" onSubmit={this.handleSubmit}>
+          <form className="login-form" onSubmit={this.handleSubmit}>
             <h2 className="sociagram-title">Sociagram</h2>
             <input className="input-field" placeholder="Username" onChange={this.update('username')} value={this.state.username} />
 

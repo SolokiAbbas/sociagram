@@ -109,7 +109,7 @@ class PostsIndexItem extends React.Component {
       </div>
     </div>
     );}
-    return(<div>Hello</div>);
+    return(<div></div>);
     }
 }
 
