@@ -178,7 +178,7 @@ class Profile extends React.Component{
                 {current.username}
               </div>
               <li>
-                {followid ? <button className="unfollow" onClick={() => this.handleUnfollow()}>Unfollow</button> : <button className="follow" onClick={() => this.handleFollow(current.id)}>Follow</button>}
+                {followid ? <button className="follow" onClick={() => this.handleUnfollow()}>Unfollow</button> : <button className="unfollow" onClick={() => this.handleFollow(current.id)}>Follow</button>}
               </li>
             </div>
 
