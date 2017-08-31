@@ -9,7 +9,7 @@ import { fetchAllPosts } from '../../actions/posts/posts_action';
 
 const mapStateToProps = (state, ownProps) =>{
   return {
-    clicked_user: ownProps.location.pathname.slice(1),
+    clicked_user: ownProps.match.params.userId,
     session: state.session,
     users: state.entities.users,
     allPosts: allPost(state.entities.posts),
