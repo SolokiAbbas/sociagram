@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { logout } from '../../actions/session/session_actions';
+import { logout, receiveErrors } from '../../actions/session/session_actions';
 import Profile from './profile';
 import { fetchAUser, updateUser, receiveAUser } from '../../actions/users/users_action';
 import { createAFollow, deleteAFollow } from '../../actions/follows/follows_action';
@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     deleteAFollow: (id) => dispatch(deleteAFollow(id)),
     fetchAllPosts: () => dispatch(fetchAllPosts()),
     updateUser: (user, id) => dispatch(updateUser(user, id)),
-    clearUsers: () => dispatch(receiveAUser({})),
+    clearErrors: () => dispatch(receiveErrors([])),
   };
 };
 
