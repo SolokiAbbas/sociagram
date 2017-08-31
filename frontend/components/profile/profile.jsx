@@ -13,34 +13,13 @@ class Profile extends React.Component{
       email: null,
     imageFile: null,
     imageUrl: null,
-    render: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadFile = this.uploadFile.bind(this);
-
   }
-
-  componentDidMount(){
-    const author = this.props.session.currentUser.id;
-    if(typeof this.props.users[author] === 'undefined'){
-      this.props.fetchAUser(author);
-    }
-  }
-
-  componentWillReceiveProps(nextProps){
-    const author = this.props.session.currentUser.id;
-    debugger
-      if(JSON.stringify(this.props.session.currentUser.image_url) !== JSON.stringify(nextProps.session.currentUser.image_url))
-    {
-      this.props.clearUsers();
-    }
-
-  }
-
 
   uploadFile(e){
     const file = e.currentTarget.files[0];
-
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({id: this.props.session.currentUser.id, username: this.props.session.currentUser.username,
@@ -71,7 +50,7 @@ class Profile extends React.Component{
     this.props.createAFollow(follow);
   }
 
-  handleUnfollow(id){
+  handleUnfollow(){
     let followid;
     let other = parseInt(this.props.clicked_user.slice(8));
     this.props.users[other].followees.forEach(follow =>{
@@ -80,6 +59,7 @@ class Profile extends React.Component{
       }
     });
     this.props.deleteAFollow(followid);
+
   }
 
   render(){
@@ -87,20 +67,37 @@ class Profile extends React.Component{
     let current = this.props.users[other];
     let postcounter = 0;
     let followid;
+    let author = this.props.session.currentUser.id;
 
-    if(typeof current === 'undefined' && !isNaN(other)){
-      this.props.fetchAUser(other);
-    }
     if(this.props.allPosts.length === 0){
       this.props.fetchAllPosts();
     }
     if (this.props.clicked_user === "profile"){
+
           this.props.allPosts.forEach(post =>{
             if(post.author_id === this.props.session.currentUser.id){
               postcounter++;
           }
         });
-          let allposts = this.props.allPosts.reverse();
+        let allfollowings = 0;
+
+        let allfollowers = this.props.users[author].followees.length;
+        let arrayusers = Object.keys(this.props.users).map(id => this.props.users[id]);
+
+        arrayusers.forEach(user => {
+
+          user.followees.forEach(follow => {
+
+            if(follow.follower_id === author){
+              allfollowings++;
+            }
+          });
+        });
+        if(typeof this.props.users[author] === 'undefined'){
+            this.props.fetchAUser(author);
+        }
+
+        let allposts = this.props.allPosts.reverse();
       return(
         <section className="profile-section">
 
@@ -108,7 +105,7 @@ class Profile extends React.Component{
                 <input className="profile-up-button" type="file" onChange={this.uploadFile}/>
                 <div className="fake-upload">
                     <input className="no-input" />
-                  <img className="user-pic" src={this.props.session.currentUser.image_url} alt="Profile Pic"/>
+                  <img className="user-pic" src={this.props.users[author].image_url} alt="Profile Pic"/>
                 </div>
               </div>
 
@@ -127,9 +124,9 @@ class Profile extends React.Component{
 
               <div>
                 <ul className="stats-user">
-                  <li className="post-counter">{postcounter}Posts</li>
-                  <li className="follows-counter">Followers</li>
-                  <li className="followers-counter">Following</li>
+                  <li className="post-counter">{postcounter} Posts</li>
+                  <li className="follows-counter">{allfollowers} Followers</li>
+                  <li className="followers-counter">{allfollowings} Following</li>
                 </ul>
               </div>
 
@@ -165,6 +162,19 @@ class Profile extends React.Component{
               postcounter++;
           }
         });
+        let allfollowings = 0;
+        let allfollowers = current.followees.length;
+        let arrayusers = Object.keys(this.props.users).map(id => this.props.users[id]);
+
+        arrayusers.forEach(user => {
+
+          user.followees.forEach(follow => {
+
+            if(follow.follower_id === current.id){
+              allfollowings++;
+            }
+          });
+        });
         let allposts = this.props.allPosts.reverse();
     return(
       <section className="profile-section">
@@ -183,9 +193,9 @@ class Profile extends React.Component{
 
             <div>
               <ul className="stats-user">
-                <li className="post-counter">{postcounter}Posts</li>
-                <li className="follows-counter">Followers</li>
-                <li className="followers-counter">Following</li>
+                <li className="post-counter">{postcounter} Posts</li>
+                <li className="follows-counter">{allfollowers} Followers</li>
+                <li className="followers-counter">{allfollowings} Following</li>
               </ul>
             </div>
 
@@ -205,7 +215,6 @@ class Profile extends React.Component{
       </section>
     );
   }}
-
 }
 
 export default Profile;

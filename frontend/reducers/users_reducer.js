@@ -6,6 +6,7 @@ import { RECEIVE_A_FOLLOW , DELETE_A_FOLLOW, RECEIVE_FOLLOW_ERRORS } from '../ac
 const UsersReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
+
   switch(action.type) {
     case RECEIVE_A_USER:
       const newUser = { [action.users.id]: action.users };
@@ -14,8 +15,8 @@ const UsersReducer = (state = {}, action) => {
       newState[action.follow.followee_id].followees.push(action.follow);
       return newState;
     case DELETE_A_FOLLOW:
-      const newFollow = newState[action.followee.followee_id].followees.filter(follow => follow.followee_id !== action.followee.followee_id);
-      newState[action.followee.followee_id].followees = newFollow;
+      const newFollow = newState[action.followee.follower_id].followees.filter(follow => follow.follower_id !== action.followee.follower_id);
+      newState[action.followee.follower_id].followees = newFollow;
       return newState;
     case RECEIVE_USER_ERRORS:
         return Object.assign({}, state, { errors: action.errors });
