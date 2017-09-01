@@ -3,8 +3,8 @@
   justify-content: space-between;
   width: 100%;
   height: 80px;
-  padding-left: 313px;
-  padding-right:  225px;
+  padding-left: 371px;
+  padding-right:  340px;
 }
 .parent-nav{
   position: fixed;
@@ -25,10 +25,16 @@
   padding: 4px;
   background-color: #fafafa;
   border:1px solid lightgrey;
+  margin-left: 96px;
 }
 .navbar-search:focus{
+  outline: none;
+  text-align: left;
+  padding-left: 12px;
 
 }
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
 
 .nav-logout{
   margin-top: 25px;
@@ -51,7 +57,7 @@
 }
 .top-right-nav{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 30%;
 }
 

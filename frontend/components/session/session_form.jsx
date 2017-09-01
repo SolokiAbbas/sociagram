@@ -37,13 +37,15 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    let allerrors = this.props.errors.map((err, idx) =>{
-      return(
-        <div className="session-errors">
-          <li>{err}</li>
-        </div>
-      );
-    });
+    
+        let allerrors = this.props.errors.map((err, idx) =>{
+          return(
+            <div className="session-errors">
+              <li>{err}</li>
+            </div>
+          );
+        });
+
     if(this.props.formType === 'login'){
       return(
         <div>

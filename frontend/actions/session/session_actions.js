@@ -43,3 +43,12 @@ export const signup = (user) => (dispatch) => {
     )
   );
 };
+
+export const signupuser = (user) => (dispatch) => {
+  return (
+    ApiUtil.signupuser(user).then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
+    )
+  );
+};

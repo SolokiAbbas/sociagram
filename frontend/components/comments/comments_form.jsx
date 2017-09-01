@@ -27,10 +27,9 @@ class CommentsForm extends React.Component{
   }
 
   render(){
-
     return(
       <form className="body-form" onSubmit={this.handleSubmit}>
-        <input autofocus={this.props.focus === focus ? "true" : "false"} className="input-body-form" placeholder="Add a Comment..." value={this.state.body} onChange={this.update('body')}/>
+        <input id={`click-here-${this.props.post.id}`} className="input-body-form" placeholder="Add a Comment..." value={this.state.body} onChange={this.update('body')}/>
       </form>
     );
 

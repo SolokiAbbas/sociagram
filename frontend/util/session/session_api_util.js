@@ -9,6 +9,14 @@ export const signup = (user) => {
   });
 };
 
+export const signupuser = (user) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/users',
+    data: { user },
+  });
+};
+
 export const login = (user) => {
   return $.ajax({
     method: 'POST',
