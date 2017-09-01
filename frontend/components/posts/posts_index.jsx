@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PostsIndexItem from './posts_index_item';
-import InfiniteScroll from 'react-infinite-scroll-component';
+
 
 class PostsIndex extends React.Component{
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchAllPosts();
   }
 
