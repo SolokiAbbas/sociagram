@@ -18,7 +18,7 @@ class PostsIndexItem extends React.Component {
   componentDidMount(){
     const author = this.props.post.author_id;
     if(typeof this.props.users[author] === 'undefined'){
-      this.props.fetchAUser(author);
+      this.props.fetchAUser(author).then(()=> this.props.fetchAUser(this.props.session.currentUser.id));
     }
   }
 

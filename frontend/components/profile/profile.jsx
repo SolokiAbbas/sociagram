@@ -24,6 +24,7 @@ class Profile extends React.Component{
     if(otherUserId){
       this.props.fetchAUser(authorId).then(()=> this.props.fetchAUser(otherUserId)).then(()=> this.props.fetchAllPosts());
     }else {
+
       this.props.fetchAUser(authorId).then(()=> this.props.fetchAllPosts());
 
     }
@@ -151,6 +152,7 @@ class Profile extends React.Component{
       return(<div></div>);
     }else
     {
+      debugger
       let followid;
       this.props.users[author].following.forEach(id =>{
         if(id.followee_id === current.id){
