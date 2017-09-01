@@ -34,7 +34,10 @@
   border: 0px;
   margin-top: 8px;
   margin-bottom: 8px;
-
+  caret-color: black;
+}
+.input-body-form:focus{
+  color: black;
 }
 
 .body-form{

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PostsIndexItem from './posts_index_item';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 class PostsIndex extends React.Component{
   componentWillMount() {
@@ -14,12 +15,15 @@ class PostsIndex extends React.Component{
     });
     if(typeof session !== 'undefined'){
     return(
-      <div className="posts-index">
-        {allposts.map(post => <PostsIndexItem key={post.id} post={ post }
-          session={ session } fetchAUser={this.props.fetchAUser}
-          users={users} deleteALike={this.props.deleteALike} createALike={this.props.createALike}
-          fetchAPost={this.props.fetchAPost}/>)}
-      </div>
+
+        <div className="posts-index">
+          {allposts.map(post => <PostsIndexItem key={post.id} post={ post }
+            session={ session } fetchAUser={this.props.fetchAUser}
+            users={users} deleteALike={this.props.deleteALike} createALike={this.props.createALike}
+            fetchAPost={this.props.fetchAPost}/>)}
+        </div>
+
+
     );
   }
   return(<div></div>);

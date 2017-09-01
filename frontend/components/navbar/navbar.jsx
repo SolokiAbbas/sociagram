@@ -15,7 +15,6 @@ class NavBar extends React.Component{
           <div className="top-right-nav">
             <Link to="/new"><img className="profile-image" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/add.png'}/></Link>
             <Link to="/profile"><img className="profile-image" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/avatar.png'}/></Link>
-            <button className="nav-logout" onClick={this.props.logout}> Log Out </button>
           </div>
         </ul>
       </div>

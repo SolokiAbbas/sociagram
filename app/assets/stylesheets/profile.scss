@@ -64,6 +64,10 @@
   margin-left: 23px;
   width: 100px;
   height: 30px;
+  border: 1px solid lightgrey;
+  background-color: #fafafa;
+  border-radius: 3px;
+  font-size: 14px;
 }
 
 .user-pic{
@@ -115,6 +119,12 @@
   border-radius: 3px;
   font-size: 14px;
   border: 1px solid lightgrey;
+}
+.unfollow:focus{
+  outline: none;
+}
+.follow:focus{
+  outline: none;
 }
 
 .no-input{
