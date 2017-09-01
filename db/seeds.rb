@@ -36,6 +36,11 @@ post7 = Post.create!({title: "So.....", body:"Like OMG, it happened again! I can
 post8 = Post.create!({title: "The wait is over", body:"The new phone is here and its aamaaazzzinggggggg!!!!", author_id: user3.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post8.jpg"})
 post9 = Post.create!({title: "Beach", body:"I am going to the beach again!!! Take some pics and post it later yay!", author_id: user3.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post9.jpg"})
 post10 = Post.create!({title: "Who is with me?", body:"Guys, I want to make a stand. Stand with me on this one!", author_id: user4.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post10.jpg"})
+post11 = Post.create!({title: "Who is with me?", body:"I want to make another stand! This one is against Kakarot!!!", author_id: usertest.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post11.jpg"})
+post12 = Post.create!({title: "Failed", body:"WOW! I cannot catch up to Kakarot, He is always a step ahead of me!", author_id: usertest.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post12.jpg"})
+post13 = Post.create!({title: "Next level", body:"Woooooo I just made a breakthrough to SSJ3!!!!!!", author_id: usertest.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post13.jpg"})
+post14 = Post.create!({title: "Powerful", body:"Guys, I feel powerful! I think I can take on Kakarot!", author_id: usertest.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post14.jpg"})
+post15 = Post.create!({title: "Names", body:"Is it just me or is the naming of my family weird?", author_id: usertest.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post15.jpg"})
 
 Comment.destroy_all
 commenttest = Comment.create!({body: "tester", author_id: usertest.id, post_id: post1.id})
