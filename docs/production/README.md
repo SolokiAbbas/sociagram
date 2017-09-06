@@ -4,6 +4,38 @@
 [Sociagram](https://sociagram-app.herokuapp.com/)
 
 Sociagram is a Full-Stack web application based on Instagram. It utilizes Ruby on Rails on the backend, PostgreSQL database, and React.js with Redux framework on the frontend.
+Sociagram will allow the users:
+
+* Create an account
+* Log in and out
+* Create a new posts
+* Make comments on posts
+* Delete own comments
+* Like posts
+* Follow and unfollow other users
+* Check out their current profile
+* Check out other user's profile
+
+
+### Overall Structure
+=======================================================================
+**Back End**
+
+This app was built with Ruby on Rails. The database used was PostgreSQL.
+The data request were made with AJAX and fulfilled by JSON Jbuilder.
+
+**Front End**
+
+The front end was built completely by React.js and Redux.
+
+
+**Libraries used:**
+* React.js
+* Redux
+* BCrypt
+* Paperclip - used to store images to Amazon Web Services
+* figaro secure api keys with Amazon Web Services
+
 
 ### Features and Implementation
 =======================================================================
@@ -12,7 +44,7 @@ On the database side, users are stored with their avatars user a paperclip gem o
 
 Posts are based on a title, image, and comments.
 
-[Posts](/Users/appacademy/Desktop/w9d4/sociagram/docs/production/Screen Shot 2017-08-31 at 8.34.40 PM.png)
+[Posts](/docs/production/Screenshot_of_posts.png)
 
 Posts with comments are rendered using React render method:
 ``` javascript
@@ -30,8 +62,9 @@ The props are passed in for each ```<PostsIndexItem>``` which renders a single p
 A user can follow another user when they click on the user's name. Each user carries a follower's id in their slice of state. This can be used to calculate the followers and retrieve data.
 
 
+
 ### Future Direction for the Project
-========================================================================
+=======================================================================
 
 In addition to these features, I plan to implement more features. I plan to include:
 
