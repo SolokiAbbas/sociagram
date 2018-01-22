@@ -1,10 +1,9 @@
 .navbar{
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  width: 60%;
   height: 80px;
-  padding-left: 371px;
-  padding-right:  340px;
+  margin: auto;
 }
 .parent-nav{
   position: fixed;
@@ -16,16 +15,19 @@
   z-index: 10;
 }
 
+.logo-container{
+  padding-right: 5px;
+}
+
 .navbar-search{
   margin-top: 20px;
   height: 20px;
-  width: 19%;
+  width: 50%;
   text-align: center;
   font-size: 14px;
   padding: 4px;
   background-color: #fafafa;
   border:1px solid lightgrey;
-  margin-left: 96px;
 }
 .navbar-search:focus{
   outline: none;

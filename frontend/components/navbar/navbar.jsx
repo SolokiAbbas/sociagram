@@ -10,7 +10,9 @@ class NavBar extends React.Component{
     return(
       <div className="parent-nav">
         <ul className="navbar">
-          <Link to="/"><img className="logo-image" src={window.staticImage.sociagramlogo} alt="Sociagram"></img></Link>
+          <div className="logo-container">
+            <Link to="/"><img className="logo-image" src={window.staticImage.sociagramlogo} alt="Sociagram"></img></Link>
+          </div>
           <input className="navbar-search" type="text" placeholder="Search"></input>
           <div className="top-right-nav">
             <Link to="/new"><img className="profile-image" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/add.png'}/></Link>
