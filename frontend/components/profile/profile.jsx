@@ -114,9 +114,6 @@ class Profile extends React.Component{
                   {this.props.session.currentUser.username}
                 </div>
                 <div>
-                  <button className="edit-profile">Edit Profile</button>
-                </div>
-                <div>
                   <img onClick={this.props.logout} className="logout-profile" src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/logout.png"}/>
                 </div>
               </div>
@@ -152,7 +149,6 @@ class Profile extends React.Component{
       return(<div></div>);
     }else
     {
-      debugger
       let followid;
       this.props.users[author].following.forEach(id =>{
         if(id.followee_id === current.id){
