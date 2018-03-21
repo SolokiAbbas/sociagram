@@ -142,11 +142,11 @@ class Profile extends React.Component{
               if(post.author_id === this.props.session.currentUser.id){
                 commentsCounter = 0;
                 console.log(this.props);
-                // this.props.comments.map(comment =>{
-                //   if(post.id === comment.post_id){
-                //     commentsCounter+=1;
-                //   }
-                // });
+                this.props.comments.map(comment =>{
+                  if(post.id === comment.post_id){
+                    commentsCounter+=1;
+                  }
+                });
                 return(
                   <div className="user-posts-container">
                     <img className="user-posts" src={post.image_url}/>

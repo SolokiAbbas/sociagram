@@ -10,7 +10,6 @@ import { fetchAllPosts } from '../../actions/posts/posts_action';
 import { allComments } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) =>{
-  console.log(state);
   return {
     clicked_user: ownProps.match.params.userId,
     comments: allComments(state.entities),
