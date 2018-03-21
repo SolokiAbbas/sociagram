@@ -40,7 +40,6 @@ class Profile extends React.Component{
     if(otherUserId !== nextUserId && typeof nextUserId !== 'undefined'){
         this.props.fetchAUser(nextUserId);
     }
-
   }
 
   uploadFile(e){
@@ -141,8 +140,9 @@ class Profile extends React.Component{
           <div className="profile-posts-container">
             {allposts.map(post => {
               if(post.author_id === this.props.session.currentUser.id){
-                // commentsCounter=0;
-                // this.props.comments.map(comment => {
+                commentsCounter = 0;
+                console.log(this.props);
+                // this.props.comments.map(comment =>{
                 //   if(post.id === comment.post_id){
                 //     commentsCounter+=1;
                 //   }

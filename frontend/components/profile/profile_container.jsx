@@ -7,11 +7,13 @@ import { fetchAComment } from '../../actions/comments/comments_action';
 import { createAFollow, deleteAFollow } from '../../actions/follows/follows_action';
 import { allPost } from '../../reducers/selectors';
 import { fetchAllPosts } from '../../actions/posts/posts_action';
+import { allComments } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) =>{
+  console.log(state);
   return {
     clicked_user: ownProps.match.params.userId,
-    comments: state.entities.comments,
+    comments: allComments(state.entities),
     session: state.session,
     users: state.entities.users,
     allPosts: allPost(state.entities.posts),
