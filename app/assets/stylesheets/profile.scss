@@ -151,3 +151,14 @@
   height: 150px;
   cursor: pointer;
 }
+
+.profile-hover{
+  display: block;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.profile-out{
+  display: None;
+}
