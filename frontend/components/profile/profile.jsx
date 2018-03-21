@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfileHover from './profile_hover';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +7,7 @@ class Profile extends React.Component{
   constructor(props){
     super(props);
     this.state = {
+      hover: false,
       id: null,
       username: null,
       Fname: null,
@@ -78,6 +80,10 @@ class Profile extends React.Component{
     this.props.deleteAFollow(other);
   }
 
+  handleHover(){
+    this.setState({ hover: !this.state.hover});
+  }
+
   render(){
     let other = this.props.clicked_user;
     let current = this.props.users[other];
@@ -137,6 +143,7 @@ class Profile extends React.Component{
                 return(
                   <div className="user-posts-container">
                     <img className="user-posts" src={post.image_url}/>
+                    <ProfileHover likes={post.likes.length} comment={comments}/>
                   </div>
                   );
                 }
