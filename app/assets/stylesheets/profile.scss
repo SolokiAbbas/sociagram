@@ -87,6 +87,7 @@
 }
 
 .user-posts{
+
   width: 300px;
   height: 300px;
   margin-right: 20px;
@@ -170,7 +171,6 @@
 }
 
 .profile-out{
+  position: fixed;
   display: None;
-  transform: translate(-50%,-50%);
--ms-transform: translate(-50%,-50%);
 }

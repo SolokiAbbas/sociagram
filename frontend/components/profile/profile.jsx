@@ -104,6 +104,7 @@ class Profile extends React.Component{
         let allfollowings = this.props.users[author].following.length;
 
         let allposts = this.props.allPosts.reverse();
+        
       return(
         <section className="profile-section">
 
@@ -148,10 +149,9 @@ class Profile extends React.Component{
                   }
                 });
                 return(
-                  <div className="user-posts-container" onMouseEnter={()=>this.handleHover} onMouseOut={()=>this.handleHover}>
-                    <img className="user-posts" src={post.image_url}/>
+                  <div className="user-posts-container" >
+                    <img onMouseEnter={this.handleHover} onMouseOut={this.handleHover} className="user-posts" src={post.image_url}/>
                      {this.state.hover ? <ProfileHover className="profile-hover" likes={post.likes.length} comments={commentsCounter} /> : <div></div>}
-                     <ProfileHover className="profile-hover" likes={post.likes.length} comments={commentsCounter} />
                   </div>
                   );
                 }
