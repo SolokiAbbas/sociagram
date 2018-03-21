@@ -153,12 +153,24 @@
 }
 
 .profile-hover{
-  display: block;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  margin-right: 20px;
+  margin-top: 20px;
+  color: white;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.icon-hover{
+  padding-right: 7px;
+  font-size: 30px;
 }
 
 .profile-out{
   display: None;
+  transform: translate(-50%,-50%);
+-ms-transform: translate(-50%,-50%);
 }

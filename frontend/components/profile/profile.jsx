@@ -81,7 +81,8 @@ class Profile extends React.Component{
   }
 
   handleHover(){
-    this.setState({ hover: !this.state.hover});
+    let toggle = this.state.hover;
+    this.setState({ hover: !toggle});
   }
 
   render(){
@@ -147,9 +148,10 @@ class Profile extends React.Component{
                   }
                 });
                 return(
-                  <div className="user-posts-container">
+                  <div className="user-posts-container" onMouseEnter={()=>this.handleHover} onMouseOut={()=>this.handleHover}>
                     <img className="user-posts" src={post.image_url}/>
-                    <ProfileHover className={this.state.hover ? "profile-hover" : "profile-out"} likes={post.likes.length} comments={commentsCounter}/>
+                     {this.state.hover ? <ProfileHover className="profile-hover" likes={post.likes.length} comments={commentsCounter} /> : <div></div>}
+                     <ProfileHover className="profile-hover" likes={post.likes.length} comments={commentsCounter} />
                   </div>
                   );
                 }
