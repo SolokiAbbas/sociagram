@@ -56,7 +56,7 @@ export const createAComment = (comment) => (dispatch) => {
 export const deleteAComment = (id) => (dispatch) => {
   return (
     ApiUtil.deleteAComment(id).then(
-      (id) => dispatch(removeAComment(id)),
+      (ids) => dispatch(removeAComment(ids)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );

@@ -18,6 +18,7 @@ class Profile extends React.Component{
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadFile = this.uploadFile.bind(this);
+    this.handleHover = this.handleHover.bind(this);
   }
 
   componentDidMount(){
@@ -89,7 +90,7 @@ class Profile extends React.Component{
     let current = this.props.users[other];
     let postcounter = 0;
     let author = this.props.session.currentUser.id;
-
+    let commentsCounter= 0;
 
     if (typeof this.props.clicked_user === 'undefined' && this.props.users[author]){
 
@@ -140,10 +141,16 @@ class Profile extends React.Component{
           <div className="profile-posts-container">
             {allposts.map(post => {
               if(post.author_id === this.props.session.currentUser.id){
+                // commentsCounter=0;
+                // this.props.comments.map(comment => {
+                //   if(post.id === comment.post_id){
+                //     commentsCounter+=1;
+                //   }
+                // });
                 return(
                   <div className="user-posts-container">
                     <img className="user-posts" src={post.image_url}/>
-                    <ProfileHover likes={post.likes.length} comment={comments}/>
+                    <ProfileHover likes={post.likes.length} comments={commentsCounter}/>
                   </div>
                   );
                 }
