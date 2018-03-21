@@ -166,6 +166,17 @@
   background-color: rgba(0,0,0,0.5);
 }
 
+.p-hover{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+
 .icon-hover{
   padding-right: 7px;
   font-size: 30px;
@@ -179,6 +190,7 @@
 .user-posts-container{
   position:relative;
 }
+
 .user-posts-container:hover .profile-hover{
   opacity: 1;
 }
