@@ -154,6 +154,7 @@
 }
 
 .profile-hover{
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,7 +163,7 @@
   margin-right: 20px;
   margin-top: 20px;
   color: white;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.5);
 }
 
 .icon-hover{
@@ -173,4 +174,11 @@
 .profile-out{
   position: fixed;
   display: None;
+}
+
+.user-posts-container{
+  position:relative;
+}
+.user-posts-container:hover .profile-hover{
+  opacity: 1;
 }
