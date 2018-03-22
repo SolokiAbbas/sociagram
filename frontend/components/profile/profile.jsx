@@ -154,11 +154,10 @@ class Profile extends React.Component{
                 });
                 return(
                   <div className="user-posts-container">
-                    <img onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="user-posts" src={post.image_url}/>
-                    {this.state.hover ? <div className="profile-hover">
-                                          <ProfileHover likes={post.likes.length} comments={commentsCounter} />
-                                        </div> : <div></div>}
-
+                    <img className="user-posts" src={post.image_url}/>
+                    <div className="profile-hover">
+                        <ProfileHover likes={post.likes.length} comments={commentsCounter} />
+                    </div>
                   </div>
                   );
                 }
