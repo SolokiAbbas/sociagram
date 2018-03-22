@@ -154,14 +154,14 @@ class Profile extends React.Component{
                 });
                 return(
                   <div className="user-posts-container">
-                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
+                    <div className={`modal fade bd-example-modal-lg-${post.id}`} tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div className="modal-dialog modal-lg">
+                        <div className="modal-content">
                           Hi
                         </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"></button>
+                    <button type="button" className="btn btn-primary" data-toggle="modal" data-target={`.bd-example-modal-lg-${post.id}`}></button>
                       <img className="user-posts" src={post.image_url}/>
                     <div className="profile-hover">
                         <ProfileHover likes={post.likes.length} comments={commentsCounter} />
