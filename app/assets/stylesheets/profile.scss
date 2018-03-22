@@ -195,3 +195,14 @@
 .user-posts-container:hover .p-hover{
   opacity: 1;
 }
+
+.modal-container{
+  width:90%;
+  height:80%;
+}
+
+.modal-image{
+  width:400px;
+  height:500px;
+  object-fit: cover;
+}
