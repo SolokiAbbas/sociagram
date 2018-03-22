@@ -197,12 +197,14 @@
 }
 
 .modal-container{
+  display: flex;
+  justify-content: flex-start;
   width:90%;
   height:80%;
 }
 
 .modal-image{
-  width:300px;
-  height:300px;
+  width:600px;
+  height:600px;
   object-fit: cover;
 }

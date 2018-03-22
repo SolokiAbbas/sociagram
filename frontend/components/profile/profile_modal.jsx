@@ -8,7 +8,7 @@ class ProfileHover extends React.Component{
     console.log(this.props);
     return(
       <div className="modal-container">
-        <img className="modal-image" src={this.props.post.image_url} alt={this.props.post.title} className="post-images"/>
+          <img className="modal-image" src={this.props.post.image_url} alt={this.props.post.title} />
         <div className="comments-part">
           <img className="user-avatar" src={this.props.user.image_url}/>
           <CommentsItemContainer post={ this.props.post } />
