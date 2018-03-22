@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfileHover from './profile_hover';
+import ProfileModal from './profile_modal';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -156,7 +157,7 @@ class Profile extends React.Component{
                     <div className="modal fade" id={`bd-example-modal-lg-${post.id}`} tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                       <div className="modal-dialog modal-lg">
                         <div className="modal-content">
-                          <h2>Hiiii</h2>
+                          <ProfileModal post={post} user={this.props.session.currentUser}/>
                         </div>
                       </div>
                     </div>
