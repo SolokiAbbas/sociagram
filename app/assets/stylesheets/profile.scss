@@ -203,6 +203,12 @@
   height:80%;
 }
 
+.modal-part{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .modal-image{
   width:600px;
   height:600px;
