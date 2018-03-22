@@ -106,7 +106,6 @@ class Profile extends React.Component{
 
         let allfollowers = this.props.users[author].followers.length;
         let allfollowings = this.props.users[author].following.length;
-        console.log(this.state.hover);
         let allposts = this.props.allPosts.reverse();
 
       return(
