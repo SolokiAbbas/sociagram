@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfileHover from './profile_hover';
+import ProfileModal from './profile_modal';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -153,7 +154,15 @@ class Profile extends React.Component{
                 });
                 return(
                   <div className="user-posts-container">
-                    <img className="user-posts" src={post.image_url}/>
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          Hi
+                        </div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"></button>
+                      <img className="user-posts" src={post.image_url}/>
                     <div className="profile-hover">
                         <ProfileHover likes={post.likes.length} comments={commentsCounter} />
                     </div>
