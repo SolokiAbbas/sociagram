@@ -149,11 +149,12 @@ class Profile extends React.Component{
                   }
                 });
                 return(
-                  <div className="user-posts-container" >
-                    <img className="user-posts" src={post.image_url}/>
-                    <div className="p-hover">
-                      <ProfileHover likes={post.likes.length} comments={commentsCounter} />
-                    </div>
+                  <div className="user-posts-container">
+                    <img onMouseEnter={this.handleHover} onMouseOut={this.handleHover} className="user-posts" src={post.image_url}/>
+                    {this.state.hover ? <div className="profile-hover">
+                                          <ProfileHover likes={post.likes.length} comments={commentsCounter} />
+                                        </div> : <div></div>}
+
                   </div>
                   );
                 }
