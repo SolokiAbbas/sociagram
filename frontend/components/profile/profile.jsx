@@ -18,7 +18,8 @@ class Profile extends React.Component{
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadFile = this.uploadFile.bind(this);
-    this.handleHover = this.handleHover.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleLeave = this.handleLeave.bind(this);
   }
 
   componentDidMount(){
@@ -80,9 +81,12 @@ class Profile extends React.Component{
     this.props.deleteAFollow(other);
   }
 
-  handleHover(){
-    let toggle = this.state.hover;
-    this.setState({ hover: !toggle});
+  handleEnter(){
+    this.setState({ hover: true});
+  }
+
+  handleLeave(){
+    this.setState({ hover: false});
   }
 
   render(){
@@ -102,7 +106,7 @@ class Profile extends React.Component{
 
         let allfollowers = this.props.users[author].followers.length;
         let allfollowings = this.props.users[author].following.length;
-
+        console.log(this.state.hover);
         let allposts = this.props.allPosts.reverse();
 
       return(
@@ -150,7 +154,7 @@ class Profile extends React.Component{
                 });
                 return(
                   <div className="user-posts-container">
-                    <img onMouseEnter={this.handleHover} onMouseOut={this.handleHover} className="user-posts" src={post.image_url}/>
+                    <img onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="user-posts" src={post.image_url}/>
                     {this.state.hover ? <div className="profile-hover">
                                           <ProfileHover likes={post.likes.length} comments={commentsCounter} />
                                         </div> : <div></div>}
