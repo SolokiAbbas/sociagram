@@ -199,23 +199,32 @@
 .modal-container{
   display: flex;
   justify-content: flex-start;
-  width:90%;
-  height:80%;
 }
 
 .modal-part{
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
 }
 
 @media (min-width: 992px){
 .modal-lg {
-    max-width: 93%;
+    max-width: 90%;
 }}
 
 .modal-image{
   width:600px;
   height:600px;
   object-fit: cover;
+}
+
+.modal-item-container{
+
+}
+
+.modal-form-container{
+ width:100%;
+}
+
+.modal-avatar{
+
 }

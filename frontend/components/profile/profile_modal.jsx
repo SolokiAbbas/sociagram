@@ -10,9 +10,15 @@ class ProfileHover extends React.Component{
       <div className="modal-container">
           <img className="modal-image" src={this.props.post.image_url} alt={this.props.post.title} />
         <div className="modal-part">
-          <img className="user-avatar" src={this.props.user.image_url}/>
-          <CommentsItemContainer post={ this.props.post } />
-          <CommentsFormContainer post={ this.props.post }  />
+          <div  className="modal-avatar">
+            <img className="user-avatar" src={this.props.user.image_url}/>
+          </div>
+          <div className="modal-item-container">
+            <CommentsItemContainer post={ this.props.post } />
+          </div>
+          <div className="modal-form-container">
+            <CommentsFormContainer post={ this.props.post }  />
+          </div>
         </div>
       </div>
   );
