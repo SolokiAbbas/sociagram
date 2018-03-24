@@ -209,6 +209,11 @@
   flex-wrap: wrap;
 }
 
+@media (min-width: 992px){
+.modal-lg {
+    max-width: 93%;
+}}
+
 .modal-image{
   width:600px;
   height:600px;
