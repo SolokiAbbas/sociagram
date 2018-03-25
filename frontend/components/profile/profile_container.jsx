@@ -8,6 +8,7 @@ import { createAFollow, deleteAFollow } from '../../actions/follows/follows_acti
 import { allPost } from '../../reducers/selectors';
 import { fetchAllPosts } from '../../actions/posts/posts_action';
 import { allComments } from '../../reducers/selectors';
+import { createALike, deleteALike } from '../../actions/likes/likes_action';
 
 const mapStateToProps = (state, ownProps) =>{
   return {
@@ -29,6 +30,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllPosts: () => dispatch(fetchAllPosts()),
     updateUser: (user, id) => dispatch(updateUser(user, id)),
     clearErrors: () => dispatch(receiveErrors([])),
+    createALike: (like) => dispatch(createALike(like)),
+    deleteALike: (id) => dispatch(deleteALike(id)),
   };
 };
 

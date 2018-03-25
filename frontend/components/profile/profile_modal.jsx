@@ -3,6 +3,20 @@ import CommentsFormContainer from '../comments/comments_form_container';
 import CommentsItemContainer from '../comments/comments_item_container';
 
 class ProfileHover extends React.Component{
+
+  handleCommentClick(id){
+    $(`#click-here-${id}`).focus();
+  }
+  
+  handleAddLike(){
+    let like = {post_id: this.props.post.id, liker_id: this.props.session.currentUser.id};
+    this.props.createALike(like);
+  }
+
+  handleUnlike(id){
+    this.props.deleteALike(id);
+  }
+
   render(){
     let author = this.props.post.author_id;
     console.log(this.props);
@@ -18,6 +32,9 @@ class ProfileHover extends React.Component{
               </div>
               <li className="post-title-single">{this.props.post.title}</li>
             </div>
+          </div>
+          <div>
+            <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
           </div>
           <div className="modal-item-container">
             <CommentsItemContainer post={ this.props.post } />
