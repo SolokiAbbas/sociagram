@@ -43,11 +43,9 @@ class ProfileHover extends React.Component{
           <div className="modal-item-container">
             <CommentsItemContainer post={ this.props.post } />
           </div>
-          <div className="">
+          <div className="modal-likes-container">
             <div>
               {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
-            </div>
-            <div>
               <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
             </div>
             <div className="single-counter-likes">

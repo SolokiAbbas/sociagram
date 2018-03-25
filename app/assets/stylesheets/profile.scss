@@ -218,7 +218,7 @@
 }
 
 .modal-item-container{
- margin-top: -56px;
+ margin-top: -105px;
 }
 
 .modal-form-container{
@@ -239,6 +239,16 @@
 }
 .modal-border{
   border-bottom: 1px solid lightgrey;
+}
+
+.modal-likes-container{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid lightgrey;
+  width: 47%;
+  margin-left: 5px;
+  margin-top: 39%;
+  position:fixed;
 }
 .modal-avatar{
 width: 45px;
