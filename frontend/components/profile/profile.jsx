@@ -223,10 +223,29 @@ class Profile extends React.Component{
         <div className="profile-posts-container">
           {allposts.map(post => {
             if(post.author_id === current.id){
+              commentsCounter = 0;
+              this.props.comments.map(comment =>{
+                if(post.id === comment.post_id){
+                  commentsCounter+=1;
+                }
+              });
               return(
+                <div>
+                  <div className="modal fade" id={`bd-example-modal-lg-${post.id}`} tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-lg">
+                      <div className="modal-content">
+                        <ProfileModal post={post} user={current} createALike={this.props.createALike} deleteALike={this.props.deleteALike}/>
+                      </div>
+                    </div>
+                  </div>
+
                 <div className="user-posts-container">
                   <img className="user-posts" src={post.image_url}/>
+                  <div className="profile-hover" data-toggle="modal" data-target={`#bd-example-modal-lg-${post.id}`}>
+                    <ProfileHover likes={post.likes.length} comments={commentsCounter} />
+                  </div>
                 </div>
+              </div>
               );
             }
           })
