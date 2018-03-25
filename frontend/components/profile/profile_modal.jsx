@@ -7,9 +7,9 @@ class ProfileHover extends React.Component{
   handleCommentClick(id){
     $(`#click-here-${id}`).focus();
   }
-  
+
   handleAddLike(){
-    let like = {post_id: this.props.post.id, liker_id: this.props.session.currentUser.id};
+    let like = {post_id: this.props.post.id, liker_id: this.props.user.id};
     this.props.createALike(like);
   }
 
@@ -19,6 +19,13 @@ class ProfileHover extends React.Component{
 
   render(){
     let author = this.props.post.author_id;
+    let ok_match;
+    let likeid;
+    let match = this.props.post.likes.forEach(like => {
+      if(like.liker_id === this.props.user.id){
+        ok_match = like;
+        likeid = like.id;
+      }});
     console.log(this.props);
     return(
       <div className="modal-container">
@@ -33,11 +40,19 @@ class ProfileHover extends React.Component{
               <li className="post-title-single">{this.props.post.title}</li>
             </div>
           </div>
-          <div>
-            <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
-          </div>
           <div className="modal-item-container">
             <CommentsItemContainer post={ this.props.post } />
+          </div>
+          <div className="">
+            <div>
+              {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
+            </div>
+            <div>
+              <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
+            </div>
+            <div className="single-counter-likes">
+              {this.props.post.likes.length} Likes
+            </div>
           </div>
           <div className="modal-form-container">
             <CommentsFormContainer post={ this.props.post }  />
