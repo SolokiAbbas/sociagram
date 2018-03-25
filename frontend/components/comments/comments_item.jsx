@@ -29,7 +29,7 @@ class CommentsItem extends React.Component{
 
     if(this.props.users[author] && this.props.post.id === this.props.comment.post_id){
     return(
-      <div>
+      <div className="all-comments">
           <ul className="single-comment">
             <li>
               {this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text" to="/profile">{this.props.users[author].username}</Link> :

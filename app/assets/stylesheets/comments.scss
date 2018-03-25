@@ -8,11 +8,13 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
-
+.all-comments{
+  width:100%;
+}
 .single-comment{
   padding: 1px 5px 5px 15px;
   margin-top: 7px;
-  width: 590px;
+  width: 100%;
 }
 
 .comment-container{
@@ -61,7 +63,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 83%;
+  width: 78%;
 
 }
 

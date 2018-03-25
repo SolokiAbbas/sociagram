@@ -40,7 +40,7 @@ class ProfileHover extends React.Component{
               <li className="post-title-single">{this.props.post.title}</li>
             </div>
           </div>
-          <div className="modal-item-container">
+          <div className="modal-item-container text-nowrap">
             <CommentsItemContainer post={ this.props.post } />
           </div>
           <div className="modal-likes-container">
