@@ -67,7 +67,7 @@ class PostsIndexItem extends React.Component {
       <ul className="posts-item2">
         <div className="avatar-container">
           <img className="user-avatar" src={this.props.users[author].image_url}/>
-          <div className="post-container-title-user">
+          <div className="post-container-title-user modal-padding">
             <li className="posts-title-user">
               {
                 this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text" to="/profile">{this.props.users[author].username}</Link> :
