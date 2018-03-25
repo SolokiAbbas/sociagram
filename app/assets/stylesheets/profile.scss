@@ -222,7 +222,7 @@
  margin-top: 63px;
  position:fixed;
  width: 49%;
- height:360px;
+ height:350px;
  overflow-y: scroll !important;
  overflow-x: hidden;
 }
@@ -230,9 +230,9 @@
 .modal-dialog{
     overflow-y: initial !important
 }
-.modal-body{
-  max-height: calc(100vh - 210px);
-  overflow-y: auto;
+.modal-content{
+  max-height: 100%;
+  overflow-y: auto !important;
 }
 .modal-form-container{
  padding-left: 5px;
