@@ -7,7 +7,8 @@ class EditNav extends React.Component{
     if(typeof session !== 'undefined'){
     return(
         <div className="container">
-
+          <Link to="/profile/edit">Edit Profile</Link>
+          <Link to="/profile/password">Change Password</Link>
         </div>
     );
   }
