@@ -10,12 +10,13 @@ class EditFormUser extends React.Component{
       username: this.session.currentUser.username,
     };
     this.update = this.update.bind(this);
-    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e){
     e.preventDefault();
-    
+    const user = Object.assign({}, this.state );
+    this.props.updateUser(user);
   }
 
   update(field) {
@@ -23,7 +24,8 @@ class EditFormUser extends React.Component{
   }
 
   render(){
-    let { session, users } = this.props;
+    let { session } = this.props;
+    let current_id = this.props.session.currentUser.id;
     if(typeof session !== 'undefined'){
     return(
       <form className="posts-form" onSubmit={this.handleSubmit}>
