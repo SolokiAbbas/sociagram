@@ -8,7 +8,9 @@ class ProfileHover extends React.Component{
   handleCommentClick(id){
     $(`#click-here-${id}`).focus();
   }
-
+  handleModalHide(){
+    $('.modal').modal('hide');
+  }
   handleAddLike(){
     let like = {post_id: this.props.post.id, liker_id: this.props.user.id};
     this.props.createALike(like);

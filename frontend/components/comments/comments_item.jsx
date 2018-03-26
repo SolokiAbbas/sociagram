@@ -23,7 +23,9 @@ class CommentsItem extends React.Component{
       this.props.fetchAComment(this.props.post.id);
     }
   }
-
+  handleModalHide(){
+    $('.modal').modal('hide');
+  }
   render(){
     let author = this.props.comment.author_id;
 
@@ -31,9 +33,9 @@ class CommentsItem extends React.Component{
     return(
       <div className="all-comments">
           <ul className="single-comment">
-            <li>
-              {this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text modal-close" to="/profile">{this.props.users[author].username}</Link> :
-                <Link className="user-text modal-close" to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
+            <li onClick={()=>this.handleModalHide.bind(this)}>
+              {this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text" data-dismiss="modal" to="/profile">{this.props.users[author].username}</Link> :
+                <Link className="user-text" data-dismiss="modal" to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
               }
             </li>
               <div className="body-comments-container">
