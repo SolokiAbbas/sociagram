@@ -26,9 +26,9 @@ export const fetchAUser = (id) => (dispatch) => {
   );
 };
 
-export const updateUser = (user, id) => (dispatch) => {
+export const updateUser = (user) => (dispatch) => {
   return (
-    ApiUtil.updateUser(user, id).then(
+    ApiUtil.updateUser(user).then(
       (users) => dispatch(receiveAUser(users)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
