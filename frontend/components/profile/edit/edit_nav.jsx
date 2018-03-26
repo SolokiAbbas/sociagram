@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-class EditItem extends React.Component{
+class EditNav extends React.Component{
   render(){
     let { session, users } = this.props;
     if(typeof session !== 'undefined'){
@@ -14,4 +15,4 @@ class EditItem extends React.Component{
   }
 }
 
-export default EditItem;
+export default EditNav;
