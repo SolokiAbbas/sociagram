@@ -95,7 +95,7 @@ class Profile extends React.Component{
     let current = this.props.users[other];
     let postcounter = 0;
     let author = this.props.session.currentUser.id;
-    let commentsCounter= 0;
+    let commentsCounter= 1;
 
     if (typeof this.props.clicked_user === 'undefined' && this.props.users[author]){
 
@@ -146,7 +146,7 @@ class Profile extends React.Component{
           <div className="profile-posts-container">
             {allposts.map(post => {
               if(post.author_id === this.props.session.currentUser.id){
-                commentsCounter = 0;
+                commentsCounter = 1;
                 this.props.comments.map(comment =>{
                   if(post.id === comment.post_id){
                     commentsCounter+=1;
@@ -223,7 +223,7 @@ class Profile extends React.Component{
         <div className="profile-posts-container">
           {allposts.map(post => {
             if(post.author_id === current.id){
-              commentsCounter = 0;
+              commentsCounter = 1;
               this.props.comments.map(comment =>{
                 if(post.id === comment.post_id){
                   commentsCounter+=1;

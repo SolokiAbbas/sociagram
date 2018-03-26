@@ -217,18 +217,29 @@
   height:550px;
   object-fit: cover;
 }
-
+.modal-body-con{
+  display: flex;
+  flex-direction: column;
+}
 .modal-item-container{
- margin-top: 63px;
- position:fixed;
- width: 49%;
- height:350px;
- overflow-y: scroll !important;
- overflow-x: hidden;
+  margin-top: 90px;
+  position: fixed;
+  width: 49%;
+  height: 322px;
+  overflow-y: scroll !important;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
 }
 
+.modal-post-body{
+  display: flex;
+  justify-content: flex-start;
+  padding: 1px 5px 5px 15px;
+  margin-top: -131px;
+}
 .modal-dialog{
-    overflow-y: initial !important
+  overflow-y: initial !important
 }
 .modal-content{
   max-height: 100%;

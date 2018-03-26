@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentsFormContainer from '../comments/comments_form_container';
 import CommentsItemContainer from '../comments/comments_item_container';
+import { Link } from 'react-router-dom';
 
 class ProfileHover extends React.Component{
 
@@ -26,7 +27,6 @@ class ProfileHover extends React.Component{
         ok_match = like;
         likeid = like.id;
       }});
-    console.log(this.props);
     return(
       <div className="modal-container">
           <img className="modal-image" src={this.props.post.image_url} alt={this.props.post.title} />
@@ -40,9 +40,14 @@ class ProfileHover extends React.Component{
               <li className="post-title-single">{this.props.post.title}</li>
             </div>
           </div>
-          <div className="modal-item-container">
-            <CommentsItemContainer post={ this.props.post } />
+          <div className="modal-post-body">
+            <Link className="user-text" to="/profile">{this.props.user.username}</Link>
+            <li className="posts-body-body">{this.props.post.body}</li>
           </div>
+          <div className="modal-item-container">
+              <CommentsItemContainer post={ this.props.post } />
+          </div>
+
           <div className="modal-likes-container">
             <div>
               {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
