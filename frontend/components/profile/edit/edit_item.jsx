@@ -4,12 +4,13 @@ import EditFormUser from './edit_form_user';
 
 class EditItem extends React.Component{
   render(){
-    let { session, users } = this.props;
+    let { session } = this.props;
+    console.log(session);
+    console.log(typeof session !== 'undefined');
     if(typeof session !== 'undefined'){
     return(
         <div className="container">
           <EditNav />
-          <EditFormUser />
         </div>
     );
   }
