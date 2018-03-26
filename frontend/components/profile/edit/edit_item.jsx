@@ -1,4 +1,5 @@
 import React from 'react';
+import EditNav from './edit_nav';
 
 class EditItem extends React.Component{
   render(){
@@ -6,7 +7,8 @@ class EditItem extends React.Component{
     if(typeof session !== 'undefined'){
     return(
         <div className="container">
-
+          <EditNav />
+          
         </div>
     );
   }
