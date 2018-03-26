@@ -41,7 +41,7 @@ class ProfileHover extends React.Component{
             </div>
           </div>
           <div className="modal-post-body">
-            <Link className="user-text" to="/profile">{this.props.user.username}</Link>
+            <Link className="user-text" data-dismiss="modal" to="/profile">{this.props.user.username}</Link>
             <li className="posts-body-body">{this.props.post.body}</li>
           </div>
           <div className="modal-item-container">

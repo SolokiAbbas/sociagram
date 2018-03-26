@@ -32,8 +32,8 @@ class CommentsItem extends React.Component{
       <div className="all-comments">
           <ul className="single-comment">
             <li>
-              {this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text" to="/profile">{this.props.users[author].username}</Link> :
-                <Link className="user-text" to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
+              {this.props.users[author].id === this.props.session.currentUser.id ? <Link className="user-text modal-close" to="/profile">{this.props.users[author].username}</Link> :
+                <Link className="user-text modal-close" to={`/profile/${this.props.users[author].id}`}>{this.props.users[author].username}</Link>
               }
             </li>
               <div className="body-comments-container">
