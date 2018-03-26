@@ -25,7 +25,6 @@ class EditFormUser extends React.Component{
 
   render(){
     let { session } = this.props;
-    let current_id = this.props.session.currentUser.id;
     if(typeof session !== 'undefined'){
     return(
       <form className="posts-form" onSubmit={this.handleSubmit}>
