@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 
 class EditNav extends React.Component{
   render(){
-    console.log(this.props);
-
+    const current_id = this.props.session.currentUser.id;
     if(typeof this.props.session !== 'undefined'){
-      console.log("inside");
     return(
         <div>
-          <Link to="/edit">Edit Profile</Link>
-          <Link to="/password">Change Password</Link>
+          <Link to={`/profile/${current_id}/edit`}>Edit Profile</Link>
+          <Link to={`/profile/${current_id}/password`}>Change Password</Link>
         </div>
     );
   }
