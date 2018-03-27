@@ -9,6 +9,7 @@ class EditItem extends React.Component{
     return(
         <div className="edit-container">
           <EditNav session={session} />
+          <EditFormUser session={session} />
         </div>
     );
   }

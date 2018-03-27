@@ -309,5 +309,15 @@ background-color: white;
   text-decoration: none;
   background-color: #fafafa;
   color: black;
-  border-left:2px solid black
+  border-left: 2px solid gray;
+}
+.user-edit-form{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+}
+.edit-label{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }

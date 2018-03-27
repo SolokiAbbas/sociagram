@@ -23,7 +23,10 @@
     margin-left: 40px;
     margin-top: 65px;
 }
-
+.input-max-width{
+  min-width: 250px !important;
+  max-width: 800px !important;
+}
 .input-field{
   min-width: 100px;
   max-width: 640px;

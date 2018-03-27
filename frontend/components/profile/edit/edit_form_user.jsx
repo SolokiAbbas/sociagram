@@ -4,10 +4,10 @@ class EditFormUser extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      Fname: this.session.currentUser.Fname,
-      Lname: this.session.currentUser.Lname,
-      email: this.session.currentUser.email,
-      username: this.session.currentUser.username,
+      Fname: this.props.session.currentUser.Fname,
+      Lname: this.props.session.currentUser.Lname,
+      email: this.props.session.currentUser.email,
+      username: this.props.session.currentUser.username,
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,7 +15,7 @@ class EditFormUser extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    const current_id = this.session.currentUser.id;
+    const current_id = this.props.session.currentUser.id;
     const user = Object.assign({}, this.state );
     this.props.updateUser(user, current_id);
   }
@@ -28,17 +28,25 @@ class EditFormUser extends React.Component{
     let { session } = this.props;
     if(typeof session !== 'undefined'){
     return(
-      <form className="posts-form" onSubmit={this.handleSubmit}>
-        <label>First Name:</label>
-        <input className="input-field" onChange={this.update('Fname')} value={this.state.Fname} />
-        <label>Last Name:</label>
-        <input className="input-field" onChange={this.update('Lname')} value={this.state.Lname} />
-        <label>Username:</label>
-        <input className="input-field" onChange={this.update('username')} value={this.state.username}/>
-        <label>Email:</label>
-        <input className="input-field" onChange={this.update('email')} value={this.state.email}/>
+      <form className="user-edit-form" onSubmit={this.handleSubmit}>
+        <div className="edit-label">
+          <label>First Name</label>
+          <input className="input-field input-max-width" onChange={this.update('Fname')} value={this.state.Fname} />
+        </div>
+        <div className="edit-label">
+          <label>Last Name</label>
+          <input className="input-field input-max-width" onChange={this.update('Lname')} value={this.state.Lname} />
+        </div>
+        <div className="edit-label">
+          <label>Username</label>
+          <input className="input-field input-max-width" onChange={this.update('username')} value={this.state.username}/>
+        </div>
+        <div className="edit-label">
+          <label>Email</label>
+          <input className="input-field input-max-width" onChange={this.update('email')} value={this.state.email}/>
+        </div>
 
-      <input className="submit-button" type="submit" value="Make Changes" />
+      <input className="btn btn-primary" type="submit" value="Make Changes" />
       </form>
     );
   }
