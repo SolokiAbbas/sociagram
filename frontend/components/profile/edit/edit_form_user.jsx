@@ -28,27 +28,35 @@ class EditFormUser extends React.Component{
     let { session } = this.props;
     if(typeof session !== 'undefined'){
     return(
-      <form className="user-edit-form" onSubmit={this.handleSubmit}>
-        <div className="edit-label">
-          <label className="input-label">First Name</label>
-          <input className="input-field input-max-width" onChange={this.update('Fname')} value={this.state.Fname} />
+      <div className="edit-form">
+        <div>
+          <img className="modal-avatar" src={this.props.session.currentUser.image_url}/>
+          <div className="user-text">
+            {this.props.session.currentUser.username}
+          </div>
         </div>
-        <div className="edit-label">
-          <label className="input-label">Last Name</label>
-          <input className="input-field input-max-width" onChange={this.update('Lname')} value={this.state.Lname} />
-        </div>
-        <div className="edit-label">
-          <label className="input-label">Username</label>
-          <input className="input-field input-max-width" onChange={this.update('username')} value={this.state.username}/>
-        </div>
-        <div className="edit-label">
-          <label className="input-label">Email</label>
-          <input className="input-field input-max-width" onChange={this.update('email')} value={this.state.email}/>
-        </div>
-        <div className="edit-submit">
-          <input className="btn btn-primary" type="submit" value="Make Changes" />
-        </div>
-      </form>
+        <form className="user-edit-form" onSubmit={this.handleSubmit}>
+          <div className="edit-label">
+            <label className="input-label">First Name</label>
+            <input className="input-field input-max-width" onChange={this.update('Fname')} value={this.state.Fname} />
+          </div>
+          <div className="edit-label">
+            <label className="input-label">Last Name</label>
+            <input className="input-field input-max-width" onChange={this.update('Lname')} value={this.state.Lname} />
+          </div>
+          <div className="edit-label">
+            <label className="input-label">Username</label>
+            <input className="input-field input-max-width" onChange={this.update('username')} value={this.state.username}/>
+          </div>
+          <div className="edit-label">
+            <label className="input-label">Email</label>
+            <input className="input-field input-max-width" onChange={this.update('email')} value={this.state.email}/>
+          </div>
+          <div className="edit-submit">
+            <input className="btn btn-primary" type="submit" value="Make Changes" />
+          </div>
+        </form>
+      </div>
     );
   }
   return(<div></div>);
