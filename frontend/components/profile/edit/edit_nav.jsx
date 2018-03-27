@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class EditNav extends React.Component{
   render(){
-    let { session } = this.props;
+    console.log(this.props);
 
     if(typeof this.props.session !== 'undefined'){
       console.log("inside");
