@@ -30,19 +30,19 @@ class EditFormUser extends React.Component{
     return(
       <form className="user-edit-form" onSubmit={this.handleSubmit}>
         <div className="edit-label">
-          <label>First Name</label>
+          <label className="input-label">First Name</label>
           <input className="input-field input-max-width" onChange={this.update('Fname')} value={this.state.Fname} />
         </div>
         <div className="edit-label">
-          <label>Last Name</label>
+          <label className="input-label">Last Name</label>
           <input className="input-field input-max-width" onChange={this.update('Lname')} value={this.state.Lname} />
         </div>
         <div className="edit-label">
-          <label>Username</label>
+          <label className="input-label">Username</label>
           <input className="input-field input-max-width" onChange={this.update('username')} value={this.state.username}/>
         </div>
         <div className="edit-label">
-          <label>Email</label>
+          <label className="input-label">Email</label>
           <input className="input-field input-max-width" onChange={this.update('email')} value={this.state.email}/>
         </div>
 
