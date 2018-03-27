@@ -7,7 +7,7 @@ class EditItem extends React.Component{
     let { session } = this.props;
     if(typeof session !== 'undefined'){
     return(
-        <div className="container">
+        <div className="edit-container">
           <EditNav session={session} />
         </div>
     );

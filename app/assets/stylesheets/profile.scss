@@ -282,3 +282,32 @@ margin-top: 6px;
 margin-left: 6px;
 margin-right: 9px;
 }
+
+.edit-container{
+width:800px;
+height: 500px;
+border: 1px solid lightgray;
+background-color: white;
+}
+
+.nav-container{
+  display:flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100%;
+  border-right: 1px solid lightgray;
+}
+
+.edit-nav-text{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  justify-content: center;
+  padding: 15px;
+}
+.edit-nav-text:hover{
+  text-decoration: none;
+  background-color: #fafafa;
+  color: black;
+  border-left:2px solid black
+}
