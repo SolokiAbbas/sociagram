@@ -29,9 +29,9 @@ class EditFormUser extends React.Component{
     if(typeof session !== 'undefined'){
     return(
       <div className="edit-form">
-        <div>
+        <div className="edit-title">
           <img className="modal-avatar" src={this.props.session.currentUser.image_url}/>
-          <div className="user-text">
+          <div className="user-text edit-user-text">
             {this.props.session.currentUser.username}
           </div>
         </div>

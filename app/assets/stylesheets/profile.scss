@@ -293,7 +293,7 @@ background-color: white;
 .nav-container{
   display:flex;
   flex-direction: column;
-  width: 300px;
+  width: 250px;
   height: 100%;
   border-right: 1px solid lightgray;
 }
@@ -315,6 +315,8 @@ background-color: white;
   display:flex;
   flex-direction: column;
   width: 100%;
+  margin:10px;
+  margin-top: 30px;
 }
 .edit-label{
   display:flex;
@@ -324,4 +326,12 @@ background-color: white;
 .edit-form{
   display: flex;
   flex-direction: column;
+}
+.edit-user-text{
+  margin-top: 18px !important;
+  font-size: 16px;
+  margin-left: 6px;
+}
+.edit-title{
+  margin:10px;
 }
