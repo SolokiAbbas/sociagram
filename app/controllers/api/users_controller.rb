@@ -26,6 +26,14 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    if(password_params)
+      if @user.valid_password?(password_params[:oldpassword])
+        @user.password=password_params[:newpassword]
+        @user.save
+      else
+        render json: @user.errors.full_messages, status: 422
+      end
+    end
     if @user.update!(edit_params)
       render :show
     else
@@ -40,6 +48,10 @@ class Api::UsersController < ApplicationController
 
   def edit_params
     params.require(:user).permit(:username, :Fname, :Lname, :email, :avatar)
+  end
+
+  def password_params
+    params.require(:user).permit(:oldpassword, :newpassword)
   end
 
 end
