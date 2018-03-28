@@ -17,7 +17,6 @@ class EditFormUser extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-
     const formData = new FormData();
     formData.append("user[email]", this.state.email);
     formData.append("user[Fname]", this.state.Fname);
