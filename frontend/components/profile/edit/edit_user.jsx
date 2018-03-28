@@ -2,7 +2,7 @@ import React from 'react';
 import EditNav from './edit_nav';
 import EditFormUser from './edit_form_user';
 
-class EditItem extends React.Component{
+class EditUser extends React.Component{
   render(){
     let { session } = this.props;
     let current_id = session.currentUser.id;
@@ -25,4 +25,4 @@ class EditItem extends React.Component{
   }
 }
 
-export default EditItem;
+export default EditUser;

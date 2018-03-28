@@ -5,7 +5,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import NavbarContainer from './navbar/navbar_container';
 import PostsFormContainer from './posts/posts_form_container';
 import ProfileContainer from './profile/profile_container';
-import EditContainer from './profile/edit/edit_container';
+import EditContainer from './profile/edit/edit_user_container';
 
 const Home = () => (
   <div className='main-login'>
