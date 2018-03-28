@@ -3,10 +3,11 @@ import React from 'react';
 import { updateUser } from '../../../actions/users/users_action';
 import EditItem from './edit_item';
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state, ownProps) =>{
   return {
     users: state.entities.users,
     session: state.session,
+    path: ownProps.location.pathname,
   };
 };
 
