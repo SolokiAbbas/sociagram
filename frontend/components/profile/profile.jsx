@@ -35,10 +35,20 @@ class Profile extends React.Component{
     }
   }
 
+  isEqual(obj1,obj2){
+    if(obj1.Fname === obj2.Fname && obj1.Lname === obj2.Lname && obj1.email === obj2.email && obj1.username === obj2.username) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   componentWillReceiveProps(nextProps){
     let otherUserId = this.props.clicked_user;
     let nextUserId = nextProps.clicked_user;
     let authorId = this.props.session.currentUser.id;
+    let currentuser = this.props.session.currentUser;
+    let updateduser = nextProps.users[authorId];
     if(otherUserId !== nextUserId && typeof nextUserId !== 'undefined'){
         this.props.fetchAUser(nextUserId);
     }
@@ -123,7 +133,7 @@ class Profile extends React.Component{
           <div className="profile-stat-rows">
               <div className="profile-user">
                 <div>
-                  {this.props.session.currentUser.username}
+                  {this.props.users[author].username}
                 </div>
                 <div>
                   <img onClick={this.props.logout} className="logout-profile" src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/logout.png"}/>
@@ -139,8 +149,8 @@ class Profile extends React.Component{
               </div>
 
               <div className="profile-name">
-                <div className="profile-fname">{this.props.session.currentUser.Fname}</div>
-                <div className="profile-lname">{this.props.session.currentUser.Lname}</div>
+                <div className="profile-fname">{this.props.users[author].Fname}</div>
+                <div className="profile-lname">{this.props.users[author].Lname}</div>
             </div>
           </div>
           <div className="profile-posts-container">
@@ -157,7 +167,7 @@ class Profile extends React.Component{
                     <div className="modal fade" id={`bd-example-modal-lg-${post.id}`} tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                       <div className="modal-dialog modal-lg">
                         <div className="modal-content">
-                          <ProfileModal post={post} user={this.props.session.currentUser} createALike={this.props.createALike} deleteALike={this.props.deleteALike}/>
+                          <ProfileModal post={post} user={this.props.users[author]} createALike={this.props.createALike} deleteALike={this.props.deleteALike}/>
                         </div>
                       </div>
                     </div>
