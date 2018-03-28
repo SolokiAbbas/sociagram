@@ -16,7 +16,7 @@ const Home = () => (
         <Route exact path="/profile/:userId" component={ProfileContainer} />
         <Route exact path="/profile" component={ProfileContainer} />
         <Route exact path="/profile/:userId/edit" component={EditContainer} />
-        <Route exact path="/password" component={ProfileContainer} />
+        <Route exact path="/profile/:userId/password" component={ProfileContainer} />
         <Route exact path="/new" component={PostsFormContainer} />
         <Route path="/" component={PostsContainer} />
       </Switch>

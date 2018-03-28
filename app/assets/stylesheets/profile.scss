@@ -304,7 +304,13 @@ background-color: white;
   color: black;
   justify-content: center;
   padding: 15px;
+
 }
+
+.edit-highlight{
+  border-left: 2px solid black;
+}
+
 .edit-nav-text:hover{
   text-decoration: none;
   background-color: #fafafa;

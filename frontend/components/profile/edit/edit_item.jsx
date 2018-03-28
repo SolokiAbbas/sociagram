@@ -6,10 +6,17 @@ class EditItem extends React.Component{
   render(){
     let { session } = this.props;
     let current_id = session.currentUser.id;
+    let path;
+    if(this.props.path.slice(-4,this.props.path.length) == 'edit'){
+      path = 'edit';
+    }else{
+      path='password';
+    }
+    console.log(this.props.path.slice(-4,this.props.path.length));
     if(typeof session !== 'undefined'){
     return(
         <div className="edit-container">
-          <EditNav users={this.props.users[current_id]}  />
+          <EditNav users={this.props.users[current_id]} path={path}/>
           <EditFormUser users={this.props.users[current_id]} updateUser={this.props.updateUser}/>
         </div>
     );
