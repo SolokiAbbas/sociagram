@@ -16,8 +16,12 @@ class EditFormUser extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const current_id = this.props.session.currentUser.id;
-    const user = Object.assign({}, this.state );
-    this.props.updateUser(user, current_id);
+    const formData = new FormData();
+    formData.append("user[email]", this.state.email);
+    formData.append("user[Fname]", this.state.Fname);
+    formData.append("user[Lname]", this.state.Lname);
+    formData.append("user[username]", this.state.username);
+    this.props.updateUser(formData, current_id);
   }
 
   update(field) {
