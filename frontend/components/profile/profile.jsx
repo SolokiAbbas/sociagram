@@ -136,6 +136,7 @@ class Profile extends React.Component{
                   {this.props.users[author].username}
                 </div>
                 <div>
+                  <button className="btn btn-light edit-button"><Link className="edit-link-button" to={`/profile/${author}/edit`}>Edit Profile</Link></button>
                   <img onClick={this.props.logout} className="logout-profile" src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/logout.png"}/>
                 </div>
               </div>

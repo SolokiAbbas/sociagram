@@ -335,3 +335,15 @@ background-color: white;
 .edit-title{
   margin:10px;
 }
+.edit-button{
+  border: 1px solid lightgray;
+  margin-left: 20px;
+}
+.edit-link-button{
+  text-decoration: none;
+  color:black;
+}
+.edit-link-button:hover{
+  text-decoration: none !important;
+  color: black;
+}
