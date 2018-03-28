@@ -3,11 +3,13 @@ import React from 'react';
 class EditFormUser extends React.Component{
   constructor(props){
     super(props);
+    console.log(this.props);
+    this.current_id = this.props.currentId;
     this.state={
-      Fname: this.props.session.currentUser.Fname,
-      Lname: this.props.session.currentUser.Lname,
-      email: this.props.session.currentUser.email,
-      username: this.props.session.currentUser.username,
+      Fname: this.props.users[this.current_id].Fname,
+      Lname: this.props.users[this.current_id].Lname,
+      email: this.props.users[this.current_id].email,
+      username: this.props.users[this.current_id].username,
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,13 +17,13 @@ class EditFormUser extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    const current_id = this.props.session.currentUser.id;
+
     const formData = new FormData();
     formData.append("user[email]", this.state.email);
     formData.append("user[Fname]", this.state.Fname);
     formData.append("user[Lname]", this.state.Lname);
     formData.append("user[username]", this.state.username);
-    this.props.updateUser(formData, current_id);
+    this.props.updateUser(formData, this.current_id);
   }
 
   update(field) {
@@ -29,14 +31,14 @@ class EditFormUser extends React.Component{
   }
 
   render(){
-    let { session } = this.props;
-    if(typeof session !== 'undefined'){
+
+    if(typeof this.props.users !== 'undefined'){
     return(
       <div className="edit-form">
         <div className="edit-title">
-          <img className="modal-avatar" src={this.props.session.currentUser.image_url}/>
+          <img className="modal-avatar" src={this.props.users[this.currentId].image_url}/>
           <div className="user-text edit-user-text">
-            {this.props.session.currentUser.username}
+            {this.props.users[this.currentId].username}
           </div>
         </div>
         <form className="user-edit-form" onSubmit={this.handleSubmit}>

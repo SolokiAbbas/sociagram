@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class EditNav extends React.Component{
   render(){
     const current_id = this.props.session.currentUser.id;
-    if(typeof this.props.session !== 'undefined'){
+    if(typeof this.props.users[current_id] !== 'undefined'){
     return(
         <div className="nav-container">
             <Link className="edit-nav-text" to={`/profile/${current_id}/edit`}>Edit Profile</Link>

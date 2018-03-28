@@ -5,6 +5,7 @@ import EditItem from './edit_item';
 
 const mapStateToProps = (state) =>{
   return {
+    users: state.entities.users,
     session: state.session,
   };
 };
