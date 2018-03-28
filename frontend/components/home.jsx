@@ -6,6 +6,7 @@ import NavbarContainer from './navbar/navbar_container';
 import PostsFormContainer from './posts/posts_form_container';
 import ProfileContainer from './profile/profile_container';
 import EditContainer from './profile/edit/edit_user_container';
+import PasswordContainer from './profile/edit/edit_password_container';
 
 const Home = () => (
   <div className='main-login'>
@@ -16,7 +17,7 @@ const Home = () => (
         <Route exact path="/profile/:userId" component={ProfileContainer} />
         <Route exact path="/profile" component={ProfileContainer} />
         <Route exact path="/profile/:userId/edit" component={EditContainer} />
-        <Route exact path="/profile/:userId/password" component={ProfileContainer} />
+        <Route exact path="/profile/:userId/password" component={PasswordContainer} />
         <Route exact path="/new" component={PostsFormContainer} />
         <Route path="/" component={PostsContainer} />
       </Switch>
