@@ -28,7 +28,7 @@ class EditFormPassword extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const formData = new FormData();
-    formData.append("user[password]", this.state.password);
+    formData.append("user[oldpassword]", this.state.oldpassword);
     if(this.checkPassword(this.state.newpassword1, this.state.newpassword2)){
       formData.append("user[newpassword]", this.state.newpassword1);
       this.props.updateUser(formData, this.current_id);
