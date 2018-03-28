@@ -9,8 +9,8 @@ class EditFormUser extends React.Component{
       email: this.props.users.email,
       username: this.props.users.username,
     };
-    this.current_id = this.props.session.currentUser.id;
-    
+    this.current_id = this.props.users.id;
+
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,9 +36,9 @@ class EditFormUser extends React.Component{
     return(
       <div className="edit-form">
         <div className="edit-title">
-          <img className="modal-avatar" src={this.props.users[this.currentId].image_url}/>
+          <img className="modal-avatar" src={this.props.users.image_url}/>
           <div className="user-text edit-user-text">
-            {this.props.users[this.currentId].username}
+            {this.props.users.username}
           </div>
         </div>
         <form className="user-edit-form" onSubmit={this.handleSubmit}>
