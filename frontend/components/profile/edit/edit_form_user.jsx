@@ -56,7 +56,7 @@ class EditFormUser extends React.Component{
           </div>
           <div className="edit-label">
             <label className="input-label">Email</label>
-            <input className="input-field input-max-width" onChange={this.update('email')} value={this.state.email}/>
+            <input type="email" className="input-field input-max-width" onChange={this.update('email')} value={this.state.email}/>
           </div>
           <div className="edit-submit">
             <input className="btn btn-primary" type="submit" value="Make Changes" />
