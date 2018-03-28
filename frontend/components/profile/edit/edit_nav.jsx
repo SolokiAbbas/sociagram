@@ -7,7 +7,7 @@ class EditNav extends React.Component{
       const current_id = this.props.users.id;
     return(
         <div className="nav-container">
-            <Link className="edit-nav-text" to={`/profile/${current_id}/edit`}>Edit Profile</Link>
+            <Link className={this.props.path === 'edit' ? "edit-nav-text edit-highlight" : "edit-nav-text"} to={`/profile/${current_id}/edit`}>Edit Profile</Link>
             <Link className="edit-nav-text" to={`/profile/${current_id}/password`}>Change Password</Link>
         </div>
     );
