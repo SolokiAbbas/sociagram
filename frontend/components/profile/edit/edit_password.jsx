@@ -12,7 +12,6 @@ class EditPassword extends React.Component{
     }else{
       path='password';
     }
-    console.log(this.props.path.slice(-4,this.props.path.length));
     if(typeof session !== 'undefined'){
     return(
         <div className="edit-container">

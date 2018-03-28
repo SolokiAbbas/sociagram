@@ -55,6 +55,9 @@ class EditFormPassword extends React.Component{
             <label className="input-label">Confirm Password</label>
             <input className="input-field input-max-width" onChange={this.update('newpassword2')} value={this.state.newpassword2} />
           </div>
+          <div className="edit-submit">
+            <input className="btn btn-primary" type="submit" value="Change Password" />
+          </div>
         </form>
         {this.state.errors.length > 0 ? this.state.errors : ""}
       </div>
