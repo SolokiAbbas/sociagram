@@ -3,14 +3,14 @@ import React from 'react';
 class EditFormUser extends React.Component{
   constructor(props){
     super(props);
-    console.log(this.props);
-    this.current_id = this.props.currentId;
     this.state={
-      Fname: this.props.users[this.current_id].Fname,
-      Lname: this.props.users[this.current_id].Lname,
-      email: this.props.users[this.current_id].email,
-      username: this.props.users[this.current_id].username,
+      Fname: this.props.users.Fname,
+      Lname: this.props.users.Lname,
+      email: this.props.users.email,
+      username: this.props.users.username,
     };
+    this.current_id = this.props.session.currentUser.id;
+    
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
