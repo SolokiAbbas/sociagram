@@ -7,7 +7,7 @@ class EditUser extends React.Component{
     let { session } = this.props;
     let current_id = session.currentUser.id;
     let path;
-    if(this.props.path.slice(-4,this.props.path.length) == 'edit'){
+    if(this.props.path.slice(-4,this.props.path.length) === 'edit'){
       path = 'edit';
     }else{
       path='password';
