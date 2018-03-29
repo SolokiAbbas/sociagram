@@ -26,11 +26,11 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    
     if(params[:user][:newpassword])
       if @user.valid_password?(password_params[:oldpassword])
         @user.password=password_params[:newpassword]
         @user.save
+        render :show
       else
         render json: @user.errors.full_messages, status: 422
       end

@@ -41,7 +41,7 @@ class EditFormPassword extends React.Component{
     let { users } = this.props;
     if(typeof users !== 'undefined'){
     return(
-      <div className="user-edit-form">
+      <div className="complete-password-form">
         <form className="user-edit-form" onSubmit={this.handleSubmit}>
           <div className="edit-label">
             <label className="input-label">Old Password</label>

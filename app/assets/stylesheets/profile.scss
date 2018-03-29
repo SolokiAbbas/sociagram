@@ -355,4 +355,9 @@ background-color: white;
 }
 .password-error{
   color: red;
+  margin-left: 10px;
+}
+.complete-password-form{
+  display: flex;
+  flex-direction: column;
 }
