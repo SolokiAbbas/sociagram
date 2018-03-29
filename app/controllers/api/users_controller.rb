@@ -32,7 +32,7 @@ class Api::UsersController < ApplicationController
         @user.save
         render :show
       else
-        render json: @user.errors.full_messages, status: 422
+        render json: ["Old Password is Incorrect"], status: 422
       end
     else
       if @user.update(edit_params)
