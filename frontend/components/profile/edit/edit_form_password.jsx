@@ -49,11 +49,11 @@ class EditFormPassword extends React.Component{
           </div>
           <div className="edit-label">
             <label className="input-label">New Password</label>
-            <input type="password" className="input-field input-max-width" onChange={this.update('newpassword1')} value={this.state.newpassword1} />
+            <input type="password" required className="input-field input-max-width" onChange={this.update('newpassword1')} value={this.state.newpassword1} />
           </div>
           <div className="edit-label">
             <label className="input-label">Confirm Password</label>
-            <input type="password" className="input-field input-max-width" onChange={this.update('newpassword2')} value={this.state.newpassword2} />
+            <input type="password" required className="input-field input-max-width" onChange={this.update('newpassword2')} value={this.state.newpassword2} />
           </div>
           <div className="edit-submit">
             <input className="btn btn-primary" type="submit" value="Change Password" />
