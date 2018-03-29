@@ -8,8 +8,10 @@ class EditFormPassword extends React.Component{
       newpassword2: "",
       oldpassword: "",
       errors: "",
-      confirm: "",
+      sent: false,
     };
+    this.allerrors=[];
+
     this.current_id = this.props.users.id;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -33,7 +35,8 @@ class EditFormPassword extends React.Component{
     if(this.checkPassword(this.state.newpassword1, this.state.newpassword2)){
       formData.append("user[newpassword]", this.state.newpassword1);
       this.props.updateUser(formData, this.current_id);
-      this.setState({confirm: "Confirmed"});
+      this.setState({sent: true, errors: ""});
+      this.props.clearErrors();
     } else {
       this.setState({errors: "New Password Does Not Match", confirm: ""});
     }
@@ -42,13 +45,15 @@ class EditFormPassword extends React.Component{
   render(){
     let { users } = this.props;
     if(typeof users !== 'undefined'){
-      let allerrors = this.props.errors.map((err, idx) =>{
-        return(
-          <div className="session-errors">
-            <li>{err}</li>
-          </div>
-        );
-      });
+      if(typeof this.props.errors !== 'undefined'){
+          this.allerrors = this.props.errors.map((err, idx) =>{
+            return(
+              <div className="session-errors">
+                <li>{err}</li>
+              </div>
+            );
+          });
+        }
     return(
       <div className="complete-password-form">
         <form className="user-edit-form" onSubmit={this.handleSubmit}>
@@ -70,10 +75,11 @@ class EditFormPassword extends React.Component{
         </form>
         <div className="password-error">
           {this.state.errors.length > 0 ? this.state.errors : ""}
-          {allerrors}
+          {this.allerrors}
         </div>
         <div className="password-confirm">
-          {this.state.confirm.length > 0 ? this.state.confirm : ""}
+          {this.state.errors}
+          {this.allerrors.length === 0 && this.state.sent ? "Password has been Changed" : "" }
         </div>
       </div>
 
