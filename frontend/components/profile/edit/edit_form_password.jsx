@@ -76,6 +76,8 @@ class EditFormPassword extends React.Component{
         </form>
         <div className="password-error">
           {this.state.errors.length > 0 ? this.state.errors : ""}
+        </div>
+        <div className="password-error">
           {this.allerrors}
         </div>
         <div className="password-confirm">
