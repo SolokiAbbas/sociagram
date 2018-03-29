@@ -16,7 +16,7 @@
 
 class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
-  validates :username, :password_digest, :email, :session_token, presence: true, uniqueness: true
+  validates :username, :Fname, :Lname, :password_digest, :email, :session_token, presence: true, uniqueness: true
 
   has_many :followees, foreign_key: :followee_id, class_name: :Follow
   has_many :followers, foreign_key: :follower_id, class_name: :Follow

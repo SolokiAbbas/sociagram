@@ -16,7 +16,7 @@ class EditUser extends React.Component{
     return(
         <div className="edit-container">
           <EditNav users={this.props.users[current_id]} path={path}/>
-          <EditFormUser users={this.props.users[current_id]} updateUser={this.props.updateUser}/>
+          <EditFormUser session={ session } users={this.props.users[current_id]} errors={this.props.users.errors} updateUser={this.props.updateUser}/>
         </div>
     );
   }

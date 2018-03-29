@@ -16,7 +16,7 @@ class EditPassword extends React.Component{
     return(
         <div className="edit-container">
           <EditNav users={this.props.users[current_id]} path={path}/>
-          <EditFormPassword users={this.props.users[current_id]} updateUser={this.props.updateUser}/>
+          <EditFormPassword users={this.props.users[current_id]} errors={this.props.errors} updateUser={this.props.updateUser}/>
         </div>
     );
   }

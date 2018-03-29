@@ -14,6 +14,7 @@ class EditFormUser extends React.Component{
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setConfirm = this.setConfirm.bind(this);
   }
 
   handleSubmit(e){
@@ -30,10 +31,23 @@ class EditFormUser extends React.Component{
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
+  setConfirm(){
+    this.setState({confirm: ""});
+  }
 
   render(){
-
+    console.log(this.props);
+    let allerrors;
     if(typeof this.props.users !== 'undefined'){
+        if(typeof this.props.errors !== 'undefined'){
+        allerrors = this.props.errors.map((err, idx) =>{
+          return(
+            <div className="session-errors">
+              <li>{err}</li>
+            </div>
+            );
+          });
+        }
     return(
       <div className="edit-form">
         <div className="edit-title">
@@ -63,8 +77,11 @@ class EditFormUser extends React.Component{
             <input className="btn btn-primary" type="submit" value="Make Changes" />
           </div>
         </form>
+        <div className="password-error">
+          {allerrors}
+        </div>
         <div className="password-confirm">
-          {this.state.confirm.length > 0 ? this.state.confirm : ""}
+          {allerrors ? "" : this.state.confirm }
         </div>
       </div>
     );
