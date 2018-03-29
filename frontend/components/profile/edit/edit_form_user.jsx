@@ -8,39 +8,36 @@ class EditFormUser extends React.Component{
       Lname: this.props.users.Lname,
       email: this.props.users.email,
       username: this.props.users.username,
-      confirm: "",
+      sent: false,
     };
     this.current_id = this.props.users.id;
+    this.allerrors=[];
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.setConfirm = this.setConfirm.bind(this);
   }
 
   handleSubmit(e){
     e.preventDefault();
+    this.allerrors = [];
     const formData = new FormData();
     formData.append("user[email]", this.state.email);
     formData.append("user[Fname]", this.state.Fname);
     formData.append("user[Lname]", this.state.Lname);
     formData.append("user[username]", this.state.username);
     this.props.updateUser(formData, this.current_id);
-    this.setState({confirm: "Confirmed"});
+    this.setState({sent: true});
+    this.props.clearErrors();
   }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
-  setConfirm(){
-    this.setState({confirm: ""});
-  }
 
   render(){
-    console.log(this.props);
-    let allerrors;
     if(typeof this.props.users !== 'undefined'){
         if(typeof this.props.errors !== 'undefined'){
-        allerrors = this.props.errors.map((err, idx) =>{
+        this.allerrors = this.props.errors.map((err, idx) =>{
           return(
             <div className="session-errors">
               <li>{err}</li>
@@ -78,10 +75,10 @@ class EditFormUser extends React.Component{
           </div>
         </form>
         <div className="password-error">
-          {allerrors}
+          {this.allerrors}
         </div>
         <div className="password-confirm">
-          {allerrors ? "" : this.state.confirm }
+          {this.allerrors.length === 0 && this.state.sent ? "Changes have been Saved" : "" }
         </div>
       </div>
     );
