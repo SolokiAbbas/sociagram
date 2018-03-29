@@ -29,8 +29,11 @@ class Api::UsersController < ApplicationController
     if(params[:user][:newpassword])
       if @user.valid_password?(password_params[:oldpassword])
         @user.password=password_params[:newpassword]
-        @user.save
-        render :show
+        if @user.save
+          render :show
+        else
+          render json: ["New Password is invalid, Min Length should be 6"], status: 422
+        end
       else
         render json: ["Old Password is Incorrect"], status: 422
       end
