@@ -8,6 +8,7 @@ class EditFormPassword extends React.Component{
       newpassword2: "",
       oldpassword: "",
       errors: "",
+      confirm: "",
     };
     this.current_id = this.props.users.id;
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,8 +33,9 @@ class EditFormPassword extends React.Component{
     if(this.checkPassword(this.state.newpassword1, this.state.newpassword2)){
       formData.append("user[newpassword]", this.state.newpassword1);
       this.props.updateUser(formData, this.current_id);
+      this.setState({confirm: "Confirmed"});
     } else {
-      this.setState({errors: "New Password Does Not Match"});
+      this.setState({errors: "New Password Does Not Match", confirm: ""});
     }
   }
 
@@ -61,6 +63,9 @@ class EditFormPassword extends React.Component{
         </form>
         <div className="password-error">
           {this.state.errors.length > 0 ? this.state.errors : ""}
+        </div>
+        <div className="password-confirm">
+          {this.state.confirm.length > 0 ? this.state.confirm : ""}
         </div>
       </div>
 
