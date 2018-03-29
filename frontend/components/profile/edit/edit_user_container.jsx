@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { updateUser, receiveErrors } from '../../../actions/users/users_action';
+import { fetchAUser, updateUser, receiveErrors } from '../../../actions/users/users_action';
 import EditUser from './edit_user';
 
 const mapStateToProps = (state, ownProps) =>{
@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) =>{
 const mapDispatchToProps = (dispatch) => {
   return {
     updateUser: (user, id) => dispatch(updateUser(user, id)),
+    fetchAUser: (id) => dispatch(fetchAUser(id)),
     clearErrors: () => dispatch(receiveErrors([])),
   };
 };
