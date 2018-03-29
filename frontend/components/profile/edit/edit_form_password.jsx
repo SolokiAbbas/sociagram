@@ -18,7 +18,7 @@ class EditFormPassword extends React.Component{
   }
 
   checkPassword(pass1, pass2){
-    if(pass1 === pass2){
+    if(pass1 === pass2 && pass1.length > 0 && pass2.length > 0){
       return true;
     }else {
       return false;
@@ -33,7 +33,7 @@ class EditFormPassword extends React.Component{
       formData.append("user[newpassword]", this.state.newpassword1);
       this.props.updateUser(formData, this.current_id);
     } else {
-      this.setState({errors: "Password Does Not Match"});
+      this.setState({errors: "New Password Does Not Match"});
     }
   }
 
@@ -41,7 +41,7 @@ class EditFormPassword extends React.Component{
     let { users } = this.props;
     if(typeof users !== 'undefined'){
     return(
-      <div>
+      <div className="user-edit-form">
         <form className="user-edit-form" onSubmit={this.handleSubmit}>
           <div className="edit-label">
             <label className="input-label">Old Password</label>
@@ -59,7 +59,9 @@ class EditFormPassword extends React.Component{
             <input className="btn btn-primary" type="submit" value="Change Password" />
           </div>
         </form>
-        {this.state.errors.length > 0 ? this.state.errors : ""}
+        <div className="password-error">
+          {this.state.errors.length > 0 ? this.state.errors : ""}
+        </div>
       </div>
 
     );
