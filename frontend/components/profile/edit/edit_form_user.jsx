@@ -8,6 +8,7 @@ class EditFormUser extends React.Component{
       Lname: this.props.users.Lname,
       email: this.props.users.email,
       username: this.props.users.username,
+      confirm: "",
     };
     this.current_id = this.props.users.id;
 
@@ -23,6 +24,7 @@ class EditFormUser extends React.Component{
     formData.append("user[Lname]", this.state.Lname);
     formData.append("user[username]", this.state.username);
     this.props.updateUser(formData, this.current_id);
+    this.setState({confirm: "Confirmed"});
   }
 
   update(field) {
@@ -61,6 +63,9 @@ class EditFormUser extends React.Component{
             <input className="btn btn-primary" type="submit" value="Make Changes" />
           </div>
         </form>
+        <div className="password-confirm">
+          {this.state.confirm.length > 0 ? this.state.confirm : ""}
+        </div>
       </div>
     );
   }
