@@ -4,17 +4,24 @@ class EditFormUser extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      Fname: this.props.users.Fname,
-      Lname: this.props.users.Lname,
-      email: this.props.users.email,
-      username: this.props.users.username,
+      Fname: "",
+      Lname: "",
+      email: "",
+      username: "",
       sent: false,
     };
-    this.current_id = this.props.users.id;
+    this.current_id = this.props.path;
     this.allerrors=[];
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.fetchAUser(this.props.path).then(()=> this.setState({Fname: this.props.users.Fname,
+          Lname: this.props.users.Lname,
+          email: this.props.users.email,
+          username: this.props.users.username}));
   }
 
   handleSubmit(e){

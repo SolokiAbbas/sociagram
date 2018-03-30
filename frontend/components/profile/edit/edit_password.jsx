@@ -15,9 +15,10 @@ class EditPassword extends React.Component{
     if(typeof session !== 'undefined'){
     return(
         <div className="edit-container">
-          <EditNav users={this.props.users[current_id]} path={path}/>
+          <EditNav users={this.props.users[current_id]} path={path} />
           <EditFormPassword users={this.props.users[current_id]} errors={this.props.users.errors}
-            updateUser={this.props.updateUser} clearErrors={this.props.clearErrors}/>
+            updateUser={this.props.updateUser} clearErrors={this.props.clearErrors}
+            fetchAUser={this.props.fetchAUser} path={current_id}/>
         </div>
     );
   }

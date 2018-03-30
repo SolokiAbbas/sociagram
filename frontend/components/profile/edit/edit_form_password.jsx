@@ -12,8 +12,12 @@ class EditFormPassword extends React.Component{
     };
     this.allerrors=[];
 
-    this.current_id = this.props.users.id;
+    this.current_id = this.props.path;
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.fetchAUser(this.props.path);
   }
 
   update(field) {
