@@ -22,7 +22,7 @@ class EditFormUser extends React.Component{
   componentDidMount(){
     this.props.fetchAUser(this.props.path).then(()=> this.setState({Fname: this.props.users.Fname,
           Lname: this.props.users.Lname, email: this.props.users.email, username: this.props.users.username,
-          bio: this.props.users.bio}));
+          bio: this.props.users.bio, gender: this.props.users.gender}));
   }
 
   handleSubmit(e){
@@ -93,8 +93,7 @@ class EditFormUser extends React.Component{
           </div>
           <div className="edit-label">
             <label className="input-label">Bio</label>
-            <textarea className="input-field edit-bio input-max-width" onChange={this.update('bio')} defaultValue={this.state.bio}>
-            </textarea>
+            <textarea className="input-field edit-bio input-max-width" onChange={this.update('bio')} value={this.state.bio} />
           </div>
           <div className="edit-submit">
             <input className="btn btn-primary" type="submit" value="Make Changes" />
