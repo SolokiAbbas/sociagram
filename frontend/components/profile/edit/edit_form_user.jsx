@@ -83,8 +83,8 @@ class EditFormUser extends React.Component{
             <label className="input-label">Gender</label>
               <select className="gender-edit select-color" value={this.state.gender} onChange={this.update('gender')} >
                 <option disabled defaultValue>-- Not Specified --</option>
-                <option value="Female">Male</option>
-                <option value="Male">Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
               </select>
           </div>
           <div className="edit-label">
