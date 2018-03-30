@@ -76,6 +76,10 @@ class EditFormUser extends React.Component{
             <label className="input-label">Username</label>
             <input className="input-field input-max-width" onChange={this.update('username')} value={this.state.username}/>
           </div>
+          <div className="edit-label">
+            <label className="input-label">Bio</label>
+            <textarea className="input-field edit-bio input-max-width" onChange={this.update('bio')} value={this.state.bio} />
+          </div>
           <div className="private-data">
             Private Data
           </div>
@@ -90,10 +94,6 @@ class EditFormUser extends React.Component{
           <div className="edit-label">
             <label className="input-label">Email</label>
             <input type="email" className="input-field input-max-width" onChange={this.update('email')} value={this.state.email}/>
-          </div>
-          <div className="edit-label">
-            <label className="input-label">Bio</label>
-            <textarea className="input-field edit-bio input-max-width" onChange={this.update('bio')} value={this.state.bio} />
           </div>
           <div className="edit-submit">
             <input className="btn btn-primary" type="submit" value="Make Changes" />
