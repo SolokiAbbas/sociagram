@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 class ProfileHover extends React.Component{
   constructor(props){
     super(props);
-    this.now = Date.now();
-    this.created = 0;
+    this.now = new Date();
+    this.created = "";
     this.handleDate = this.handleDate.bind(this);
   }
 
@@ -27,8 +27,16 @@ class ProfileHover extends React.Component{
   }
 
   handleDate(){
-    this.created = this.now - new Date(this.props.post.created_at);
-    console.log(Math.floor(this.created / (1000*60*60*24)));
+    let tempTime = this.now - new Date(this.props.post.created_at);
+    let tempTimehr = Math.floor(tempTime/(1000*60*60));
+    let tempTimedy = Math.floor(tempTime/(1000*60*60*24));
+    if(tempTimehr < 24){
+      this.created = tempTimehr.toString() + " hours ago";
+    } else if(tempTime > 24 && tempTime < 48){
+      this.created = "1 day ago";
+    } else {
+      this.created = tempTimedy.toString() + " days ago";
+    }
   }
 
   render(){
@@ -68,12 +76,12 @@ class ProfileHover extends React.Component{
             <div>
               {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
               <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
-              <div>
-                {this.created}
-              </div>
             </div>
             <div className="single-counter-likes">
               {this.props.post.likes.length} Likes
+            </div>
+            <div className="date-profile">
+              {this.created}
             </div>
           </div>
           <div className="modal-form-container">

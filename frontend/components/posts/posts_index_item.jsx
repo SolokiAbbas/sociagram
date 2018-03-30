@@ -10,15 +10,32 @@ class PostsIndexItem extends React.Component {
     this.state = {
       input: "notfocus"
     };
+    this.now = new Date();
+    this.created = "";
     this.handleAddLike = this.handleAddLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
     this.updatePost = this.updatePost.bind(this);
     this.handleCommentClick = this.handleCommentClick.bind(this);
+    this.handleDate = this.handleDate.bind(this);
   }
+
   componentDidMount(){
     const author = this.props.post.author_id;
     if(typeof this.props.users[author] === 'undefined'){
       this.props.fetchAUser(author).then(()=> this.props.fetchAUser(this.props.session.currentUser.id));
+    }
+  }
+
+  handleDate(){
+    let tempTime = this.now - new Date(this.props.post.created_at);
+    let tempTimehr = Math.floor(tempTime/(1000*60*60));
+    let tempTimedy = Math.floor(tempTime/(1000*60*60*24));
+    if(tempTimehr < 24){
+      this.created = tempTimehr.toString() + " hours ago";
+    } else if(tempTime > 24 && tempTime < 48){
+      this.created = "1 day ago";
+    } else {
+      this.created = tempTimedy.toString() + " days ago";
     }
   }
 
@@ -61,7 +78,7 @@ class PostsIndexItem extends React.Component {
 
         }});
       let { post } = this.props;
-
+      this.handleDate();
     return(
     <div className="posts-index-item">
       <ul className="posts-item2">
@@ -105,6 +122,9 @@ class PostsIndexItem extends React.Component {
       </div>
       <div className="comments-part">
         <CommentsItemContainer post={ this.props.post } />
+          <div className="date-profile">
+            {this.created}
+          </div>
         <CommentsFormContainer post={ this.props.post } focus={this.state.input} />
       </div>
     </div>
