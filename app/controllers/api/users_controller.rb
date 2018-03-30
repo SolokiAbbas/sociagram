@@ -52,7 +52,7 @@ class Api::UsersController < ApplicationController
   end
 
   def edit_params
-    params.require(:user).permit(:username, :Fname, :Lname, :email, :avatar)
+    params.require(:user).permit(:username, :Fname, :Lname, :email, :avatar, :bio, :gender)
   end
 
   def password_params
