@@ -31,10 +31,12 @@ class ProfileHover extends React.Component{
       }});
     return(
       <div className="modal-container">
+        <div>
           <img className="modal-image" src={this.props.post.image_url} alt={this.props.post.title} />
+        </div>
         <div className="modal-part">
           <div  className="modal-avatar-container modal-border">
-            <img className="modal-avatar" src={this.props.user.image_url}/>
+              <img className="modal-avatar" src={this.props.user.image_url}/>
             <div className="post-container-title-user modal-padding">
               <div className="user-text">
                 {this.props.user.username}
