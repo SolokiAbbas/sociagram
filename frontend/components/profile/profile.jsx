@@ -152,6 +152,7 @@ class Profile extends React.Component{
               <div className="profile-name">
                 <div className="profile-fname">{this.props.users[author].Fname}</div>
                 <div className="profile-lname">{this.props.users[author].Lname}</div>
+                <div className="profile-bio">{this.props.users[author].bio}</div>
             </div>
           </div>
           <div className="profile-posts-container">
