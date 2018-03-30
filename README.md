@@ -15,6 +15,8 @@ Sociagram will allow the users:
 * Follow and unfollow other users
 * Check out their current profile
 * Check out other user's profile
+* Edit Profile
+* Profile Modal when Post clicked on
 
 
 ### Overall Structure
@@ -27,7 +29,7 @@ The data request were made with AJAX and fulfilled by JSON Jbuilder.
 **Front End**
 
 The front end was built completely by React.js and Redux.
-
+Bootstrap styling
 
 **Libraries used:**
 * React.js
@@ -68,6 +70,15 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
+#### Add Profile Bio and Gender
+#### Add Date Posted
+#### Add Date on Posts
+#### Add bottom nav bar
+#### Add BookMarks
+#### Add section for BookMarks in Profile
+#### Add a delete Post
 #### Search
+#### Add Handles to clickable people
+#### Add Hashtags to clickable groups on posts
 
 Searching is fundamental in apps nowadays. There is so much data that it becomes vital.
