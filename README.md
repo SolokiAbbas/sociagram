@@ -70,8 +70,6 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
-#### Add Date Posted
-#### Add Date on Posts
 #### Add bottom nav bar
 #### Add a delete Post
 #### Add BookMarks
