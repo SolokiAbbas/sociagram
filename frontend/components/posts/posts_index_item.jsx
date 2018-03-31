@@ -32,7 +32,7 @@ class PostsIndexItem extends React.Component {
     let tempTimedy = Math.floor(tempTime/(1000*60*60*24));
     if(tempTimehr < 24){
       this.created = tempTimehr.toString() + " hours ago";
-    } else if(tempTime > 24 && tempTime < 48){
+    } else if(tempTimehr > 24 && tempTimehr < 48){
       this.created = "1 day ago";
     } else {
       this.created = tempTimedy.toString() + " days ago";
