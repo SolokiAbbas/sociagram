@@ -98,7 +98,7 @@
 .profile-posts-container{
   display: flex;
   flex-wrap: wrap;
-  width: 1000px;
+  width: 1060px;
   margin-top: 40px;
   justify-content: flex-start;
 }
@@ -398,4 +398,7 @@ background-color: white;
   margin-top: 8px;
   font-family: "Rajdhani";
   font-size: 14px;
+}
+.delete-post{
+  margin-top: 15px;
 }

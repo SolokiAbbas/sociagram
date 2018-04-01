@@ -21,6 +21,11 @@ class Profile extends React.Component{
     this.uploadFile = this.uploadFile.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
     this.handleLeave = this.handleLeave.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(){
+    this.props.deleteAPost(this.props.id);
   }
 
   componentDidMount(){
@@ -173,12 +178,11 @@ class Profile extends React.Component{
                         </div>
                       </div>
                     </div>
-
+                  <div className="ion-ios-trash-outline icon-hover delete-post" onClick={()=>this.handleDelete()}></div>
                   <div className="user-posts-container">
                     <img className="user-posts" src={post.image_url}/>
                     <div className="profile-hover" data-toggle="modal" data-target={`#bd-example-modal-lg-${post.id}`}>
-                      <ProfileHover id={post.id} likes={post.likes.length}
-                        deleteAPost={this.props.deleteAPost} comments={commentsCounter} />
+                      <ProfileHover id={post.id} likes={post.likes.length} comments={commentsCounter} />
                     </div>
                   </div>
                 </div>

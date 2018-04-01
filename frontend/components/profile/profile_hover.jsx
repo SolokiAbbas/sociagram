@@ -15,7 +15,7 @@ class profileHover extends React.Component {
         <div className="p-hover">
           <div className="ion-ios-heart-outline icon-hover">{this.props.likes}</div>
           <div className="ion-ios-chatbubble-outline icon-hover">{this.props.comments}</div>
-          <div className="ion-ios-trash-outline icon-hover" onClick={()=>this.handleDelete()}></div>
+        
         </div>
       );
     }
