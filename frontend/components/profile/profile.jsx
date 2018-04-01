@@ -8,7 +8,7 @@ class Profile extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      hover: false,
+      delete: false,
       id: null,
       username: null,
       Fname: null,
@@ -17,15 +17,17 @@ class Profile extends React.Component{
     imageFile: null,
     imageUrl: null,
     };
+    this.allposts = [];
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadFile = this.uploadFile.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
-    this.handleLeave = this.handleLeave.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.toggleDelete = this.toggleDelete.bind(this);
   }
 
-  handleDelete(){
-    this.props.deleteAPost(this.props.id);
+  handleDelete(id){
+    this.props.deleteAPost(id).then(()=>this.props.fetchAllPosts());
+    this.allposts = this.props.allPosts.reverse();
+    this.toggleDelete();
   }
 
   componentDidMount(){
@@ -57,6 +59,7 @@ class Profile extends React.Component{
     if(otherUserId !== nextUserId && typeof nextUserId !== 'undefined'){
         this.props.fetchAUser(nextUserId);
     }
+  
   }
 
   uploadFile(e){
@@ -97,12 +100,8 @@ class Profile extends React.Component{
     this.props.deleteAFollow(other);
   }
 
-  handleEnter(){
-    this.setState({ hover: true});
-  }
-
-  handleLeave(){
-    this.setState({ hover: false});
+  toggleDelete(){
+    this.setState({ delete: !this.state.delete});
   }
 
   render(){
@@ -119,10 +118,9 @@ class Profile extends React.Component{
               postcounter++;
           }
         });
-
         let allfollowers = this.props.users[author].followers.length;
         let allfollowings = this.props.users[author].following.length;
-        let allposts = this.props.allPosts.reverse();
+        this.allposts = this.props.allPosts.reverse();
 
       return(
         <section className="profile-section">
@@ -161,7 +159,7 @@ class Profile extends React.Component{
             </div>
           </div>
           <div className="profile-posts-container">
-            {allposts.map(post => {
+            {this.allposts.map(post => {
               if(post.author_id === this.props.session.currentUser.id){
                 commentsCounter = 1;
                 this.props.comments.map(comment =>{
@@ -178,7 +176,7 @@ class Profile extends React.Component{
                         </div>
                       </div>
                     </div>
-                  <div className="ion-ios-trash-outline icon-hover delete-post" onClick={()=>this.handleDelete()}></div>
+                  <div className="ion-ios-trash-outline icon-hover delete-post" onClick={()=>this.handleDelete(post.id)}></div>
                   <div className="user-posts-container">
                     <img className="user-posts" src={post.image_url}/>
                     <div className="profile-hover" data-toggle="modal" data-target={`#bd-example-modal-lg-${post.id}`}>
@@ -212,7 +210,7 @@ class Profile extends React.Component{
         let allfollowers = this.props.users[other].followers.length;
         let allfollowings = this.props.users[other].following.length;
 
-        let allposts = this.props.allPosts.reverse();
+        this.allposts = this.props.allPosts.reverse();
     return(
       <section className="profile-section">
         <div>
@@ -238,7 +236,7 @@ class Profile extends React.Component{
 
         </div>
         <div className="profile-posts-container">
-          {allposts.map(post => {
+          {this.allposts.map(post => {
             if(post.author_id === current.id){
               commentsCounter = 1;
               this.props.comments.map(comment =>{
