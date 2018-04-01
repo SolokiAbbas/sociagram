@@ -177,7 +177,8 @@ class Profile extends React.Component{
                   <div className="user-posts-container">
                     <img className="user-posts" src={post.image_url}/>
                     <div className="profile-hover" data-toggle="modal" data-target={`#bd-example-modal-lg-${post.id}`}>
-                      <ProfileHover id={post.id} likes={post.likes.length} comments={commentsCounter} />
+                      <ProfileHover id={post.id} likes={post.likes.length}
+                        deleteAPost={this.props.deleteAPost} comments={commentsCounter} />
                     </div>
                   </div>
                 </div>

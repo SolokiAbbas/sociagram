@@ -11,9 +11,9 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
-    render json: {}
+    @post = Post.find(params[:id])
+    @post.destroy
+    render json: @post.errors.full_messages, status: 422
   end
 
   def index
