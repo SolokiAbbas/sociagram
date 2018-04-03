@@ -54,12 +54,10 @@ class Profile extends React.Component{
     let otherUserId = this.props.clicked_user;
     let nextUserId = nextProps.clicked_user;
     let authorId = this.props.session.currentUser.id;
-    let currentuser = this.props.session.currentUser;
-    let updateduser = nextProps.users[authorId];
     if(otherUserId !== nextUserId && typeof nextUserId !== 'undefined'){
         this.props.fetchAUser(nextUserId);
     }
-  
+
   }
 
   uploadFile(e){
