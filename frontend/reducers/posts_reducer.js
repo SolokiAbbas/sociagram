@@ -13,7 +13,7 @@ const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
       const newPost = { allPosts: {[action.post.id]: action.post }};
       return merge({}, state, newPost);
     case DELETE_A_POST:
-      newState = newState.allPosts.filter(post => post.id !== action.post.id);
+      delete newState.allPosts[action.post.id];
       return newState;
     case RECEIVE_A_LIKE:
       newState.allPosts[action.like.post_id].likes.push(action.like);
