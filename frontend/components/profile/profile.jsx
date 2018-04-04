@@ -25,9 +25,7 @@ class Profile extends React.Component{
   }
 
   handleDelete(id){
-    this.props.deleteAPost(id).then(()=>this.props.fetchAllPosts());
-    this.allposts = this.props.allPosts.reverse();
-    this.toggleDelete();
+    this.props.deleteAPost(id).then(()=>this.toggleDelete());
   }
 
   componentDidMount(){
@@ -51,9 +49,9 @@ class Profile extends React.Component{
   }
 
   shouldComponentUpdate(nextProps){
-    console.log(nextProps);
-    console.log(this.props);
-    if(this.props.allPosts !== nextProps.allPosts){
+    console.log(nextProps.allPosts.length);
+    console.log(this.props.allPosts.length);
+    if(this.props.allPosts.length !== nextProps.allPosts.length){
       return true;
     } else{
       return false;
@@ -109,6 +107,7 @@ class Profile extends React.Component{
   }
 
   toggleDelete(){
+    this.allposts = this.props.allPosts.reverse();
     this.setState({ delete: !this.state.delete});
   }
 

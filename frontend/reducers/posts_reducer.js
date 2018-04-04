@@ -1,4 +1,4 @@
-import { RECEIVE_POST_ERRORS, RECEIVE_ALL_POSTS, RECEIVE_A_POST } from '../actions/posts/posts_action';
+import { RECEIVE_POST_ERRORS, RECEIVE_ALL_POSTS, RECEIVE_A_POST,  DELETE_A_POST} from '../actions/posts/posts_action';
 import { RECEIVE_A_LIKE, DELETE_A_LIKE } from '../actions/likes/likes_action';
 import merge from 'lodash/merge';
 
@@ -12,6 +12,9 @@ const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
     case RECEIVE_A_POST:
       const newPost = { allPosts: {[action.post.id]: action.post }};
       return merge({}, state, newPost);
+    case DELETE_A_POST:
+      newState = newState.allPosts.filter(post => post.id !== action.post.id);
+      return newState;
     case RECEIVE_A_LIKE:
       newState.allPosts[action.like.post_id].likes.push(action.like);
       return newState;

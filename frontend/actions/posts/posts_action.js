@@ -2,12 +2,19 @@ import * as ApiUtil from '../../util/posts/post_api_util';
 
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_A_POST = 'RECEIVE_A_POST';
+export const DELETE_A_POST = 'DELETE_A_POST';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
 export const receiveCurrentPost = (posts) => {
   return {
     type: RECEIVE_ALL_POSTS,
     posts,
+  };
+};
+export const receiveDeletePost = (post) => {
+  return {
+    type: DELETE_A_POST,
+    post,
   };
 };
 
@@ -55,7 +62,7 @@ export const createAPost = (post) => (dispatch) => {
 export const deleteAPost = (id) => (dispatch) => {
   return (
     ApiUtil.deleteAPost(id).then(
-      (post) => dispatch(receiveCurrentPost(post)),
+      (post) => dispatch(receiveDeletePost(post)),
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
   );
