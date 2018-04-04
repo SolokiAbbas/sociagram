@@ -50,6 +50,16 @@ class Profile extends React.Component{
     }
   }
 
+  shouldComponentUpdate(nextProps){
+    console.log(nextProps);
+    console.log(this.props);
+    if(this.props.allPosts !== nextProps.allPosts){
+      return true;
+    } else{
+      return false;
+    }
+  }
+
   componentWillReceiveProps(nextProps){
     let otherUserId = this.props.clicked_user;
     let nextUserId = nextProps.clicked_user;
