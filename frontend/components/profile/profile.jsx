@@ -49,8 +49,6 @@ class Profile extends React.Component{
   }
 
   shouldComponentUpdate(nextProps){
-    console.log(nextProps.allPosts.length);
-    console.log(this.props.allPosts.length);
     if(this.props.allPosts.length !== nextProps.allPosts.length){
       return true;
     } else{
