@@ -18,7 +18,7 @@ class ProfileHover extends React.Component{
     $('.modal').modal('hide');
   }
   handleAddLike(){
-    let like = {post_id: this.props.post.id, liker_id: this.props.user.id};
+    let like = {post_id: this.props.post.id, liker_id: this.props.session.currentUser.id};
     this.props.createALike(like);
   }
 
@@ -44,7 +44,7 @@ class ProfileHover extends React.Component{
     let ok_match;
     let likeid;
     let match = this.props.post.likes.forEach(like => {
-      if(like.liker_id === this.props.user.id){
+      if(like.liker_id === this.props.session.currentUser.id){
         ok_match = like;
         likeid = like.id;
       }});
