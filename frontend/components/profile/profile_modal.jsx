@@ -29,14 +29,14 @@ class ProfileHover extends React.Component{
   }
 
   handleAddLike(){
+    this.setState({ likes: true });
     let like = {post_id: this.props.post.id, liker_id: this.props.session.currentUser.id};
     this.props.createALike(like);
-    this.setState({ likes: true});
   }
 
   handleUnlike(id){
+    this.setState({ likes: false });
     this.props.deleteALike(id);
-    this.setState({ likes: false});
   }
 
   handleLikes(){
@@ -59,9 +59,10 @@ class ProfileHover extends React.Component{
   render(){
     let author = this.props.post.author_id;
     let likeid;
+    let ok_match;
     let match = this.props.post.likes.forEach(like => {
       if(like.liker_id === this.props.session.currentUser.id){
-        this.handleLikes();
+        ok_match = like;
         likeid = like.id;
       }});
       this.handleDate();
@@ -90,7 +91,7 @@ class ProfileHover extends React.Component{
 
           <div className="modal-likes-container">
             <div>
-              {this.state.likes ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
+              {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
               <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
             </div>
             <div className="single-counter-likes">
