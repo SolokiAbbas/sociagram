@@ -8,22 +8,26 @@ class ProfileHover extends React.Component{
     super(props);
     this.now = new Date();
     this.created = "";
+    this.ok_match = false;
     this.handleDate = this.handleDate.bind(this);
+    this.handleAddLike = this.handleAddLike.bind(this);
+    this.handleUnlike = this.handleUnlike.bind(this);
+    this.handleCommentClick = this.handleCommentClick.bind(this);
   }
 
   handleCommentClick(id){
     $(`#click-here-${id}`).focus();
   }
-  handleModalHide(){
-    $('.modal').modal('hide');
-  }
+
   handleAddLike(){
     let like = {post_id: this.props.post.id, liker_id: this.props.session.currentUser.id};
     this.props.createALike(like);
+    this.ok_match = false;
   }
 
   handleUnlike(id){
     this.props.deleteALike(id);
+    this.ok_match = true;
   }
 
   handleDate(){
@@ -41,11 +45,10 @@ class ProfileHover extends React.Component{
 
   render(){
     let author = this.props.post.author_id;
-    let ok_match;
     let likeid;
     let match = this.props.post.likes.forEach(like => {
       if(like.liker_id === this.props.session.currentUser.id){
-        ok_match = like;
+        this.ok_match = true;
         likeid = like.id;
       }});
       this.handleDate();
@@ -74,7 +77,7 @@ class ProfileHover extends React.Component{
 
           <div className="modal-likes-container">
             <div>
-              {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
+              {this.ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
               <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
             </div>
             <div className="single-counter-likes">
