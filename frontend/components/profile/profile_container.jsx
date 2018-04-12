@@ -6,7 +6,7 @@ import { fetchAUser, updateUser, receiveAUser } from '../../actions/users/users_
 import { fetchAComment } from '../../actions/comments/comments_action';
 import { createAFollow, deleteAFollow } from '../../actions/follows/follows_action';
 import { allPost } from '../../reducers/selectors';
-import { fetchAllPosts, deleteAPost } from '../../actions/posts/posts_action';
+import { fetchAllPosts, deleteAPost, fetchAPost } from '../../actions/posts/posts_action';
 import { allComments } from '../../reducers/selectors';
 import { createALike, deleteALike } from '../../actions/likes/likes_action';
 
@@ -28,6 +28,7 @@ const mapDispatchToProps = (dispatch) => {
     createAFollow: (follow) => dispatch(createAFollow(follow)),
     deleteAFollow: (id) => dispatch(deleteAFollow(id)),
     fetchAllPosts: () => dispatch(fetchAllPosts()),
+    fetchAPost: (id) => dispatch(fetchAPost(id)),
     updateUser: (user, id) => dispatch(updateUser(user, id)),
     clearErrors: () => dispatch(receiveErrors([])),
     createALike: (like) => dispatch(createALike(like)),
