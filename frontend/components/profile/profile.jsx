@@ -63,7 +63,6 @@ class Profile extends React.Component{
     if(otherUserId !== nextUserId && typeof nextUserId !== 'undefined'){
         this.props.fetchAUser(nextUserId);
     }
-
   }
 
   uploadFile(e){
@@ -256,7 +255,9 @@ class Profile extends React.Component{
                   <div className="modal fade" id={`bd-example-modal-lg-${post.id}`} tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-lg">
                       <div className="modal-content">
-                          <ProfileModal id={post.id} post={post} user={current} createALike={this.props.createALike} deleteALike={this.props.deleteALike}/>
+                          <ProfileModal id={post.id} post={post} user={current} session={this.props.session}
+                            createALike={this.props.createALike} deleteALike={this.props.deleteALike}
+                            fetchAPost={this.props.fetchAPost} />
                       </div>
                     </div>
                   </div>

@@ -11,7 +11,6 @@ class ProfileHover extends React.Component{
     this.handleDate = this.handleDate.bind(this);
     this.handleAddLike = this.handleAddLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
-    this.handleLikes = this.handleLikes.bind(this);
     this.handleCommentClick = this.handleCommentClick.bind(this);
   }
 
@@ -35,8 +34,6 @@ class ProfileHover extends React.Component{
   handleUnlike(id){
     this.props.deleteALike(id);
   }
-
-
 
   handleDate(){
     let tempTime = this.now - new Date(this.props.post.created_at);
