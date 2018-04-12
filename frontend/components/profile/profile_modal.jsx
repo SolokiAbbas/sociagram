@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 class ProfileHover extends React.Component{
   constructor(props){
     super(props);
-    this.state = { likes : false };
     this.now = new Date();
     this.created = "";
     this.handleDate = this.handleDate.bind(this);
@@ -29,19 +28,15 @@ class ProfileHover extends React.Component{
   }
 
   handleAddLike(){
-    this.setState({ likes: true });
     let like = {post_id: this.props.post.id, liker_id: this.props.session.currentUser.id};
     this.props.createALike(like);
   }
 
   handleUnlike(id){
-    this.setState({ likes: false });
     this.props.deleteALike(id);
   }
 
-  handleLikes(){
-    this.setState({ likes: true});
-  }
+
 
   handleDate(){
     let tempTime = this.now - new Date(this.props.post.created_at);
