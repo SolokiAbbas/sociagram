@@ -15,6 +15,13 @@ const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
     case DELETE_A_POST:
       delete newState.allPosts[action.post.id];
       return newState;
+    case RECEIVE_A_LIKE:
+      newState.allPosts[action.like.post_id].likes.push(action.like);
+      return newState;
+    case DELETE_A_LIKE:
+      const newLikes = newState.allPosts[action.like.post_id].likes.filter(like => like.id !== action.like.id);
+      newState.allPosts[action.like.post_id].likes = newLikes;
+      return newState;
     case RECEIVE_POST_ERRORS:
         return Object.assign({}, state, { errors: action.errors });
     default:
