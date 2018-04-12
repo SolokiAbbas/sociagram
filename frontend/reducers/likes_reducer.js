@@ -4,7 +4,8 @@ import merge from 'lodash/merge';
 const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-
+  console.log(newState);
+  
   switch(action.type) {
     case RECEIVE_A_LIKE:
       newState.allPosts[action.like.post_id].likes.push(action.like);
