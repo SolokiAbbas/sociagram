@@ -17,9 +17,6 @@ class ProfileHover extends React.Component{
   }
 
   shouldComponentUpdate(nextProps){
-    console.log(this.props.post);
-    console.log(nextProps.post);
-
     if(this.props.post.likes.length !== nextProps.post.likes.length){
       return true;
     } else{
