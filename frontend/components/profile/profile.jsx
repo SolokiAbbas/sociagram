@@ -48,13 +48,13 @@ class Profile extends React.Component{
     }
   }
 
-  shouldComponentUpdate(nextProps){
-    if(this.props.allPosts.length !== nextProps.allPosts.length){
-      return true;
-    } else{
-      return false;
-    }
-  }
+  // shouldComponentUpdate(nextProps){
+  //   if(this.props.allPosts.length !== nextProps.allPosts.length){
+  //     return true;
+  //   } else{
+  //     return false;
+  //   }
+  // }
 
   componentWillReceiveProps(nextProps){
     let otherUserId = this.props.clicked_user;

@@ -14,14 +14,6 @@ class ProfileHover extends React.Component{
     this.handleCommentClick = this.handleCommentClick.bind(this);
   }
 
-  shouldComponentUpdate(nextProps){
-    if(this.props.post.likes.length !== nextProps.post.likes.length){
-      return true;
-    } else{
-      return false;
-    }
-  }
-
   handleCommentClick(id){
     $(`#click-here-${id}`).focus();
   }
