@@ -17,6 +17,7 @@
 class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, :Fname, :Lname, :password_digest, :email, :session_token, presence: true, uniqueness: true
+  scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase) }
   validates_with GenderValidator
 
   has_many :followees, foreign_key: :followee_id, class_name: :Follow
@@ -36,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+    user = User.ci_find('username',  username).first
     return nil unless user && user.valid_password?(password)
     user
   end
