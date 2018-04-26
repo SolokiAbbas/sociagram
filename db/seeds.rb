@@ -81,6 +81,20 @@ like13 = Like.create!({post_id: post7.id, liker_id: user4.id})
 like14 = Like.create!({post_id: post8.id, liker_id: user4.id})
 like15 = Like.create!({post_id: post1.id, liker_id: user5.id})
 
+Bookmark.destroy_all
+bookmarktest = Bookmark.create!({post_id: post1.id, user_id: user1.id})
+
+bookmark1 = Bookmark.create!({post_id: post10.id, user_id: user2.id})
+bookmark2 = Bookmark.create!({post_id: post2.id, user_id: user5.id})
+bookmark3 = Bookmark.create!({post_id: post1.id, user_id: user5.id})
+bookmark4 = Bookmark.create!({post_id: post8.id, user_id: user4.id})
+
+bookmark5 = Bookmark.create!({post_id: post10.id, user_id: user1.id})
+bookmark6 = Bookmark.create!({post_id: post2.id, user_id: user1.id})
+bookmark7 = Bookmark.create!({post_id: post13.id, user_id: user1.id})
+bookmark8 = Bookmark.create!({post_id: post14.id, user_id: user1.id})
+
+
 
 Follow.destroy_all
 followtest = Follow.create!({followee_id: usertest.id, follower_id: user1.id})
