@@ -70,7 +70,6 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
-#### Add user login to not be case sensitive
 #### Add BookMarks
 #### Add section for BookMarks in Profile
 #### Search
