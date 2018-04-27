@@ -251,7 +251,7 @@ class Profile extends React.Component{
             </div>
 
         </div>
-        <div className="profile-posts-container">
+        <div className="profile-posts-container profile-margin">
           {this.allposts.map(post => {
             if(post.author_id === current.id){
               commentsCounter = 1;
