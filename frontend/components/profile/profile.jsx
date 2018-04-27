@@ -155,8 +155,8 @@ class Profile extends React.Component{
             </div>
           </div>
           <div className="posts-saved">
-            <div>POSTS</div>
-            <div>SAVED</div>
+            <div className="saved-links">POSTS</div>
+            <div className="saved-links">SAVED</div>
           </div>
           <div className="profile-posts-container">
             {this.allposts.map(post => {

@@ -161,13 +161,22 @@
   margin-left: 80%;
 }
 .posts-saved{
-  width:900px;
+  width: 90%;
   display: flex;
   justify-content: center;
   margin-top: 50px;
   margin-left: -50px;
   border-top: 1px solid lightgrey;
-  padding-top: 25px;
   color: grey;
   font-size: 16px;
+}
+.saved-links{
+  margin-right:25px;
+  padding: 25px;
+  font-style: "Roboto Mono";
+}
+.saved-links:hover{
+  height:100%;
+  background: lightgrey;
+  border-top: 1px solid black;
 }
