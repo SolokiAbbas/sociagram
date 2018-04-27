@@ -70,6 +70,7 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
+#### Add user's bio to their section
 #### Add section for BookMarks in Profile
 #### Search
 #### Add Hashtags to clickable groups on posts
