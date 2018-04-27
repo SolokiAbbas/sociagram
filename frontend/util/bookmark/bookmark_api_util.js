@@ -1,8 +1,8 @@
-export const createABookmark = (bookmark) => {
+export const createABookmark = (bookmarks) => {
   return $.ajax({
     method: 'POST',
     url: `api/bookmarks/`,
-    data: { bookmark }
+    data: { bookmarks }
   });
 };
 

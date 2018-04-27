@@ -20,7 +20,8 @@ class PostsIndex extends React.Component{
           {allposts.map(post => <PostsIndexItem key={post.id} post={ post }
             session={ session } fetchAUser={this.props.fetchAUser}
             users={users} deleteALike={this.props.deleteALike} createALike={this.props.createALike}
-            fetchAPost={this.props.fetchAPost}/>)}
+            fetchAPost={this.props.fetchAPost} createABookmark={this.props.createABookmark}
+            deleteABookmark={this.props.deleteABookmark} />)}
         </div>
 
 

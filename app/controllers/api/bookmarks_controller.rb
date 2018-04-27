@@ -1,4 +1,4 @@
-class BookmarksController < ApplicationController
+class Api::BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.user_id = current_user.id

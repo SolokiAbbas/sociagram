@@ -94,7 +94,7 @@ class PostsIndexItem extends React.Component {
       let bookmarkid;
       let book = this.props.post.bookmarks.forEach(bookmark => {
         if(bookmark.user_id === this.props.session.currentUser.id){
-          ok_match = bookmark;
+          ok_bookmark = bookmark;
           bookmarkid = bookmark.id;
         }});
 
@@ -131,7 +131,7 @@ class PostsIndexItem extends React.Component {
               </div>
             </div>
             <div>
-              {ok_bookmark ? <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-black.png'} /> : <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'} />}
+              {ok_bookmark ? <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-black.png'} onClick={() => this.handleRemoveBookmark(bookmarkid)}/> : <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'} onClick={() => this.handleAddBookmark()}/>}
             </div>
           </div>
           <div className="single-counter-likes">

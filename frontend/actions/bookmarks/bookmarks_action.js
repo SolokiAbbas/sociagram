@@ -3,17 +3,17 @@ export const RECEIVE_A_BOOKMARK = 'RECEIVE_A_BOOKMARK';
 export const DELETE_A_BOOKMARK = 'DELETE_A_BOOKMARK';
 export const RECEIVE_BOOKMARK_ERRORS = 'RECEIVE_BOOKMARK_ERRORS';
 
-export const receiveABookmark = (bookmark) => {
+export const receiveABookmark = (bookmarks) => {
   return {
     type: RECEIVE_A_BOOKMARK,
-    bookmark,
+    bookmarks,
   };
 };
 
-export const removeABookmark = (bookmark) => {
+export const removeABookmark = (bookmarks) => {
   return {
     type: DELETE_A_BOOKMARK,
-    bookmark,
+    bookmarks,
   };
 };
 

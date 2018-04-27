@@ -24,11 +24,12 @@ const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
       newState.allPosts[action.like.post_id].likes = newLikes;
       return newState;
     case RECEIVE_A_BOOKMARK:
+    console.log(action);
       newState.allPosts[action.bookmarks.post_id].bookmarks.push(action.bookmarks);
       return newState;
     case DELETE_A_BOOKMARK:
       const newBookmarks = newState.allPosts[action.bookmarks.post_id].bookmarks.filter(bookmark => bookmark.id !== action.bookmarks.id);
-      newState.allPosts[action.bookmarks.post_id].bookmark = newBookmarks;
+      newState.allPosts[action.bookmarks.post_id].bookmarks = newBookmarks;
       return newState;
     case RECEIVE_POST_ERRORS:
         return Object.assign({}, state, { errors: action.errors });
