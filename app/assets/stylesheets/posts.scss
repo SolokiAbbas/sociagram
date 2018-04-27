@@ -178,6 +178,7 @@
   cursor: pointer;
 }
 .saved-links:hover{
+  margin-top:-1px;
   border-top: 1px solid black;
 }
 .saved-links-clicked{
@@ -186,5 +187,6 @@
   font-style: "Roboto Mono";
   color: black;
   border-top: 1px solid black;
+
   cursor: pointer;
 }
