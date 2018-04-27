@@ -154,6 +154,10 @@ class Profile extends React.Component{
                 <div className="profile-bio">{this.props.users[author].bio}</div>
             </div>
           </div>
+          <div className="posts-saved">
+            <div>POSTS</div>
+            <div>SAVED</div>
+          </div>
           <div className="profile-posts-container">
             {this.allposts.map(post => {
               if(post.author_id === this.props.session.currentUser.id){

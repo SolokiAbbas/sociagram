@@ -70,10 +70,9 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
-#### Add BookMarks
 #### Add section for BookMarks in Profile
 #### Search
-#### Add Handles to clickable people
 #### Add Hashtags to clickable groups on posts
+#### Add Handles to clickable people
 
 Searching is fundamental in apps nowadays. There is so much data that it becomes vital.
