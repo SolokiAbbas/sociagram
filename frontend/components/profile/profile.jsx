@@ -16,12 +16,15 @@ class Profile extends React.Component{
       email: null,
     imageFile: null,
     imageUrl: null,
+    saved: false,
     };
     this.allposts = [];
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadFile = this.uploadFile.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleDelete = this.toggleDelete.bind(this);
+    this.showPosts = this.showPosts.bind(this);
+    this.showSaved = this.showSaved.bind(this);
   }
 
   handleDelete(id){
@@ -95,6 +98,14 @@ class Profile extends React.Component{
     this.props.deleteAFollow(other);
   }
 
+  showSaved(){
+    this.setState({saved: true});
+  }
+
+  showPosts(){
+    this.setState({saved: false});
+  }
+
   toggleDelete(){
     this.allposts = this.props.allPosts.reverse();
     this.setState({ delete: !this.state.delete});
@@ -155,8 +166,10 @@ class Profile extends React.Component{
             </div>
           </div>
           <div className="posts-saved">
-            <div className="saved-links">POSTS</div>
-            <div className="saved-links">SAVED</div>
+            {this.state.saved ? <div className="saved-links" onClick={() => this.showPosts()}>POSTS</div> :
+                  <div className="saved-links-clicked" onClick={() => this.showPosts()}>POSTS</div>}
+            {this.state.saved ? <div className="saved-links-clicked" onClick={() => this.showSaved()}>SAVED</div> :
+                  <div className="saved-links" onClick={() => this.showSaved()}>SAVED</div>}
           </div>
           <div className="profile-posts-container">
             {this.allposts.map(post => {
