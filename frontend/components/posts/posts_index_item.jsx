@@ -17,6 +17,8 @@ class PostsIndexItem extends React.Component {
     this.updatePost = this.updatePost.bind(this);
     this.handleCommentClick = this.handleCommentClick.bind(this);
     this.handleDate = this.handleDate.bind(this);
+    this.handleRemoveBookmark = this.handleRemoveBookmark.bind(this);
+    this.handleAddBookmark = this.handleAddBookmark.bind(this);
   }
 
   componentDidMount(){
@@ -41,6 +43,15 @@ class PostsIndexItem extends React.Component {
 
   handleCommentClick(id){
     $(`#click-here-${id}`).focus();
+  }
+
+  handleAddBookmark(){
+    let bookmark = {post_id: this.props.post.id, user_id: this.props.session.currentUser.id};
+    this.props.createABookmark(bookmark);
+  }
+
+  handleRemoveBookmark(id){
+    this.props.deleteABookmark(id);
   }
 
   handleAddLike(){
@@ -69,6 +80,7 @@ class PostsIndexItem extends React.Component {
   render(){
     let author = this.props.post.author_id;
     if(this.props.users[author]){
+
       let ok_match;
       let likeid;
       let match = this.props.post.likes.forEach(like => {
@@ -77,6 +89,15 @@ class PostsIndexItem extends React.Component {
           likeid = like.id;
 
         }});
+
+      let ok_bookmark;
+      let bookmarkid;
+      let book = this.props.post.bookmarks.forEach(bookmark => {
+        if(bookmark.user_id === this.props.session.currentUser.id){
+          ok_match = bookmark;
+          bookmarkid = bookmark.id;
+        }});
+
       let { post } = this.props;
       this.handleDate();
     return(
@@ -110,7 +131,7 @@ class PostsIndexItem extends React.Component {
               </div>
             </div>
             <div>
-              <img className="bookmark-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'}/>
+              {ok_bookmark ? <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-black.png'} /> : <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'} />}
             </div>
           </div>
           <div className="single-counter-likes">

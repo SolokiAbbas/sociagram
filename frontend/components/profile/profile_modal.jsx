@@ -77,7 +77,7 @@ class ProfileHover extends React.Component{
             <div>
               {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
               <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
-              <img className="bookmark-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'}/>
+              <img className="bookmark-modal" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'}/>
             </div>
             <div className="single-counter-likes">
               {this.props.post.likes.length} Likes

@@ -142,7 +142,7 @@
   margin-left: 12px;
   padding-top: 10px;
 }
-.bookmark-active{
+.bookmark-posts{
   width: 25px;
   height: 30px;
   margin-top: 10px;
@@ -151,4 +151,11 @@
 .icons-group{
   display: flex;
   justify-content: space-between;
+}
+.bookmark-modal{
+  width: 25px;
+  height: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 80%;
 }
