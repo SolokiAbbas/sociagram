@@ -131,7 +131,10 @@ class PostsIndexItem extends React.Component {
               </div>
             </div>
             <div>
-              {ok_bookmark ? <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-black.png'} onClick={() => this.handleRemoveBookmark(bookmarkid)}/> : <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'} onClick={() => this.handleAddBookmark()}/>}
+              {ok_bookmark ? <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-black.png'}
+                  onClick={() => this.handleRemoveBookmark(bookmarkid)} data-toggle="tooltip" data-placement="top" title="Bookmark"/> :
+                  <img className="bookmark-posts" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'} onClick={() => this.handleAddBookmark()}
+                    data-toggle="tooltip" data-placement="top" title="Bookmark"/>}
             </div>
           </div>
           <div className="single-counter-likes">
