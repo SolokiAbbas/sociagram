@@ -170,7 +170,8 @@ class Profile extends React.Component{
                         <div className="modal-content">
                           <ProfileModal id={post.id} session={this.props.session} post={post}
                             user={this.props.users[author]} createALike={this.props.createALike}
-                            deleteALike={this.props.deleteALike} fetchAPost={this.props.fetchAPost} />
+                            deleteALike={this.props.deleteALike} fetchAPost={this.props.fetchAPost}
+                            createABookmark={this.props.createABookmark} removeABookmark={this.props.removeABookmark}/>
                         </div>
                       </div>
                     </div>
@@ -249,7 +250,8 @@ class Profile extends React.Component{
                       <div className="modal-content">
                           <ProfileModal id={post.id} post={post} user={current} session={this.props.session}
                             createALike={this.props.createALike} deleteALike={this.props.deleteALike}
-                            fetchAPost={this.props.fetchAPost} />
+                            fetchAPost={this.props.fetchAPost} createABookmark={this.props.createABookmark}
+                            removeABookmark={this.props.removeABookmark}/>
                       </div>
                     </div>
                   </div>

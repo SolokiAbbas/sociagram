@@ -12,6 +12,8 @@ class ProfileHover extends React.Component{
     this.handleAddLike = this.handleAddLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
     this.handleCommentClick = this.handleCommentClick.bind(this);
+    this.handleRemoveBookmark = this.handleRemoveBookmark.bind(this);
+    this.handleAddBookmark = this.handleAddBookmark.bind(this);
   }
 
   handleCommentClick(id){
@@ -25,6 +27,15 @@ class ProfileHover extends React.Component{
 
   handleUnlike(id){
     this.props.deleteALike(id);
+  }
+
+  handleAddBookmark(){
+    let bookmark = {post_id: this.props.post.id, user_id: this.props.session.currentUser.id};
+    this.props.createABookmark(bookmark);
+  }
+
+  handleRemoveBookmark(id){
+    this.props.deleteABookmark(id);
   }
 
   handleDate(){
@@ -49,6 +60,14 @@ class ProfileHover extends React.Component{
         ok_match = like;
         likeid = like.id;
       }});
+      let ok_bookmark;
+      let bookmarkid;
+      let book = this.props.post.bookmarks.forEach(bookmark => {
+        if(bookmark.user_id === this.props.session.currentUser.id){
+          ok_bookmark = bookmark;
+          bookmarkid = bookmark.id;
+        }});
+
       this.handleDate();
     return(
       <div className="modal-container">
@@ -77,7 +96,10 @@ class ProfileHover extends React.Component{
             <div>
               {ok_match ? <img className="heart-active" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-active.png'} onClick={() => this.handleUnlike(likeid)} /> : <img className="heart-inactive" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/like-inactive.png'} onClick={() => this.handleAddLike()}/>}
               <img className="bubble" onClick={() => this.handleCommentClick(this.props.post.id)} src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/comment-bubble.png"}/>
-              <img className="bookmark-modal" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'}/>
+                {ok_bookmark ? <img className="bookmark-modal" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-black.png'}
+                    onClick={() => this.handleRemoveBookmark(bookmarkid)} data-toggle="tooltip" data-placement="top" title="Bookmark"/> :
+                    <img className="bookmark-modal" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/bookmark-white.png'} onClick={() => this.handleAddBookmark()}
+                      data-toggle="tooltip" data-placement="top" title="Bookmark"/>}
             </div>
             <div className="single-counter-likes">
               {this.props.post.likes.length} Likes

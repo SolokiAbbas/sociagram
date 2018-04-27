@@ -9,6 +9,7 @@ import { allPost } from '../../reducers/selectors';
 import { fetchAllPosts, deleteAPost, fetchAPost } from '../../actions/posts/posts_action';
 import { allComments } from '../../reducers/selectors';
 import { createALike, deleteALike } from '../../actions/likes/likes_action';
+import { createABookmark, deleteABookmark } from '../../actions/bookmarks/bookmarks_action';
 
 const mapStateToProps = (state, ownProps) =>{
   return {
@@ -34,6 +35,8 @@ const mapDispatchToProps = (dispatch) => {
     createALike: (like) => dispatch(createALike(like)),
     deleteALike: (id) => dispatch(deleteALike(id)),
     deleteAPost: (id) => dispatch(deleteAPost(id)),
+    createABookmark: (bookmark) => dispatch(createABookmark(bookmark)),
+    deleteABookmark: (id) => dispatch(deleteABookmark(id)),
   };
 };
 
