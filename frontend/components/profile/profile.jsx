@@ -171,7 +171,7 @@ class Profile extends React.Component{
                           <ProfileModal id={post.id} session={this.props.session} post={post}
                             user={this.props.users[author]} createALike={this.props.createALike}
                             deleteALike={this.props.deleteALike} fetchAPost={this.props.fetchAPost}
-                            createABookmark={this.props.createABookmark} removeABookmark={this.props.removeABookmark}/>
+                            createABookmark={this.props.createABookmark} deleteABookmark={this.props.deleteABookmark}/>
                         </div>
                       </div>
                     </div>
@@ -251,7 +251,7 @@ class Profile extends React.Component{
                           <ProfileModal id={post.id} post={post} user={current} session={this.props.session}
                             createALike={this.props.createALike} deleteALike={this.props.deleteALike}
                             fetchAPost={this.props.fetchAPost} createABookmark={this.props.createABookmark}
-                            removeABookmark={this.props.removeABookmark}/>
+                            deleteABookmark={this.props.deleteABookmark}/>
                       </div>
                     </div>
                   </div>
