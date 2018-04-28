@@ -7,22 +7,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-usertest = User.create!({username: "Vegeta2000", password: "password", Fname: "Prince", Lname:"Vegeta", email: "PrinceVegeta@planetvegeta.com", handle: "@vegeta", avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/vegeta-profile.jpg"})
+usertest = User.create!({username: "Vegeta2000", password: "password", Fname: "Prince", Lname:"Vegeta", email: "PrinceVegeta@planetvegeta.com",
+  handle: "@vegeta", avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/vegeta-profile.jpg", bio: "Over 9000????"})
 
   name = Faker::Name.first_name
-  user1=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile.jpg"})
+  user1=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile.jpg", bio:"I like pancakes and brownies"})
 
   name = Faker::Name.first_name
-  user2=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile2.jpg" })
+  user2=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile2.jpg", bio:"I love Harry Potter Books!"})
 
   name = Faker::Name.first_name
-  user3=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile3.jpg" })
+  user3=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile3.jpg" })
 
   name = Faker::Name.first_name
-  user4=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile4.jpg" })
+  user4=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile4.jpg" })
 
   name = Faker::Name.first_name
-  user5=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email , handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
+  user5=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
 Post.destroy_all
 post1 = Post.create!({title: "Testing", body:"Tester again", author_id: usertest.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post1.jpg"})
