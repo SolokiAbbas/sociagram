@@ -128,85 +128,6 @@ class Profile extends React.Component{
         let allfollowers = this.props.users[author].followers.length;
         let allfollowings = this.props.users[author].following.length;
         this.allposts = this.props.allPosts.reverse();
-        if(this.state){
-          return(
-            <section className="profile-section">
-                  <div className="profile-upload-button">
-                    <input className="profile-up-button" type="file" onChange={this.uploadFile}/>
-                    <div className="fake-upload">
-                        <input className="no-input" />
-                      <img className="user-pic" src={this.props.users[author].image_url} alt="Profile Pic"/>
-                    </div>
-                  </div>
-
-              <div className="profile-stat-rows">
-                  <div className="profile-user">
-                    <div>
-                      {this.props.users[author].username}
-                    </div>
-                    <div>
-                      <button className="btn btn-light edit-button"><Link className="edit-link-button" to={`/profile/${author}/edit`}>Edit Profile</Link></button>
-                      <img onClick={this.props.logout} className="logout-profile" src={"https://s3.amazonaws.com/sociagram-dev/posts/icons/logout.png"}/>
-                    </div>
-                  </div>
-
-                  <div>
-                    <ul className="stats-user">
-                      <li className="post-counter">{postcounter} Posts</li>
-                      <li className="follows-counter">{allfollowers} Followers</li>
-                      <li className="followers-counter">{allfollowings} Following</li>
-                    </ul>
-                  </div>
-
-                  <div className="profile-name">
-                    <div className="profile-fname">{this.props.users[author].Fname}</div>
-                    <div className="profile-lname">{this.props.users[author].Lname}</div>
-                    <div className="profile-bio">{this.props.users[author].bio}</div>
-                </div>
-              </div>
-              <div className="posts-saved">
-                {this.state.saved ? <div className="saved-links" onClick={() => this.showPosts()}>POSTS</div> :
-                      <div className="saved-links-clicked" onClick={() => this.showPosts()}>POSTS</div>}
-                {this.state.saved ? <div className="saved-links-clicked" onClick={() => this.showSaved()}>SAVED</div> :
-                      <div className="saved-links" onClick={() => this.showSaved()}>SAVED</div>}
-              </div>
-              <div className="profile-posts-container">
-                {this.allposts.map(post => {
-                  if(post.author_id === this.props.session.currentUser.id){
-                    commentsCounter = 1;
-                    this.props.comments.map(comment =>{
-                      if(post.id === comment.post_id){
-                        commentsCounter+=1;
-                      }
-                    });
-                    return(
-                      <div>
-                        <div className="modal fade" id={`bd-example-modal-lg-${post.id}`} tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                          <div className="modal-dialog modal-lg">
-                            <div className="modal-content">
-                              <ProfileModal id={post.id} session={this.props.session} post={post}
-                                user={this.props.users[author]} createALike={this.props.createALike}
-                                deleteALike={this.props.deleteALike} fetchAPost={this.props.fetchAPost}
-                                createABookmark={this.props.createABookmark} deleteABookmark={this.props.deleteABookmark}/>
-                            </div>
-                          </div>
-                        </div>
-                      <div className="ion-ios-trash-outline icon-hover delete-post" onClick={()=>this.handleDelete(post.id)}></div>
-                      <div className="user-posts-container">
-                        <img className="user-posts" src={post.image_url}/>
-                        <div className="profile-hover" data-toggle="modal" data-target={`#bd-example-modal-lg-${post.id}`}>
-                          <ProfileHover id={post.id} likes={post.likes.length} comments={commentsCounter} />
-                        </div>
-                      </div>
-                    </div>
-                      );
-                    }
-                  })
-                }
-              </div>
-            </section>
-          );
-        }else{
       return(
         <section className="profile-section">
 
@@ -284,7 +205,7 @@ class Profile extends React.Component{
             }
           </div>
         </section>
-      );}
+      );
     }else if(!current){
       return(<div></div>);
     }else
