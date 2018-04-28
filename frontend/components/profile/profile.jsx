@@ -249,7 +249,11 @@ class Profile extends React.Component{
                 <li className="followers-counter">{allfollowings} Following</li>
               </ul>
             </div>
-
+            <div className="profile-name">
+              <div className="profile-fname">{this.props.users[other].Fname}</div>
+              <div className="profile-lname">{this.props.users[other].Lname}</div>
+              <div className="profile-bio">{this.props.users[other].bio}</div>
+          </div>
         </div>
         <div className="profile-posts-container profile-margin">
           {this.allposts.map(post => {
