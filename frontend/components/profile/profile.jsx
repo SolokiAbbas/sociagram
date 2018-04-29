@@ -187,6 +187,7 @@ class Profile extends React.Component{
                           <div className="modal fade" id={`bd-example-modal-lg-${post.id}`} tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div className="modal-dialog modal-lg">
                               <div className="modal-content">
+
                                 <ProfileModal id={post.id} session={this.props.session} post={post}
                                   user={this.props.users[author]} createALike={this.props.createALike}
                                   deleteALike={this.props.deleteALike} fetchAPost={this.props.fetchAPost}
