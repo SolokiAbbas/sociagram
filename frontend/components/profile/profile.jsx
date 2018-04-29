@@ -195,8 +195,7 @@ class Profile extends React.Component{
                               </div>
                             </div>
                           </div>
-                        <div className="ion-ios-trash-outline icon-hover delete-post" onClick={()=>this.handleDelete(post.id)}></div>
-                        <div className="user-posts-container">
+                        <div className="user-posts-container user-padding">
                           <img className="user-posts" src={post.image_url}/>
                           <div className="profile-hover" data-toggle="modal" data-target={`#bd-saved-modal-lg-${post.id}`}>
                             <ProfileHover id={post.id} likes={post.likes.length} comments={commentsCounter} />
