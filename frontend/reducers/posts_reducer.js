@@ -24,7 +24,6 @@ const PostsReducer = (state = {allPosts: {}, errors: {}}, action) => {
       newState.allPosts[action.like.post_id].likes = newLikes;
       return newState;
     case RECEIVE_A_BOOKMARK:
-    console.log(action);
       newState.allPosts[action.bookmarks.post_id].bookmarks.push(action.bookmarks);
       return newState;
     case DELETE_A_BOOKMARK:
