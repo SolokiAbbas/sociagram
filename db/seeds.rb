@@ -88,11 +88,11 @@ like14 = Like.create!({post_id: post8.id, liker_id: user4.id})
 like15 = Like.create!({post_id: post1.id, liker_id: user5.id})
 
 Bookmark.destroy_all
-bookmarktest = Bookmark.create!({post_id: post1.id, user_id: user1.id})
+bookmarktest = Bookmark.create!({post_id: post1.id, user_id: usertest.id})
+bookmark1 = Bookmark.create!({post_id: post1.id, user_id: usertest.id})
 
-bookmark1 = Bookmark.create!({post_id: post10.id, user_id: user2.id})
-bookmark2 = Bookmark.create!({post_id: post2.id, user_id: user5.id})
-bookmark3 = Bookmark.create!({post_id: post1.id, user_id: user5.id})
+bookmark2 = Bookmark.create!({post_id: post10.id, user_id: user2.id})
+bookmark3 = Bookmark.create!({post_id: post2.id, user_id: user5.id})
 bookmark4 = Bookmark.create!({post_id: post8.id, user_id: user4.id})
 
 bookmark5 = Bookmark.create!({post_id: post10.id, user_id: user1.id})
