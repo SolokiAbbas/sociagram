@@ -12,11 +12,15 @@ Sociagram will allow the users:
 * Make comments on posts
 * Delete own comments
 * Like posts
+* Delete own posts
 * Follow and unfollow other users
 * Check out their current profile
 * Check out other user's profile
 * Edit Profile
-* Profile Modal when Post clicked on
+* Change Password or other data
+* Profile Modal when Post clicked on in Profile Page
+* Posts can be bookmarked
+* Saved Posts can be viewed in Profile Page
 
 
 ### Overall Structure
@@ -29,7 +33,7 @@ The data request were made with AJAX and fulfilled by JSON Jbuilder.
 **Front End**
 
 The front end was built completely by React.js and Redux.
-Bootstrap styling
+Bootstrap styling.
 
 **Libraries used:**
 * React.js
