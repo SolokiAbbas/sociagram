@@ -152,7 +152,7 @@ class Profile extends React.Component{
 
               <div>
                 <ul className="stats-user">
-                  <li className="post-counter">{postcounter} Posts</li>
+                  <li className="post-counter"><div className="boldering">{postcounter}</div> Posts</li>
                   <li className="follows-counter">{allfollowers} Followers</li>
                   <li className="followers-counter">{allfollowings} Following</li>
                 </ul>
