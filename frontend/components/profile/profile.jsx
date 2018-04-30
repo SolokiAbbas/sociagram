@@ -172,13 +172,6 @@ class Profile extends React.Component{
           </div>
           <div className="profile-posts-container">
             {this.allposts.map(post => {
-              if(post.author_id === this.props.session.currentUser.id){
-                commentsCounter = 1;
-                this.props.comments.map(comment =>{
-                  if(post.id === comment.post_id){
-                    commentsCounter+=1;
-                  }
-                });
                 if(this.state.saved){
                   return(
                   post.bookmarks.map(bookmark => {
@@ -207,28 +200,35 @@ class Profile extends React.Component{
                   })
                 );
                 }else{
-                return(
-                  <div>
-                    <div className="modal fade" id={`bd-example-modal-lg-${post.id}`} tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                      <div className="modal-dialog modal-lg">
-                        <div className="modal-content">
-                          <ProfileModal id={post.id} session={this.props.session} post={post}
-                            user={this.props.users[author]} createALike={this.props.createALike}
-                            deleteALike={this.props.deleteALike} fetchAPost={this.props.fetchAPost}
-                            createABookmark={this.props.createABookmark} deleteABookmark={this.props.deleteABookmark} saved={false}/>
+                  if(post.author_id === this.props.session.currentUser.id){
+                    commentsCounter = 1;
+                    this.props.comments.map(comment =>{
+                      if(post.id === comment.post_id){
+                        commentsCounter+=1;
+                      }
+                    });
+                    return(
+                      <div>
+                        <div className="modal fade" id={`bd-example-modal-lg-${post.id}`} tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div className="modal-dialog modal-lg">
+                            <div className="modal-content">
+                              <ProfileModal id={post.id} session={this.props.session} post={post}
+                                user={this.props.users[author]} createALike={this.props.createALike}
+                                deleteALike={this.props.deleteALike} fetchAPost={this.props.fetchAPost}
+                                createABookmark={this.props.createABookmark} deleteABookmark={this.props.deleteABookmark} saved={false}/>
+                            </div>
+                          </div>
+                        </div>
+                      <div className="ion-ios-trash-outline icon-hover delete-post" onClick={()=>this.handleDelete(post.id)}></div>
+                      <div className="user-posts-container">
+                        <img className="user-posts" src={post.image_url}/>
+                        <div className="profile-hover" data-toggle="modal" data-target={`#bd-example-modal-lg-${post.id}`}>
+                          <ProfileHover id={post.id} likes={post.likes.length} comments={commentsCounter} />
                         </div>
                       </div>
                     </div>
-                  <div className="ion-ios-trash-outline icon-hover delete-post" onClick={()=>this.handleDelete(post.id)}></div>
-                  <div className="user-posts-container">
-                    <img className="user-posts" src={post.image_url}/>
-                    <div className="profile-hover" data-toggle="modal" data-target={`#bd-example-modal-lg-${post.id}`}>
-                      <ProfileHover id={post.id} likes={post.likes.length} comments={commentsCounter} />
-                    </div>
-                  </div>
-                </div>
               );}
-                }
+            }
               })
             }
           </div>
