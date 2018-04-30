@@ -41,6 +41,7 @@ Bootstrap styling.
 * BCrypt
 * Paperclip - used to store images to Amazon Web Services
 * figaro secure api keys with Amazon Web Services
+* PGSearch
 
 
 ### Features and Implementation
@@ -53,6 +54,7 @@ Posts are based on a title, image, and comments.
 [Posts](/docs/production/Screenshot_of_posts.png)
 
 Posts with comments are rendered using React render method:
+
 ``` javascript
 return(
   <div className="posts-index">
@@ -62,6 +64,7 @@ return(
       fetchAPost={this.props.fetchAPost}/>)}
   </div>
 ```
+
 The props are passed in for each ```<PostsIndexItem>``` which renders a single post.
 
 #### Follows
@@ -74,8 +77,8 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
-#### Search
-#### Add Hashtags to clickable groups on posts
-#### Add Handles to clickable people
+* Search
+* Add Hashtags to clickable groups on posts
+* Add Handles to clickable people
 
 Searching is fundamental in apps nowadays. There is so much data that it becomes vital.
