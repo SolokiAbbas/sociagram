@@ -16,8 +16,6 @@
 
 class User < ApplicationRecord
   include PgSearch
-
-  multisearchable :against => [:username, :Fname]
   pg_search_scope :search_users,
                 :against => [:username, :Fname],
                 :using => {
