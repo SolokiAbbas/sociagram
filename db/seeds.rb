@@ -89,7 +89,7 @@ like15 = Like.create!({post_id: post1.id, liker_id: user5.id})
 
 Bookmark.destroy_all
 bookmarktest = Bookmark.create!({post_id: post1.id, user_id: usertest.id})
-bookmark1 = Bookmark.create!({post_id: post1.id, user_id: usertest.id})
+bookmark1 = Bookmark.create!({post_id: post5.id, user_id: usertest.id})
 
 bookmark2 = Bookmark.create!({post_id: post10.id, user_id: user2.id})
 bookmark3 = Bookmark.create!({post_id: post2.id, user_id: user5.id})
