@@ -23,6 +23,7 @@ class User < ApplicationRecord
                     :threshold => 0.1
                   }
                 }
+                
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, :Fname, :Lname, :password_digest, :email, :session_token, presence: true, uniqueness: true
   scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase) }
