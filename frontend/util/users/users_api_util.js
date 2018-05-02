@@ -15,3 +15,11 @@ export const updateUser = (user, id) =>{
       data: user
     });
   };
+
+export const searchUsers = (user) => {
+  return $.ajax({
+    method: 'GET',
+    url: 'search',
+    data: user,
+  });
+};
