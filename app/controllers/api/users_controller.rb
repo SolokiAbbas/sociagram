@@ -9,6 +9,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.search_users(params[:username])
+    if @users
+      render :search
+    else
+      render json: {}
+    end
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
