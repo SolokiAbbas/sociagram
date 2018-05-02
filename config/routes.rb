@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update, :edit] do
       resources :follows, only: [ :index ]
     end
+    get 'search', to: 'users#search'
     resources :likes, only: [:create, :destroy]
     resources :bookmarks, only: [:index, :create, :destroy]
     resources :follows, only: [:create, :destroy]
