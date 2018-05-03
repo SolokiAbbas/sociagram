@@ -10,9 +10,15 @@ class Search extends React.Component{
     };
   }
 
+  handleInput(search){
+    this.setState({query: search});
+  }
+
   render(){
     return(
       <div>
+        <form>
+        </form>
       </div>
     );
   }
