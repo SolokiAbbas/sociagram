@@ -15,7 +15,7 @@ class Search extends React.Component{
   }
 
   getInfo(){
-    searchUsers().then((data)=>{this.setState({results: data.data});});
+    searchUsers(this.state.query).then((data)=>{this.setState({results: data});});
   }
 
   handleInput(){
@@ -24,6 +24,7 @@ class Search extends React.Component{
         if (this.state.query.length % 2 === 0) {
           this.getInfo();
         }
+      }else if (!this.state.query) {
       }
     });
   }

@@ -17,9 +17,10 @@ export const updateUser = (user, id) =>{
   };
 
 export const searchUsers = (user) => {
+  console.log("inside");
   return $.ajax({
     method: 'GET',
-    url: 'search',
+    url: 'api/search',
     data: user,
   });
 };
