@@ -32,7 +32,7 @@ class Search extends React.Component{
     return(
       <div>
         <form>
-          <input placeholder="Search..." onChange={this.handleInput()}/>
+            <input className="navbar-search" placeholder="Search..." onChange={this.handleInput()}/>
             <Suggestions props={this.state.results}/>
         </form>
       </div>
