@@ -8,7 +8,7 @@ class Search extends React.Component{
     super(props);
     this.state = {
       query: '',
-      results: '',
+      results: [],
     };
     this.handleInput = this.handleInput.bind(this);
     this.getInfo = this.getInfo.bind(this);
