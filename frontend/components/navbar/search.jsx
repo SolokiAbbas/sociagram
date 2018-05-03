@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import searchUsers from '../../../util/users/users_api_util';
+import Suggestions from './suggestions';
 
 class Search extends React.Component{
   constructor(props){
@@ -20,7 +21,7 @@ class Search extends React.Component{
       <div>
         <form>
           <input placeholder="Search..." onChange={this.handleInput()}/>
-
+            <Suggestions />
         </form>
       </div>
     );
