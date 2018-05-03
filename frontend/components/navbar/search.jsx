@@ -8,16 +8,19 @@ class Search extends React.Component{
     this.state = {
       query: ''
     };
+    this.handleInput = this.handleInput.bind(this);
   }
 
-  handleInput(search){
-    this.setState({query: search});
+  handleInput(e){
+    this.setState({query: e.currentTarget.value});
   }
 
   render(){
     return(
       <div>
         <form>
+          <input placeholder="Search..." onChange={this.handleInput()}/>
+
         </form>
       </div>
     );
