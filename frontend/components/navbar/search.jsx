@@ -7,13 +7,25 @@ class Search extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      query: ''
+      query: '',
+      results: '',
     };
     this.handleInput = this.handleInput.bind(this);
+    this.getInfo = this.getInfo.bind(this);
+  }
+
+  getInfo(){
+    searchUsers().then((data)=>{this.setState({results: data.data});});
   }
 
   handleInput(e){
-    this.setState({query: e.currentTarget.value});
+    this.setState({query: e.currentTarget.value}, ()=>{
+      if (this.state.query && this.state.query.length > 1) {
+        if (this.state.query.length % 2 === 0) {
+          this.getInfo();
+        }
+      }
+    });
   }
 
   render(){
@@ -21,7 +33,7 @@ class Search extends React.Component{
       <div>
         <form>
           <input placeholder="Search..." onChange={this.handleInput()}/>
-            <Suggestions />
+            <Suggestions props={this.state.results}/>
         </form>
       </div>
     );
