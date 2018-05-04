@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import searchUsers from '../../util/users/users_api_util';
 import Suggestions from './suggestions';
 
 class Search extends React.Component{
@@ -15,7 +14,7 @@ class Search extends React.Component{
   }
 
   getInfo(){
-    searchUsers(this.state.query).then((data)=>{this.setState({results: data});});
+    
   }
 
   handleInput(){
