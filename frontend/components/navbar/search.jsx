@@ -39,6 +39,7 @@ class Search extends React.Component{
     return(
       <div>
         <input className="navbar-search" placeholder="Search..." onChange={this.handleInput()}/>
+        {this.state.results ? <Suggestions results={this.state.results} /> : "" }
       </div>
     );
   }
