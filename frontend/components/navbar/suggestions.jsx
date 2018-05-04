@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Suggestions = (props) => {
   const options = props.results.map(res => (
     <li key={res.id}>
-      <Link to={`/profile/${res.id}`}>@{res.username}</Link>
+      <Link className="suggestions-link" to={`/profile/${res.id}`}>@{res.username}</Link>
     </li>
   ));
   return <ul className="suggestions-container">{options}</ul>;

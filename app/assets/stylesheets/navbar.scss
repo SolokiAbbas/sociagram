@@ -86,4 +86,12 @@ input:focus:-moz-placeholder { color:transparent; }
   display: flex;
   justify-content: center;
   flex-direction: column;
+  border: 1px solid lightgrey;
+  background: white;
+  position: fixed;
+  margin-top: 49px;
+}
+.suggestions-link{
+  padding: 12px;
+  width: 100%;
 }
