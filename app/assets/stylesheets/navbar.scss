@@ -80,4 +80,10 @@ input:focus:-moz-placeholder { color:transparent; }
 .search-container{
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+}
+.suggestions-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
