@@ -37,7 +37,7 @@ class Search extends React.Component{
 
   render(){
     return(
-      <div className="dropdown-item-text">
+      <div className="search-container">
         <input className="navbar-search" placeholder="Search..." onChange={this.handleInput()}/>
         {this.state.results ? <Suggestions results={this.state.results} /> : "" }
       </div>

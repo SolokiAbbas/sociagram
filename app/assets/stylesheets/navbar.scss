@@ -77,3 +77,7 @@ input:focus:-moz-placeholder { color:transparent; }
 .footer-height{
   height: 80px;
 }
+.search-container{
+  display: flex;
+  flex-wrap: wrap;
+}
