@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Suggestions from './suggestions';
 
 class Search extends React.Component{
@@ -14,7 +15,12 @@ class Search extends React.Component{
   }
 
   getInfo(){
-    
+    axios.get('/api/search')
+      .then(({ data }) => {
+        this.setState({
+          results: data.data
+        });
+      });
   }
 
   handleInput(){
