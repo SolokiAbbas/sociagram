@@ -39,7 +39,6 @@ class Search extends React.Component{
       <div>
         <form>
             <input className="navbar-search" placeholder="Search..." onChange={this.handleInput()}/>
-            <button onClick={()=>this.getInfo()}>Click</button>
         </form>
       </div>
     );
