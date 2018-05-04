@@ -15,12 +15,12 @@ class Search extends React.Component{
   }
 
   getInfo(){
-    axios.get('/api/search')
+    axios.post('/api/search', {username:  this.state.query})
       .then(({ data }) => {
         this.setState({
           results: data.data
         });
-      });
+      }).then(()=>console.log(this.state));
   }
 
   handleInput(){
@@ -39,6 +39,7 @@ class Search extends React.Component{
       <div>
         <form>
             <input className="navbar-search" placeholder="Search..." onChange={this.handleInput()}/>
+
         </form>
       </div>
     );
