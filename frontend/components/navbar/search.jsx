@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import ReactOnRails from "react-on-rails";
 import Suggestions from './suggestions';
 
 class Search extends React.Component{
@@ -15,10 +16,10 @@ class Search extends React.Component{
   }
 
   getInfo(){
-    axios.post('/api/search', {username:  this.state.query})
+    axios.post('/api/search', {username:  this.state.query, authenticity_token: ReactOnRails.authenticityToken(),})
       .then(({ data }) => {
         this.setState({
-          results: data.data
+          results: data
         });
       }).then(()=>console.log(this.state));
   }

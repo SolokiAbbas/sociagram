@@ -10,7 +10,6 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-    debugger
     @users = User.search_users(params[:username])
     if @users
       render :search
