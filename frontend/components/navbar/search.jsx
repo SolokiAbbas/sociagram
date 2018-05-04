@@ -30,17 +30,14 @@ class Search extends React.Component{
           this.getInfo();
         }
       }else if (!this.state.query) {
-      }
-    });
+        }
+      });
   }
 
   render(){
     return(
       <div>
-        <form>
-            <input className="navbar-search" placeholder="Search..." onChange={this.handleInput()}/>
-
-        </form>
+        <input className="navbar-search" placeholder="Search..." onChange={this.handleInput()}/>
       </div>
     );
   }
