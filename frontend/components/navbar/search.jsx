@@ -16,12 +16,9 @@ class Search extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.location !== this.props.location) {
-
-      this.setState({results: []});
+    if (nextProps.props.location !== this.props.location) {
+      this.setState({query: '', results: []});
       console.log(this.state);
-      console.log(nextProps.location);
-      console.log(this.props.location);
     }
   }
 
@@ -48,7 +45,8 @@ class Search extends React.Component{
   render(){
     return(
       <div className="search-container">
-        <input className="navbar-search" placeholder="Search..." onChange={this.handleInput()}/>
+        <input className="navbar-search" placeholder="Search..." value={this.state.query}
+            onChange={this.handleInput()}/>
         {this.state.results ? <Suggestions results={this.state.results} /> : "" }
       </div>
     );
