@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Suggestions = (props) => {
   const options = props.results.map(res => (
     <li key={res.id}>
+      <img className="search-avatars" src={res.image_url} />
       <Link className="suggestions-link dropdown-item" to={`/profile/${res.id}`}>@{res.username}</Link>
     </li>
   ));
