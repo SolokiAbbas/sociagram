@@ -18,7 +18,6 @@ class Search extends React.Component{
   componentWillReceiveProps(nextProps) {
     if (nextProps.props.location !== this.props.location) {
       this.setState({query: '', results: []});
-      console.log(this.state);
     }
   }
 
@@ -28,7 +27,7 @@ class Search extends React.Component{
         this.setState({
           results: data
         });
-      }).then(()=>console.log(this.state));
+      });
   }
 
   handleInput(){
@@ -37,20 +36,20 @@ class Search extends React.Component{
         if (this.state.query.length % 2 === 0) {
           this.getInfo();
         }
-      }else if (!this.state.query) {
+      } else if (!this.state.query) {
         }
       });
   }
 
   render(){
     return(
-      <div className="search-container">
-        <input className="navbar-search" placeholder="Search..." value={this.state.query}
-            onChange={this.handleInput()}/>
-        {this.state.results ? <Suggestions results={this.state.results} /> : "" }
-      </div>
-    );
-  }
+        <div className="search-container">
+          <input className="navbar-search" placeholder="Search..." value={this.state.query}
+              onChange={this.handleInput()}/>
+            {this.state.results ? <Suggestions results={this.state.results} /> : <div></div> }
+        </div>
+      );
+    }
 }
 
 export default Search;
