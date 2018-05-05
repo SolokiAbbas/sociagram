@@ -14,7 +14,7 @@ class NavBar extends React.Component{
             <Link to="/"><img className="logo-image" src={window.staticImage.sociagramlogo} alt="Sociagram"></img></Link>
           </div>
           <div>
-            <Search />
+            <Search props={this.props}/>
           </div>
           <div className="top-right-nav2">
             <Link to="/new"><img className="profile-image" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/add.png'}/></Link>

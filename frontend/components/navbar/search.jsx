@@ -15,6 +15,16 @@ class Search extends React.Component{
     this.getInfo = this.getInfo.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location !== this.props.location) {
+
+      this.setState({results: []});
+      console.log(this.state);
+      console.log(nextProps.location);
+      console.log(this.props.location);
+    }
+  }
+
   getInfo(){
     axios.post('/api/search', {username:  this.state.query, authenticity_token: ReactOnRails.authenticityToken(),})
       .then(({ data }) => {
