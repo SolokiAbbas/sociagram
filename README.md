@@ -77,8 +77,8 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
-* Search
-* Allow Search to lead to profile pages
+* Make search have profile icon
+* Fix landing page for set up to have carousel
 * Add Hashtags to clickable groups on posts
 * Add Handles to clickable people
 
