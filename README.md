@@ -21,6 +21,7 @@ Sociagram will allow the users:
 * Profile Modal when Post clicked on in Profile Page
 * Posts can be bookmarked
 * Saved Posts can be viewed in Profile Page
+* Can search for Users while leads to their profile page
 
 
 ### Overall Structure
@@ -35,13 +36,16 @@ The data request were made with AJAX and fulfilled by JSON Jbuilder.
 The front end was built completely by React.js and Redux.
 Bootstrap styling.
 
-**Libraries used:**
+**Libraries and Gems used:**
 * React.js
 * Redux
 * BCrypt
 * Paperclip - used to store images to Amazon Web Services
 * figaro secure api keys with Amazon Web Services
 * PGSearch
+* aws-sdk
+* faker
+* Jbuilder
 
 
 ### Features and Implementation
