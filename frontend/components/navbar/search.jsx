@@ -37,7 +37,8 @@ class Search extends React.Component{
           this.getInfo();
         }
       } else if (!this.state.query) {
-        }
+        this.setState({results: []});
+      }
       });
   }
 
