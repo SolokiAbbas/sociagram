@@ -15,12 +15,3 @@ export const updateUser = (user, id) =>{
       data: user
     });
   };
-
-export const searchUsers = (user) => {
-  console.log("inside");
-  return $.ajax({
-    method: 'GET',
-    url: 'api/search',
-    data: user,
-  });
-};

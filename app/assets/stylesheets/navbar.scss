@@ -74,14 +74,17 @@ input:focus:-moz-placeholder { color:transparent; }
   width: 100%;
   max-width:600px;
 }
+
 .footer-height{
   height: 80px;
 }
+
 .search-container{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
+
 .suggestions-container{
   display: flex;
   justify-content: center;
@@ -91,7 +94,16 @@ input:focus:-moz-placeholder { color:transparent; }
   position: fixed;
   margin-top: 49px;
 }
+
 .suggestions-link{
-  padding: 12px;
-  width: 100%;
+  padding: 9px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.search-avatars{
+  width: 40px;
+  height: 40px;
+  padding: 2px;
 }
