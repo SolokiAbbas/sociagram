@@ -5,6 +5,7 @@ import { allPost } from '../../reducers/selectors';
 import { fetchAComment } from '../../actions/comments/comments_action';
 import { fetchAllPosts } from '../../actions/posts/posts_action';
 import { fetchAUser } from '../../actions/users/users_action';
+import { createAFollow, deleteAFollow } from '../../actions/follows/follows_action';
 
 const mapStateToProps = (state) =>{
   return {
@@ -19,6 +20,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllPosts: () => dispatch(fetchAllPosts()),
     fetchAUser: (id) => dispatch(fetchAUser(id)),
     fetchAComment: (id) => dispatch(fetchAComment(id)),
+    createAFollow: (follow) => dispatch(createAFollow(follow)),
+    deleteAFollow: (id) => dispatch(deleteAFollow(id)),
   };
 };
 
