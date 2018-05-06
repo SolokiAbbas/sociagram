@@ -1,7 +1,7 @@
 .navbar2{
   display: flex;
   justify-content: center;
-  width: 60%;
+  width: 850px;
   height: 80px;
   margin: auto;
 }
@@ -59,8 +59,8 @@ input:focus:-moz-placeholder { color:transparent; }
 }
 .top-right-nav2{
   display: flex;
-  justify-content: space-evenly;
-  width: 30%;
+  justify-content: space-between;
+  width: 20%;
 }
 
 .logo-image{
@@ -84,6 +84,7 @@ input:focus:-moz-placeholder { color:transparent; }
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  margin-right: 20px;
 }
 
 .suggestions-container{
