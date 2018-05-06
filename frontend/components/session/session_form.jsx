@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    
+
         let allerrors = this.props.errors.map((err, idx) =>{
           return(
             <div className="session-errors">
@@ -49,7 +49,27 @@ class SessionForm extends React.Component {
     if(this.props.formType === 'login'){
       return(
         <div>
-          <img src={window.staticImage.phonelogin} height="440px" width="382px" alt="Log in Phone"/>
+            <div id="carouselLogin" className="carousel slide" data-ride="carousel">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img className="d-block w-20" src={window.staticImage.phonelogin} height="440px" width="382px" alt="Log in Phone"/>
+                </div>
+                <div className="carousel-item">
+                    <img className="d-block w-20" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/mobile2.jpeg'} height="440px" width="382px" alt="Phone2"/>
+                </div>
+                <div className="carousel-item">
+                  <img className="d-block w-20" src={'https://s3.amazonaws.com/sociagram-dev/posts/icons/mobile3.jpeg'} height="440px" width="382px" alt="Phone3"/>
+                </div>
+              </div>
+              <a className="carousel-control-prev" href="#carouselLogin" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+              </a>
+              <a className="carousel-control-next" href="#carouselLogin" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+              </a>
+            </div>
         <div className="current-form">
           <form className="login-form" onSubmit={this.handleSubmit}>
             <h2 className="sociagram-title">Sociagram</h2>
