@@ -82,8 +82,10 @@ A user can follow another user when they click on the user's name. Each user car
 In addition to these features, I plan to implement more features. I plan to include:
 
 * Fix landing page for set up to have carousel
+* Fix search bar to be in the middle
+* Add explore Icon
+* Explore should have users in it
+* Fix initial log in when users log in (first time) and get recommendations
 
 * Add Hashtags to clickable groups on posts
 * Add Handles to clickable people
-
-Searching is fundamental in apps nowadays. There is so much data that it becomes vital.
