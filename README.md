@@ -81,7 +81,7 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
-* Explore should have users in it
+* Explore should have some users in it and random posts 
 * Fix initial log in when users log in (first time) and get recommendations
 
 * Add Hashtags to clickable groups on posts
