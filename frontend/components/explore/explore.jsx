@@ -12,15 +12,12 @@ class Explore extends React.Component{
     let userlength = Object.keys(this.props.users).length;
     let randomNum1 = Math.floor(Math.random()*userlength);
     let randomNum2 = Math.floor(Math.random()*userlength);
-    let randomNum3 = Math.floor(Math.random()*userlength);
-    while(randomNum1 === randomNum2 || randomNum1 === randomNum3 || randomNum2 === randomNum3){
-      randomNum1 = Math.floor(Math.random()*userlength);
+    while(randomNum1 === randomNum2){
       randomNum2 = Math.floor(Math.random()*userlength);
-      randomNum3 = Math.floor(Math.random()*userlength);
     }
+    this.randomUsers.push(this.props.users[1]);
     this.randomUsers.push(this.props.users[randomNum1]);
     this.randomUsers.push(this.props.users[randomNum2]);
-    this.randomUsers.push(this.props.users[randomNum3]);
   }
 
   render(){

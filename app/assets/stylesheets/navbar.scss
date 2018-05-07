@@ -121,6 +121,8 @@ input:focus:-moz-placeholder { color:transparent; }
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background: white;
+  border: 1px solid lightgrey;
 }
 .explore-avatar{
   border-radius: 50%;
@@ -137,5 +139,5 @@ input:focus:-moz-placeholder { color:transparent; }
   font-family: "Open Sans"
 }
 .explore-name{
-  color: #d0cbcb;
+  color: #b9b3b3;
 }
