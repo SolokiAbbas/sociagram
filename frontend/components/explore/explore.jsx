@@ -3,18 +3,28 @@ import ExploreUser from './explore_user';
 
 class Explore extends React.Component{
   constructor(){
-    this.randomUsers = []
+    this.randomUsers = [];
+    this.selectRandom = this.selectRandom.bind(this);
   }
 
   selectRandom(){
 
-    
+    let randomNum1 = Math.floor(Math.random()*this.props.users.length);
+    let randomNum2 = Math.floor(Math.random()*this.props.users.length);
+    let randomNum3 = Math.floor(Math.random()*this.props.users.length);
+    while(randomNum1 === randomNum2 || randomNum1 === randomNum3 || randomNum2 === randomNum3){
+      randomNum1 = Math.floor(Math.random()*this.props.users.length);
+      randomNum2 = Math.floor(Math.random()*this.props.users.length);
+      randomNum3 = Math.floor(Math.random()*this.props.users.length);
+    }
+
+  this.randomUsers.push(this.props.users[randomNum1]);
+  this.randomUsers.push(this.props.users[randomNum2]);
+  this.randomUsers.push(this.props.users[randomNum3]);
   }
 
   render(){
-    let randomUser1 = this.props.users[Math.floor(Math.random()*this.props.users.length)];
-    let randomUser2 = this.props.users[Math.floor(Math.random()*this.props.users.length)];
-    let randomUser3 = this.props.users[Math.floor(Math.random()*this.props.users.length)];
+    this.selectRandom();
     return(
       <div>
         <div>
