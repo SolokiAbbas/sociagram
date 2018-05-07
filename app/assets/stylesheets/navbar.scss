@@ -114,3 +114,18 @@ input:focus:-moz-placeholder { color:transparent; }
   height: 40px;
   padding: 2px;
 }
+.explore-container{
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.explore-avatar{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.explore-titles{
+
+}

@@ -9,12 +9,14 @@ class ExploreUser extends React.Component{
 
   render(){
   return(
-    <div>
-      <img src={this.props.user.image_url} />
-      <li>{this.props.user.username}</li>
-      <li>{this.props.user.Fname}</li>
-      <li>{this.props.user.Lname}</li>
-      <button>Follow</button>
+    <div className="explore-container">
+      <img className="explore-avatar" src={this.props.user.image_url} />
+      <div className="explore-titles">
+        <li>{this.props.user.username}</li>
+        <li>{this.props.user.Fname}</li>
+        <li>{this.props.user.Lname}</li>
+      </div>
+      <button className="btn btn-primary">Follow</button>
     </div>
     );
   }
