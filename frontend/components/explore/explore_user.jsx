@@ -5,7 +5,6 @@ import { Link, Redirect } from 'react-router-dom';
 class ExploreUser extends React.Component{
   constructor(props){
     super(props);
-
   }
 
   render(){
