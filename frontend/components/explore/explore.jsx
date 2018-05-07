@@ -1,4 +1,5 @@
 import React from 'react';
+import ExploreUser from './explore_user';
 
 class Explore extends React.Component{
 
@@ -7,6 +8,7 @@ class Explore extends React.Component{
       <div>
         <div>
           <li>Discover People</li>
+          <ExploreUser />
         </div>
         <div>
           <li>Explore</li>
