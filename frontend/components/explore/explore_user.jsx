@@ -13,8 +13,7 @@ class ExploreUser extends React.Component{
       <img className="explore-avatar" src={this.props.user.image_url} />
       <div className="explore-titles">
         <li>{this.props.user.username}</li>
-        <li>{this.props.user.Fname}</li>
-        <li>{this.props.user.Lname}</li>
+        <li className="explore-name">{this.props.user.Fname} {this.props.user.Lname}</li>
       </div>
       <button className="btn btn-primary">Follow</button>
     </div>

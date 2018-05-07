@@ -115,11 +115,12 @@ input:focus:-moz-placeholder { color:transparent; }
   padding: 2px;
 }
 .explore-container{
-  width: 300px;
+  width: 200px;
   height: 200px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .explore-avatar{
   border-radius: 50%;
@@ -127,5 +128,12 @@ input:focus:-moz-placeholder { color:transparent; }
   height: 80px;
 }
 .explore-titles{
-
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+}
+.explore-name{
+  color: lightgrey;
 }
