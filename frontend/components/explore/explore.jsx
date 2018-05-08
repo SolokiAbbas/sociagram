@@ -21,9 +21,10 @@ class Explore extends React.Component{
     while(randomNum1 === randomNum2 || randomNum2 === 1 || randomNum2 === 0){
       randomNum2 = Math.floor(Math.random()*userlength);
     }
-    this.randomUsers.push(this.props.users[1]);
-    this.randomUsers.push(this.props.users[randomNum1]);
-    this.randomUsers.push(this.props.users[randomNum2]);
+    console.log(this.props.users);
+    this.randomUsers.push(this.props.users.allUsers[1]);
+    this.randomUsers.push(this.props.users.allUsers[randomNum1]);
+    this.randomUsers.push(this.props.users.allUsers[randomNum2]);
   }
 
   render(){
