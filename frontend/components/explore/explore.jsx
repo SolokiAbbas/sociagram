@@ -30,7 +30,6 @@ class Explore extends React.Component{
     if(typeof this.props.users.allUsers !== 'undefined'){
       this.selectRandom();
     return(
-      <div className="exp-container">
         <div className="exp-container">
           <li className="explorer-header">Discover People</li>
           <div className="explorers">
@@ -41,11 +40,8 @@ class Explore extends React.Component{
             <ExploreUser user={this.randomUsers[2]} createAFollow={this.props.createAFollow}
               deleteAFollow={this.props.deleteAFollow} />
           </div>
-        </div>
-        <div>
           <li className="explorer-header">Explore</li>
         </div>
-      </div>
     );
   }else {
     return(<div></div>);
