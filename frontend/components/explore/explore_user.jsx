@@ -15,7 +15,7 @@ class ExploreUser extends React.Component{
         <li>{this.props.user.username}</li>
         <li className="explore-name">{this.props.user.Fname} {this.props.user.Lname}</li>
       </div>
-      <button className="btn btn-primary">Follow</button>
+      <button className="btn btn-primary follow-button">Follow</button>
     </div>
     );
   }
