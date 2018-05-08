@@ -8,7 +8,7 @@ class Explore extends React.Component{
     this.selectRandom = this.selectRandom.bind(this);
   }
   componentDidMount(){
-    this.props.fetchAllUsers();
+    this.props.fetchAllUsers().then(()=> this.props.fetchAllPosts());
   }
 
   selectRandom(){
@@ -21,7 +21,6 @@ class Explore extends React.Component{
     while(randomNum1 === randomNum2 || randomNum2 === 1 || randomNum2 === 0){
       randomNum2 = Math.floor(Math.random()*userlength);
     }
-    console.log(this.props.users);
     this.randomUsers.push(this.props.users.allUsers[1]);
     this.randomUsers.push(this.props.users.allUsers[randomNum1]);
     this.randomUsers.push(this.props.users.allUsers[randomNum2]);
@@ -33,16 +32,18 @@ class Explore extends React.Component{
     return(
       <div>
         <div>
-          <li>Discover People</li>
-          <ExploreUser user={this.randomUsers[0]} createAFollow={this.props.createAFollow}
-            deleteAFollow={this.props.deleteAFollow} />
-          <ExploreUser user={this.randomUsers[1]} createAFollow={this.props.createAFollow}
-            deleteAFollow={this.props.deleteAFollow} />
-          <ExploreUser user={this.randomUsers[2]} createAFollow={this.props.createAFollow}
-            deleteAFollow={this.props.deleteAFollow} />
+          <li className="explorer-header">Discover People</li>
+          <div className="explorers">
+            <ExploreUser user={this.randomUsers[0]} createAFollow={this.props.createAFollow}
+              deleteAFollow={this.props.deleteAFollow} />
+            <ExploreUser user={this.randomUsers[1]} createAFollow={this.props.createAFollow}
+              deleteAFollow={this.props.deleteAFollow} />
+            <ExploreUser user={this.randomUsers[2]} createAFollow={this.props.createAFollow}
+              deleteAFollow={this.props.deleteAFollow} />
+          </div>
         </div>
         <div>
-          <li>Explore</li>
+          <li className="explorer-header">Explore</li>
         </div>
       </div>
     );
