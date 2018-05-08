@@ -81,7 +81,6 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
-* Create more seeds to have better datas
 * Fix follow other users
 * Explore should have random posts
 * Fix controller to not request
