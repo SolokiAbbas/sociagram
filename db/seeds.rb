@@ -30,6 +30,66 @@ usertest = User.create!({username: "Vegeta2000", password: "password", Fname: "P
   user5=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
+  name = Faker::Name.first_name
+  user6=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
+
+  name = Faker::Name.first_name
+  user7=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
+
+  name = Faker::Name.first_name
+  user8=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
+
+  name = Faker::Name.first_name
+  user9=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
+
+  name = Faker::Name.first_name
+  user10=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
+
+  name = Faker::Name.first_name
+  user11=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name })
+
+  name = Faker::Name.first_name
+  user12=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name })
+
+  name = Faker::Name.first_name
+  user13=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name  })
+
+  name = Faker::Name.first_name
+  user14=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name  })
+
+  name = Faker::Name.first_name
+  user15=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name })
+
+  name = Faker::Name.first_name
+  user16=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name })
+
+  name = Faker::Name.first_name
+  user17=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name })
+
+  name = Faker::Name.first_name
+  user18=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name })
+
+  name = Faker::Name.first_name
+  user19=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name })
+
+  name = Faker::Name.first_name
+  user20=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+    handle: "@t"+ name })
+
 Post.destroy_all
 post1 = Post.create!({title: "Testing", body:"Tester again", author_id: usertest.id, image: "https://s3.amazonaws.com/sociagram-dev/posts/postimages/post1.jpg"})
 
