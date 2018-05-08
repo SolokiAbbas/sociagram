@@ -115,7 +115,7 @@ input:focus:-moz-placeholder { color:transparent; }
   padding: 2px;
 }
 .explore-container{
-  width: 200px;
+  width: 300px;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -123,6 +123,7 @@ input:focus:-moz-placeholder { color:transparent; }
   align-items: center;
   background: white;
   border: 1px solid lightgrey;
+  margin: 30px;
 }
 .explore-avatar{
   border-radius: 50%;
@@ -136,14 +137,23 @@ input:focus:-moz-placeholder { color:transparent; }
   padding: 10px;
   align-items: center;
   font-size: 15px;
-  font-family: "Open Sans"
+  font-family: "Open Sans";
 }
 .explore-name{
+  margin-top: 8px;
+  margin-bottom: 5px;
   color: #b9b3b3;
 }
 .explorer-header{
   color: grey;
+  width: 100%;
 }
 .explorers{
-  
+
+}
+.exp-container{
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
