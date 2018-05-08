@@ -9,17 +9,16 @@ class Explore extends React.Component{
   }
   componentDidMount(){
     this.props.fetchAllUsers();
-    console.log(this.props);
   }
 
   selectRandom(){
     let userlength = Object.keys(this.props.users.allUsers).length;
     let randomNum1 = Math.floor(Math.random()*userlength);
     let randomNum2 = Math.floor(Math.random()*userlength);
-    console.log(randomNum1);
-    console.log(randomNum2);
-    while(randomNum1 === randomNum2 && randomNum1 !== 0 && randomNum2 !== 0
-    && randomNum1 !== 1 && randomNum2 !== 1 ){
+    while(randomNum1 === 1 || randomNum1 === 0){
+      randomNum1 = Math.floor(Math.random()*userlength);
+    }
+    while(randomNum1 === randomNum2 || randomNum2 === 1 || randomNum2 === 0){
       randomNum2 = Math.floor(Math.random()*userlength);
     }
     this.randomUsers.push(this.props.users[1]);
