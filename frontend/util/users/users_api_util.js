@@ -15,3 +15,10 @@ export const updateUser = (user, id) =>{
       data: user
     });
   };
+
+  export const fetchAllUsers = () => {
+    return $.ajax({
+      method: 'GET',
+      url: `api/users/`,
+    });
+  };
