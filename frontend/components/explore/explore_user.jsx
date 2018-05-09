@@ -19,7 +19,8 @@ class ExploreUser extends React.Component{
   componentWillReceiveProps(nextProps){
     let other = nextProps.user.followers;
     let current = this.props.user.followers;
-
+    console.log(nextProps);
+    console.log(this.props);
     if(other !== current){
         this.props.fetchAUser(current).then(()=>this.props.fetchAUser(1)).then(
           ()=>this.props.fetchAUser(this.props.current)).then(()=>this.props.fetchAllUsers());
