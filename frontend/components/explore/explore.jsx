@@ -28,17 +28,21 @@ class Explore extends React.Component{
 
   render(){
     if(typeof this.props.users.allUsers !== 'undefined'){
+      let currentUserId = this.props.session.currentUser.id;
       this.selectRandom();
     return(
         <div className="exp-container">
           <li className="explorer-header">Discover People</li>
           <div className="explorers">
             <ExploreUser user={this.randomUsers[0]} createAFollow={this.props.createAFollow}
-              deleteAFollow={this.props.deleteAFollow} />
+              deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
+              current={currentUserId}/>
             <ExploreUser user={this.randomUsers[1]} createAFollow={this.props.createAFollow}
-              deleteAFollow={this.props.deleteAFollow} />
+              deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
+              current={currentUserId}/>
             <ExploreUser user={this.randomUsers[2]} createAFollow={this.props.createAFollow}
-              deleteAFollow={this.props.deleteAFollow} />
+              deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
+              current={currentUserId}/>
           </div>
           <li className="explorer-header">Explore</li>
         </div>
