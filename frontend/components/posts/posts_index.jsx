@@ -16,7 +16,6 @@ class PostsIndex extends React.Component{
       return this.props.posts[el];
     });
     if(typeof users[authorId] !== 'undefined'){
-      console.log(this.props);
       let allfollowing = Object.keys(this.props.users[authorId].following).map(el=> {
         return this.props.users[authorId].following[el].followee_id;
       });

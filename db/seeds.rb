@@ -11,83 +11,83 @@ usertest = User.create!({username: "Vegeta2000", password: "password", Fname: "P
   handle: "@vegeta", avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/vegeta-profile.jpg", bio: "Over 9000????"})
 
   name = Faker::Name.first_name
-  user1=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user1=User.create!({username: name+"1", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile.jpg", bio:"I like pancakes and brownies"})
 
   name = Faker::Name.first_name
-  user2=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user2=User.create!({username: name+"2", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile2.jpg", bio:"I love Harry Potter Books!"})
 
   name = Faker::Name.first_name
-  user3=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user3=User.create!({username: name+"3", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile3.jpg" })
 
   name = Faker::Name.first_name
-  user4=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user4=User.create!({username: name+"4", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/penguin-profile4.jpg" })
 
   name = Faker::Name.first_name
-  user5=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user5=User.create!({username: name+"5", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
   name = Faker::Name.first_name
-  user6=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user6=User.create!({username: name+"101", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
   name = Faker::Name.first_name
-  user7=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user7=User.create!({username: name+"100", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
   name = Faker::Name.first_name
-  user8=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user8=User.create!({username: name+"2000", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
   name = Faker::Name.first_name
-  user9=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user9=User.create!({username: name+"2010", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
   name = Faker::Name.first_name
-  user10=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user10=User.create!({username: name+"2015", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name, avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/owl-profile.jpg" })
 
   name = Faker::Name.first_name
-  user11=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user11=User.create!({username: name+name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name })
 
   name = Faker::Name.first_name
-  user12=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user12=User.create!({username: name+"Million", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name })
 
   name = Faker::Name.first_name
-  user13=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user13=User.create!({username: name+"Faker", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name  })
 
   name = Faker::Name.first_name
-  user14=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user14=User.create!({username: name+"Glorious", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name  })
 
   name = Faker::Name.first_name
-  user15=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user15=User.create!({username: name+"Genius", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name })
 
   name = Faker::Name.first_name
-  user16=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user16=User.create!({username: name+"Lover", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name })
 
   name = Faker::Name.first_name
-  user17=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user17=User.create!({username: name+"Now", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name })
 
   name = Faker::Name.first_name
-  user18=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user18=User.create!({username: name+"Golden", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name })
 
   name = Faker::Name.first_name
-  user19=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user19=User.create!({username: name+"Car", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name })
 
   name = Faker::Name.first_name
-  user20=User.create!({username: name, password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
+  user20=User.create!({username: name+"Rich", password: "password", Fname: Faker::Name.first_name, Lname: Faker::Name.last_name, email: Faker::Internet.email ,
     handle: "@t"+ name })
 
 Post.destroy_all
@@ -225,3 +225,9 @@ follow7 = Follow.create!({followee_id: user4.id, follower_id: user3.id})
 follow8 = Follow.create!({followee_id: user5.id, follower_id: user3.id})
 follow9 = Follow.create!({followee_id: user5.id, follower_id: user4.id})
 follow10 = Follow.create!({followee_id: user2.id, follower_id: user4.id})
+
+follow11 = Follow.create!({followee_id: user10.id, follower_id: usertest.id})
+follow12 = Follow.create!({followee_id: user11.id, follower_id: usertest.id})
+follow13 = Follow.create!({followee_id: user12.id, follower_id: usertest.id})
+follow14 = Follow.create!({followee_id: user13.id, follower_id: usertest.id})
+follow15 = Follow.create!({followee_id: user14.id, follower_id: usertest.id})
