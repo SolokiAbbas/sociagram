@@ -6,23 +6,31 @@ import { Link, Route } from 'react-router-dom';
 class ExplorePosts extends React.Component{
   constructor(props){
     super(props);
-    this.randoms= [];
+    this.randoms = [];
     this.allposts = [];
+    this.selectRandom = this.selectRandom.bind(this);
+  }
+
+  componentDidMount(){
+    this.randoms = [];
+    this.props.fetchAllPosts();
   }
 
   selectRandom(){
     let postlength = Object.keys(this.props.allPosts).length;
-    let randomNum = Math.floor(Math.random()*postlength);
-    let redo = true;
-    this.randoms.push(randomNum);
-    while(redo){
-      if(randomNum !== 0 && !this.randoms.includes(randomNum)){
-        this.randoms.push(randomNum);
-      }
-      randomNum = Math.floor(Math.random()*postlength);
-      if(this.randoms.length === 9){
-        redo = false;
-      }
+    if(postlength !== 0 ){
+      let randomNum = Math.floor(Math.random()*postlength);
+      let redo = true;
+      this.randoms.push(randomNum);
+      while(redo){
+        if(randomNum !== 0 && !this.randoms.includes(randomNum)){
+          this.randoms.push(randomNum);
+        }
+        randomNum = Math.floor(Math.random()*postlength);
+        if(this.randoms.length === 9){
+            redo = false;
+          }
+        }
     }
   }
 
@@ -37,6 +45,7 @@ class ExplorePosts extends React.Component{
       return(
         <div className="profile-posts-container exp-post">
           {this.allposts.map(post => {
+            commentsCounter = 1;
               this.props.comments.map(comment =>{
                 if(post.id === comment.post_id){
                   commentsCounter+=1;

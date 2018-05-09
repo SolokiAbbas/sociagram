@@ -49,7 +49,8 @@ class Explore extends React.Component{
           <ExplorePosts session={this.props.session} allPosts={this.props.allPosts}
             createALike={this.props.createALike} deleteALike={this.props.deleteALike}
             fetchAPost={this.props.fetchAPost} createABookmark={this.props.createABookmark}
-            deleteABookmark={this.props.deleteABookmark} comments={this.props.comments}/>
+            deleteABookmark={this.props.deleteABookmark} comments={this.props.comments}
+            fetchAllPosts={this.props.fetchAllPosts} />
         </div>
     );
   }else {
