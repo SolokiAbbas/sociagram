@@ -1,5 +1,6 @@
 import React from 'react';
 import ExploreUser from './explore_user';
+import ExplorePosts from './explore_posts';
 
 class Explore extends React.Component{
   constructor(){
@@ -45,6 +46,10 @@ class Explore extends React.Component{
               current={currentUserId}/>
           </div>
           <li className="explorer-header">Explore</li>
+          <ExplorePosts session={this.props.session} allPosts={this.props.allPosts}
+            createALike={this.props.createALike} deleteALike={this.props.deleteALike}
+            fetchAPost={this.props.fetchAPost} createABookmark={this.props.createABookmark}
+            deleteABookmark={this.props.deleteABookmark} comments={this.props.comments}/>
         </div>
     );
   }else {

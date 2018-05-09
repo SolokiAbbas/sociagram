@@ -17,7 +17,7 @@
 class User < ApplicationRecord
   include PgSearch
   pg_search_scope :search_users,
-                :against => [:username, :Fname],
+                :against => [:username],
                 :using => {
                   :trigram => {
                     :threshold => 0.1

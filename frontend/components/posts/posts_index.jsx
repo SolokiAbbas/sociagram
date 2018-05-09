@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PostsIndexItem from './posts_index_item';
+import ExploreContainer from '../explore/explore_container';
 
 
 class PostsIndex extends React.Component{
@@ -19,6 +20,9 @@ class PostsIndex extends React.Component{
       let allfollowing = Object.keys(this.props.users[authorId].following).map(el=> {
         return this.props.users[authorId].following[el].followee_id;
       });
+      if(allfollowing.length === 0){
+        return(<ExploreContainer />);
+      }else{
       return(
           <div className="posts-index">
             {allposts.map(post => {
@@ -32,6 +36,7 @@ class PostsIndex extends React.Component{
             }
           </div>
       );
+    }
   }
   return(<div></div>);
   }
