@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Explore from './explore';
 import { allPost } from '../../reducers/selectors';
 import { fetchAComment } from '../../actions/comments/comments_action';
@@ -34,4 +35,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Explore);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Explore));

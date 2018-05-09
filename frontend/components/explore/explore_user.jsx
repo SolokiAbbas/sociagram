@@ -7,17 +7,22 @@ class ExploreUser extends React.Component{
     super(props);
     this.state={followid: 0};
     this.followid = 0;
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentDidMount(){
     let author = this.props.user.id;
-    this.props.fetchAUser(author);
+    this.props.fetchAUser(author).then(()=>this.props.fetchAUser(this.props.current)).then(()=>this.props.fetchAllUsers());
   }
+
   componentWillReceiveProps(nextProps){
-    let other = nextProps.user.followings;
-    let current = this.props.user.followings;
+    let other = nextProps.user.followers;
+    let current = this.props.user.followers;
+
     if(other !== current){
-        this.props.fetchAUser(current);
+        this.props.fetchAUser(current).then(()=>this.props.fetchAUser(1)).then(
+          ()=>this.props.fetchAUser(this.props.current)).then(()=>this.props.fetchAllUsers());
     }
   }
 
@@ -32,15 +37,13 @@ class ExploreUser extends React.Component{
     this.followid = 0;
     this.props.deleteAFollow(other);
   }
-  handlefollowings(id){
-    this.setState({followid: id});
-  }
+
 
   render(){
     let userId = this.props.user.id;
     this.props.user.followers.forEach(id =>{
       if(id.follower_id === this.props.current){
-        this.followid = id;
+        this.followid = id.id;
       }
     });
   return(

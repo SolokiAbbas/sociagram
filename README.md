@@ -85,4 +85,6 @@ In addition to these features, I plan to implement more features. I plan to incl
 * Fix initial log in when users log in (first time) and get recommendations
 
 * Add Hashtags to clickable groups on posts
+* Parse in comments the # and @ to links to hashtags and other users
+* Link on bottom page linking to other Hashtags
 * Add Handles to clickable people

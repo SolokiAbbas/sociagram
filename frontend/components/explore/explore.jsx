@@ -8,8 +8,10 @@ class Explore extends React.Component{
     this.randomUsers = [];
     this.selectRandom = this.selectRandom.bind(this);
   }
+
   componentDidMount(){
-    this.props.fetchAllUsers().then(()=> this.props.fetchAllPosts());
+    this.props.fetchAllUsers().then(()=> this.props.fetchAllPosts()).then(
+      ()=>this.props.fetchAUser(this.props.session.currentUser.id)).then(()=>this.props.fetchAUser(1));
   }
 
   selectRandom(){
@@ -22,6 +24,7 @@ class Explore extends React.Component{
     while(randomNum1 === randomNum2 || randomNum2 === 1 || randomNum2 === 0){
       randomNum2 = Math.floor(Math.random()*userlength);
     }
+
     this.randomUsers.push(this.props.users.allUsers[1]);
     this.randomUsers.push(this.props.users.allUsers[randomNum1]);
     this.randomUsers.push(this.props.users.allUsers[randomNum2]);
@@ -37,13 +40,16 @@ class Explore extends React.Component{
           <div className="explorers">
             <ExploreUser user={this.randomUsers[0]} createAFollow={this.props.createAFollow}
               deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
-              current={currentUserId}/>
+              current={currentUserId} location={this.props.location}
+              fetchAllUsers={this.props.fetchAllUsers} />
             <ExploreUser user={this.randomUsers[1]} createAFollow={this.props.createAFollow}
               deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
-              current={currentUserId}/>
+              current={currentUserId} location={this.props.location}
+              fetchAllUsers={this.props.fetchAllUsers} />
             <ExploreUser user={this.randomUsers[2]} createAFollow={this.props.createAFollow}
               deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
-              current={currentUserId}/>
+              current={currentUserId} location={this.props.location}
+              fetchAllUsers={this.props.fetchAllUsers} />
           </div>
           <li className="explorer-header">Explore</li>
           <ExplorePosts session={this.props.session} allPosts={this.props.allPosts}
