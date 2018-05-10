@@ -46,19 +46,22 @@ class PostsIndex extends React.Component{
       });
       if(allfollowing.length === 0){
         return(
-          <div className="explorers">
-            <ExploreUser user={this.randomUsers[0]} createAFollow={this.props.createAFollow}
-              deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
-              current={currentUserId} location={this.props.location}
-              fetchAllUsers={this.props.fetchAllUsers} />
-            <ExploreUser user={this.randomUsers[1]} createAFollow={this.props.createAFollow}
-              deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
-              current={currentUserId} location={this.props.location}
-              fetchAllUsers={this.props.fetchAllUsers} />
-            <ExploreUser user={this.randomUsers[2]} createAFollow={this.props.createAFollow}
-              deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
-              current={currentUserId} location={this.props.location}
-              fetchAllUsers={this.props.fetchAllUsers} />
+          <div className="profile-explore-user">
+            <li className="explorer-header exp-pro">Suggested People for New Users</li>
+            <div className="explorers">
+              <ExploreUser user={this.randomUsers[0]} createAFollow={this.props.createAFollow}
+                deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
+                current={currentUserId} location={this.props.location}
+                fetchAllUsers={this.props.fetchAllUsers} />
+              <ExploreUser user={this.randomUsers[1]} createAFollow={this.props.createAFollow}
+                deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
+                current={currentUserId} location={this.props.location}
+                fetchAllUsers={this.props.fetchAllUsers} />
+              <ExploreUser user={this.randomUsers[2]} createAFollow={this.props.createAFollow}
+                deleteAFollow={this.props.deleteAFollow} fetchAUser={this.props.fetchAUser}
+                current={currentUserId} location={this.props.location}
+                fetchAllUsers={this.props.fetchAllUsers} />
+            </div>
           </div>
       );
       }else{
