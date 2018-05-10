@@ -22,6 +22,7 @@ Sociagram will allow the users:
 * Posts can be bookmarked
 * Saved Posts can be viewed in Profile Page
 * Can search for Users while leads to their profile page
+* Explore page with Random Users and Random Posts to look at
 
 
 ### Overall Structure
@@ -81,10 +82,9 @@ A user can follow another user when they click on the user's name. Each user car
 
 In addition to these features, I plan to implement more features. I plan to include:
 
-* Explore should have random posts
-* Fix initial log in when users log in (first time) and get recommendations
-
 * Add Hashtags to clickable groups on posts
 * Parse in comments the # and @ to links to hashtags and other users
 * Link on bottom page linking to other Hashtags
 * Add Handles to clickable people
+
+The final stages of this project involve Hashtags and Handles
