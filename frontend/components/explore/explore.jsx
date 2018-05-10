@@ -11,7 +11,7 @@ class Explore extends React.Component{
 
   componentDidMount(){
     this.props.fetchAllUsers().then(()=> this.props.fetchAllPosts()).then(
-      ()=>this.props.fetchAUser(this.props.session.currentUser.id)).then(()=>this.props.fetchAUser(1));
+      ()=>this.props.fetchAUser(this.props.session.currentUser.id));
   }
 
   selectRandom(){
@@ -33,7 +33,9 @@ class Explore extends React.Component{
   render(){
     if(typeof this.props.users.allUsers !== 'undefined'){
       let currentUserId = this.props.session.currentUser.id;
-      this.selectRandom();
+      if(this.randomUsers.length === 0 ){
+        this.selectRandom();
+      }
     return(
         <div className="exp-container">
           <li className="explorer-header">Discover People</li>

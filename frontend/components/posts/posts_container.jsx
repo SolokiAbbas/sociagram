@@ -4,8 +4,9 @@ import { fetchAllPosts, fetchAPost, deleteAPost } from '../../actions/posts/post
 import { createALike, deleteALike } from '../../actions/likes/likes_action';
 import { createABookmark, deleteABookmark } from '../../actions/bookmarks/bookmarks_action';
 import PostsIndex from './posts_index';
-import { fetchAUser } from '../../actions/users/users_action';
+import { fetchAUser, fetchAllUsers } from '../../actions/users/users_action';
 import PostsIndexItem from './posts_index_item';
+import { createAFollow, deleteAFollow } from '../../actions/follows/follows_action';
 
 const mapStateToProps = (state) =>{
   return {
@@ -18,9 +19,12 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAUser: (id) => dispatch(fetchAUser(id)),
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
     fetchAllPosts: () => dispatch(fetchAllPosts()),
     fetchAPost: (id) => dispatch(fetchAPost(id)),
     deleteAPost: (id) => dispatch(deleteAPost(id)),
+    createAFollow: (follow) => dispatch(createAFollow(follow)),
+    deleteAFollow: (id) => dispatch(deleteAFollow(id)),
     createALike: (like) => dispatch(createALike(like)),
     deleteALike: (id) => dispatch(deleteALike(id)),
     createABookmark: (bookmark) => dispatch(createABookmark(bookmark)),
