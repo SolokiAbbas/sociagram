@@ -228,6 +228,3 @@ follow10 = Follow.create!({followee_id: user2.id, follower_id: user4.id})
 
 follow11 = Follow.create!({followee_id: user10.id, follower_id: usertest.id})
 follow12 = Follow.create!({followee_id: user11.id, follower_id: usertest.id})
-follow13 = Follow.create!({followee_id: user12.id, follower_id: usertest.id})
-follow14 = Follow.create!({followee_id: user13.id, follower_id: usertest.id})
-follow15 = Follow.create!({followee_id: user14.id, follower_id: usertest.id})
