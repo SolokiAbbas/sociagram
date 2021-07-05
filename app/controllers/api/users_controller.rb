@@ -25,6 +25,10 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    if !@user.avatar
+      @user.avatar = "https://s3.amazonaws.com/sociagram-dev/posts/icons/add-button.png"
+    end
+    p @user
     if @user.save
       signin(@user)
       render :show

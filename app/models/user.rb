@@ -15,7 +15,7 @@
 #
 
 class User < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
   pg_search_scope :search_users,
                 :against => [:username],
                 :using => {
@@ -35,8 +35,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, through: :posts
 
-  has_attached_file :avatar, default_url: "https://s3.amazonaws.com/sociagram-dev/posts/icons/add-button.png"
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  has_one_attached :avatar
+  validates_acceptance_of :avatar, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
 

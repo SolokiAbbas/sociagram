@@ -7,9 +7,9 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.4'
+gem 'rails', '~> 6.1.4'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 1.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -29,17 +29,17 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'annotate'
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.16'
 gem 'rails_12factor'
 
-gem 'aws-sdk', '>= 2.0'
+gem 'aws-sdk', '>= 3.0'
 gem 'figaro'
-gem "paperclip", "~> 5.0.0"
+# gem "paperclip", "~> 6.0.0"
 gem 'pg_search'
-gem 'react_on_rails', '11.0.3'
+gem 'react_on_rails', '12.2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-ruby "2.3.1"
+ruby "2.7.3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

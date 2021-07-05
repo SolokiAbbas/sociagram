@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 User.destroy_all
+p "in"
 usertest = User.create!({username: "Vegeta2000", password: "password", Fname: "Prince", Lname:"Vegeta", email: "PrinceVegeta@planetvegeta.com",
   handle: "@vegeta", avatar: "https://s3.amazonaws.com/sociagram-dev/posts/profiles/vegeta-profile.jpg", bio: "Over 9000????"})
 
